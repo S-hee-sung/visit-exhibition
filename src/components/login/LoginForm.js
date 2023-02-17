@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Button from '../common/Button';
 
 const LoginFormWrapper = styled.div`
   h3{
@@ -33,7 +34,7 @@ const textMap = {
 };
 
 
-function LoginForm() {
+function LoginForm({ type }) {
   const text = textMap[type];
 
   return (

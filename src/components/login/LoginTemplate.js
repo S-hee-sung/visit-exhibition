@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import LoginForm from "./LoginForm";
 
 
 
@@ -34,21 +35,23 @@ const WhiteBox = styled.div`
 `
 
 
-function LoginTemplate({childeren}) {
+const LoginTemplate = (props) => {
+  // const { children } = props;
+
   return (  
     <LoginTemplateWrapper>
       <WhiteBox>
-        <div className=".logo-area">
-          <Link to='/' >
-            Title
-          </Link>
+        <div className="logo-area">
+          {/* <Link to='/'> */}
+            TITLE
+          {/* </Link> */}
         </div>
-        {childeren}
+        <LoginForm type={'login'} />
       </WhiteBox>
     </LoginTemplateWrapper>
   );
-}
+};
 
-export default  LoginTemplate;
+export default LoginTemplate;
 
 

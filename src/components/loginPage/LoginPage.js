@@ -7,7 +7,7 @@ function LoginPage(props) {
   
   return (
     <LoginTemplate>
-      <LoginForm />
+      <LoginForm type='login' />
     </LoginTemplate>
   );
 }

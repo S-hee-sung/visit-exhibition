@@ -1,5 +1,7 @@
+import { Route } from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
-import LoginPage from "./components/loginPage/LoginPage";
+import LoginForm from "./components/login/LoginForm";
+import LoginTemplate from "./components/login/LoginTemplate";
 
 const GlobalStyle = createGlobalStyle`
   body: {
@@ -15,6 +17,8 @@ function App() {
   return (
     <>
       <GlobalStyle />
+      <LoginTemplate />
+    
     </>
   );
 }

@@ -6,7 +6,7 @@ function RegisterPage(props) {
   return (
     <>
       <LoginTemplate>
-        <LoginForm />
+        <LoginForm  type='register' />
       </LoginTemplate>
     </>
   );

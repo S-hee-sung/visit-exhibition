@@ -10,13 +10,13 @@ const StyledButton = styled.button`
   outline: none;
   cursor: pointer;
   
-  background: black;
+  background: purple;
   &:hover {
-    background: white;
+    background: black;
   }
   /* fullWidth props =ture */
   ${props =>
-  props.fullWidth &&
+    props.fullWidth &&
   css`
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
@@ -25,19 +25,17 @@ const StyledButton = styled.button`
   `
   }
    /* fullWidth cyan =ture */
-  ${
-    props =>
+  ${props =>
     props.cyan &&
-    css`
-    background: white;
-    &:hover{
-      background: black;
+      css`
+        background: white;
+      &:hover{
+        background: black;
+      }
+      `
     }
-    `
-
-  }
 `;
-// Button 에 받아오는 props 를 모두 styledButton 에 전달한다는 의미
+
 const Button = (props) => {
   return <StyledButton {...props} />;
 };

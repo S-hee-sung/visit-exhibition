@@ -19,14 +19,16 @@ const MainWrapper = styled.div`
     font-size: 1.0rem;
   }
   img {
-    height: 400px;
-    margin: 3vh 1vh 3vh 0;
+    height: 409px;
+  }
+  .imagecontainer {
+    display: flex;
+    gap: 2vh;
   }
   .subtext {
     color: #656565;
     font-size: 1.0rem;
     text-align: right;
-    padding: 0 5vh 0 5vh;
   }
   `;
 
@@ -36,8 +38,11 @@ function MainPage(props) {
       <div className="inner">
         <h4>Main text area</h4>
         <p className="maintext">Lorem ipsum dolor sit amet,</p>
-        <img src={mainImage} alt="main_image" />
-        <img src={mainImage03} alt="main_image" />
+        <div className='imagecontainer'>
+          <img src={mainImage} alt="main_image" />
+          <img src={mainImage03} alt="main_image" />
+        </div>
+        
         <p className="subtext">consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br/>labore et dolore magna aliqua, Lorem ipsum dolor sit amet</p>
       </div>
     </MainWrapper>

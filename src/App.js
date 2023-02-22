@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components";
 
 import reset from "styled-reset";
+
 import MainPage from "./components/MainPage";
 import LandingPage from "./components/map/LandingPage";
 
@@ -29,7 +30,6 @@ function App() {
   return (
     <>
       <GlobalStyle />
-
         <Header />
         <Main />
 

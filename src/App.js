@@ -1,23 +1,26 @@
 import { Route } from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
-import LoginForm from "./components/login/LoginForm";
-import LoginTemplate from "./components/login/LoginTemplate";
+import Header from "./pages/Header";
+import reset from "styled-reset";
 
 const GlobalStyle = createGlobalStyle`
+  ${reset};
+  
   body: {
     box-sizing: border-box;
   }
 
-  .cursor-pointer {
-    cursor: pointer;
+  * {
+    box-sizing: inherit;
   }
+  
 `;
 
 function App() {
   return (
     <>
       <GlobalStyle />
-    
+      <Header />
     </>
   );
 }

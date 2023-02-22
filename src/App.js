@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 import MainPage from "./components/mainPage";
 // import Youtube from "./components/youtube";
+import LocalExhibition from "./components/localExhibition";
 
 const GlobalStyle = createGlobalStyle`
   ${reset};
@@ -24,6 +25,7 @@ function App() {
     <>
       <GlobalStyle />
       <MainPage/>
+      <LocalExhibition/>
     </>
   );
 }

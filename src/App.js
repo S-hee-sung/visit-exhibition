@@ -1,11 +1,19 @@
-import { Route } from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
-import LoginForm from "./components/login/LoginForm";
-import LoginTemplate from "./components/login/LoginTemplate";
+import reset from "styled-reset";
+import LandingPage from "./components/map/LandingPage";
+
+import Header from "./pages/Header";
+import Main from "./pages/Main";
 
 const GlobalStyle = createGlobalStyle`
-  body: {
+  ${reset};
+
+  body {
     box-sizing: border-box;
+  }
+
+  * {
+    box-sizing: inherit;
   }
 
   .cursor-pointer {
@@ -17,7 +25,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
-    
+      <LandingPage />
     </>
   );
 }

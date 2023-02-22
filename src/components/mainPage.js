@@ -30,7 +30,7 @@ const MainWrapper = styled.div`
   }
   `;
 
-function mainPage(props) {
+function MainPage(props) {
   return (
     <MainWrapper>
       <div className="inner">
@@ -46,4 +46,4 @@ function mainPage(props) {
   );
 }
 
-export default mainPage;
+export default MainPage;

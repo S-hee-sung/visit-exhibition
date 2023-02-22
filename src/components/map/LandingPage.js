@@ -36,7 +36,7 @@ const MapWrapper = styled.div`
   }
   button {
     margin-left: 30px;
-    width: 120px;
+    width: 100px;
     height: 40px;
     border-radius: 10px;
   }

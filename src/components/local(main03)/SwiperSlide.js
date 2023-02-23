@@ -4,25 +4,26 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from "styled-components";
 import data from "../../data.json";
 
-import slideImg01 from "../../images/slide01.jpg";
-
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-const slideWrapper = styled.div`
+const SlideWrapper = styled.div`
 .inner {
     max-width: 1200px;
     margin: 0 auto;
   }
+  img {
+    height: 42vh;
+    width: 28vh;
+  }
 `;
-
-
 
 export default () => {
   return (
+    <SlideWrapper>
     <div className="inner">
       <Swiper
       // install Swiper modules
@@ -39,7 +40,7 @@ export default () => {
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log('slide change')}
       >
-        <SwiperSlide><img src={slideImg01}/></SwiperSlide>
+        <SwiperSlide><img src={data[0].src}/></SwiperSlide>
         <SwiperSlide><img src={data[1].src}/></SwiperSlide>
         <SwiperSlide><img src={data[2].src}/></SwiperSlide>
         <SwiperSlide><img src={data[3].src}/></SwiperSlide>
@@ -48,6 +49,7 @@ export default () => {
         <SwiperSlide><img src={data[6].src}/></SwiperSlide>
       </Swiper>
     </div>
+    </SlideWrapper>
     
   );
 };

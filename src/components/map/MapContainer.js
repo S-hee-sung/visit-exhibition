@@ -4,7 +4,7 @@ const { kakao } = window;
 
 function MapContainer() {
   useEffect(() => {
-    const markers = [];
+    // const markers = [];
     const mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = { 
         center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표

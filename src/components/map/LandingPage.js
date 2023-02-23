@@ -2,14 +2,12 @@ import { useState } from "react"
 import styled from "styled-components"
 import MapContainer from "./MapContainer"
 
-
 const AllBox = styled.div`
   padding-top: 50px;
   max-width: 1200px;
   margin: 0 auto;
 
 `;
-
 
 const InputWrapper = styled.div`
   h3 {
@@ -22,7 +20,6 @@ const InputWrapper = styled.div`
     background-color: black;
   }
 `;
-
 
 const MapWrapper = styled.div`
   display: flex;
@@ -44,10 +41,7 @@ const MapWrapper = styled.div`
 `;
 
 
-
-
-
-function LandingPage() {
+function LandingPage(props) {
   const [InputText, setInputText] = useState('')
   const [Place, setPlace] = useState('')
 

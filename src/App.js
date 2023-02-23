@@ -2,16 +2,18 @@ import { createGlobalStyle } from "styled-components";
 
 import reset from "styled-reset";
 
-import MainPage from "./components/MainPage";
+import MainPage from "./components/main(main01)/MainPage";
 import LandingPage from "./components/map/LandingPage";
 
 import Header from "./pages/Header";
+
 import Main from "./pages/Main";
+import LocalExhibition from "./components/local(main03)/LocalExhibition";
+import SwiperSlide from "./components/local(main03)/SwiperSlide";
 
 
 const GlobalStyle = createGlobalStyle`
   ${reset};
-
 
   body: {
     box-sizing: border-box;
@@ -33,6 +35,8 @@ function App() {
       <GlobalStyle />
         <Header />
         <Main />
+        <LocalExhibition />
+        <SwiperSlide />
 
 
     </>

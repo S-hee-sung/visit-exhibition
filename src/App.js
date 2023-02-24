@@ -39,6 +39,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
+
       
       <Routes>
         <Route path="/" element={<Layout />}>
@@ -50,6 +51,7 @@ function App() {
 
         {/* <LocalExhibition /> */}
         <SwiperSlide />
+
     </>
   );
 }

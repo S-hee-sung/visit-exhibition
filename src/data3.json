@@ -2,50 +2,50 @@
   {
     "id": 1,
     "src": "./images/slide03-1.jpg",
-    "name": "봄 소품",
-    "location": "[Gallery We]",
-    "address": "경기도 용인시 수지구 호수로52번길 25-17"
+    "name": "harmgerdes : panorama",
+    "location": "[페레스프로젝트 서울]",
+    "address": "서울 중구 동호로 249 서울신라호텔 B1층"
   },
   {
     "id": 2,
-    "src": "./images/slide03-2.jpg",
-    "name": "경유지",
-    "location": "[artcenter WHITE BLOCK]",
-    "address": "경기 파주시 탄현면 헤이리마을길 72"
+    "src": "./images/slide03-2.gif",
+    "name": "마리아 스바르보바 사진전",
+    "location": "[예술의 전당 한가람미술관]",
+    "address": "서울 서초구 남부순환로 2406"
   },
   {
     "id": 3,
     "src": "./images/slide03-3.jpg",
-    "name": "백남준 효과",
-    "location": "[국립현대미술관]",
-    "address": "경기 과천시 광명로 313 국립현대미술관"
+    "name": "국가무형문화재: 한옥관조",
+    "location": "[은평역사한옥박물관]",
+    "address": "서울 은평구 연서로50길 8"
   },
   {
     "id": 4,
     "src": "./images/slide03-4.jpg",
-    "name": "WE ARE COLLECTORS",
-    "location": "[소다미술관]",
-    "address": "경기 화성시 효행로707번길 30"
+    "name": "WATSON, THE MAESTRO",
+    "location": "[예술의 전당 한가람미술관]",
+    "address": "서울 서초구 남부순환로 2406"
   },
   {
     "id": 5,
     "src": "./images/slide03-5.jpg",
-    "name": "백남준의 보고서 1968-1979",
-    "location": "[백남준 아트센터]",
-    "address": "경기 용인시 기흥구 백남준로 10"
+    "name": "서울살이와 집",
+    "location": "[서울생활사박물관]",
+    "address": "서울 노원구 동일로174길 27"
   },
   {
     "id": 6,
-    "src": "./images/slide03-6.gif",
-    "name": "어둠 속의 대화",
-    "location": "[롯데백화점 동탄점]",
-    "address": "경기 화성시 동탄역로 160 동탄역 롯데캐슬"
+    "src": "./images/slide03-6.jpeg",
+    "name": "나탈리 카르푸셴코 사진전",
+    "location": "[그라운드시소 성수]",
+    "address": "서울 성동구 아차산로17길 49 생각공장 데시앙플렉스 지하 1층"
   },
   {
     "id": 7,
-    "src": "./images/slide03-7.jpg ",
-    "name": "SLICK LOUNGE",
-    "location": "[GIFC 타워]",
-    "address": "경기 고양시 일산서구 킨텍스로 240 킨텍스"
+    "src": "./images/slide03-7.jpg",
+    "name": "Gustav Klimt, Gold in Motion",
+    "location": "[예술의전당 디자인미술관]",
+    "address": "서울 서초구 남부순환로 2406"
   }
 ]

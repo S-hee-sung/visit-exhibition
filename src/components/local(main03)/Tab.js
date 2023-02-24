@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import SwiperSlide from './SwiperSlide';
 import SwiperSlide2 from "./SwiperSlide2";
 import SwiperSlide3 from "./SwiperSlide3";
+import SwiperSlide4 from "./SwiperSlide4";
+import SwiperSlide5 from "./SwiperSlide5";
 
 
 const TabMenu = styled.ul`
@@ -53,12 +55,19 @@ export const Tab = () => {
   const [currentTab, clickTab] = useState(0);
 
   const menuArr = [
-    { name: '서울', content: <SwiperSlide/> },
-    { name: '인천', content: <SwiperSlide2/> },
-    { name: '경기 남부', content: <SwiperSlide3/> },
-    { name: '경기 북부', content: 'Tab menu 4' },
-    { name: '기타', content: 'Tab menu 5' },
+    // { name: '서울', content: <SwiperSlide/> },
+    // { name: '인천', content: <SwiperSlide2/> },
+    // { name: '경기 남부', content: <SwiperSlide3/> },
+    // { name: '경기 북부', content: 'Tab menu 4' },
+    // { name: '기타', content: 'Tab menu 5' },
+
+    { name: '서울 종로구', content: <SwiperSlide/> },
+    { name: '서울 강남구', content: <SwiperSlide2/> },
+    { name: '서울 기타', content: <SwiperSlide3/> },
+    { name: '인천', content: <SwiperSlide4/> },
+    { name: '경기', content: <SwiperSlide5/> },
   ];
+
 
   const selectMenuHandler = (index) => {
     clickTab(index);

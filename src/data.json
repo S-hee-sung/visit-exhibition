@@ -1,51 +1,51 @@
 [
   {
     "id": 1,
-    "src": "./images/slide01.jpg",
-    "name": "harmgerdes : panorama",
-    "location": "[페레스프로젝트 서울]",
-    "address": "서울 중구 동호로 249 서울신라호텔 B1층"
+    "src": "./images/slide01-1.jpg",
+    "name": "슬픔은 파도처럼 밀려와",
+    "location": "[drawingRoom]",
+    "address": "서울 종로구 자하문로7길 68-4 2층"
   },
   {
     "id": 2,
-    "src": "./images/slide02.jpg",
+    "src": "./images/slide01-2.jpg",
     "name": "NEW WAVE",
     "location": "[스페이스 사직]",
     "address": "서울특별시 종로구 경희궁3가길 8-4"
   },
   {
     "id": 3,
-    "src": "./images/slide03.jpg",
+    "src": "./images/slide01-3.jpg",
     "name": "이현정초대전",
     "location": "[정문규 미술관]",
     "address": "서울 종로구 성균관로5길 55-3"
   },
   {
     "id": 4,
-    "src": "./images/slide04.jpg",
+    "src": "./images/slide01-4.jpg",
     "name": "최민솔개인전",
     "location": "[갤러리 도스]",
     "address": "서울 종로구 삼청로7길 37 갤러리도스"
   },
   {
     "id": 5,
-    "src": "./images/slide05.webp",
-    "name": "데미안",
-    "location": "[K현대미술관]",
-    "address": "서울 강남구 선릉로 807 K현대미술관"
+    "src": "./images/slide01-5.jpg",
+    "name": "그해 겨울은 따뜻했네",
+    "location": "[GALLERY INDEX]",
+    "address": "서울특별시 종로구 인사동길 45 인덕빌딩F3"
   },
   {
     "id": 6,
-    "src": "./images/slide06.jpg",
-    "name": "조우 : Encounter",
-    "location": "[엔버갤러리]",
-    "address": "서울 강남구 압구정로 421-1"
+    "src": "./images/slide01-6.jpg",
+    "name": "Record",
+    "location": "[김종영미술관]",
+    "address": "서울 종로구 평창32길 30"
   },
   {
     "id": 7,
-    "src": "./images/slide07.jpg",
-    "name": "프리다 칼로 사진전",
-    "location": "[현대백화점 무역센터점]",
-    "address": "서울 강남구 테헤란로 517"
+    "src": "./images/slide01-7.jpg",
+    "name": "그 겨울의 행복",
+    "location": "[국립민속박물관]",
+    "address": "서울 종로구 삼청로 37"
   }
 ]

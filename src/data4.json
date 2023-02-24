@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "src": "./images/slide04-1.jpg",
+    "name": "유행이 끝나면 깨워주세요",
+    "location": "[부연]",
+    "address": "인천 중구 개항로106번길 8"
+  },
+  {
+    "id": 2,
+    "src": "./images/slide04-2.jpg",
+    "name": "vita nova new life",
+    "location": "[인천 아트플랫폼]",
+    "address": "인천 중구 제물량로218번길 3 인천아트플랫폼"
+  },
+  {
+    "id": 3,
+    "src": "./images/slide04-3.jpg",
+    "name": "Alice in Wonderyarn",
+    "location": "[현대의상박물관]",
+    "address": "인천 연수구 송도문화로 119-2 한국뉴욕주립대학교 지하1층"
+  },
+  {
+    "id": 4,
+    "src": "./images/slide04-4.jpg",
+    "name": "Dear future me 展",
+    "location": "[롯데갤러리 인천점]",
+    "address": "인천 미추홀구 연남로 35 롯데백화점 5층"
+  },
+  {
+    "id": 5,
+    "src": "./images/slide04-5.gif",
+    "name": "놀이터를 부탁해",
+    "location": "[인천도시역사관]",
+    "address": "인천 연수구 인천타워대로 238"
+  }
+]

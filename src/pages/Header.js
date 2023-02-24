@@ -5,7 +5,7 @@ import backgroundWhiteImg from '../images/logo-white.png';
 import MainNavbar from '../components/mainmenu/MainNavbar';
 import UtilityMenu from '../components/mainmenu/utilitymenu/UtilityMenu';
 import { useState, useEffect } from 'react';
-import { Outlet } from 'react-router';
+import { Outlet, useNavigate } from 'react-router';
 
 
 
@@ -60,6 +60,7 @@ const HeaderContainer = styled.header`
 
 
 function Header() {
+  const navigate = useNavigate();
   const [scrollPosition, setScrollPosition] = useState(0);
   console.log(scrollPosition);
   const updateScroll = () => {
@@ -74,7 +75,7 @@ function Header() {
       <HeaderContainer >
         <div className={scrollPosition < 60 ? "original_header" : "change_header"}>
           <div className='header_inner'>
-            <div className='header_Area'>
+            <div className='header_Area' onClick={() => navigate('/')}>
               <img src={backgroundImg} />
             </div>
             {/* <div className='mainMenu_Area'>
@@ -84,8 +85,6 @@ function Header() {
           </div>
         </div>
       </HeaderContainer>
-
-      <Outlet />
     </>
   );
 }

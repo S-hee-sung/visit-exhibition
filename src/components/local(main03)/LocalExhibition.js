@@ -3,6 +3,8 @@ import styled from "styled-components";
 import HorizonLine from "../main(main01)/HorizonLine";
 import LocalButton from "./LocalButton";
 import SwiperSlide from "../local(main03)/SwiperSlide";
+import Tab from "../local(main03)/Tab";
+
 
 const LocalExhibitionWrapper = styled.div`
 .inner {
@@ -29,14 +31,16 @@ function localExhibition(props) {
       <div className='inner'>
       <h4>National Exhibition</h4>
       <HorizonLine />
-      <div className='buttonComponents'>
+      {/* <div className='buttonComponents'>
         <LocalButton name="서울"/>
         <LocalButton name="인천"/>
         <LocalButton name="경기 북부"/>
         <LocalButton name="경기 남부"/>
         <LocalButton name="기타"/>
       </div>
-      <SwiperSlide />
+      <SwiperSlide /> */}
+
+      <Tab/>
       
       </div>
     </LocalExhibitionWrapper>

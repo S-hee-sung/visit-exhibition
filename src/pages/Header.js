@@ -5,6 +5,7 @@ import backgroundWhiteImg from '../images/logo-white.png';
 import MainNavbar from '../components/mainmenu/MainNavbar';
 import UtilityMenu from '../components/mainmenu/utilitymenu/UtilityMenu';
 import { useState, useEffect } from 'react';
+import { Outlet } from 'react-router';
 
 
 
@@ -83,6 +84,8 @@ function Header() {
           </div>
         </div>
       </HeaderContainer>
+
+      <Outlet />
     </>
   );
 }

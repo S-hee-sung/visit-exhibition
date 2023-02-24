@@ -8,6 +8,7 @@ function Main(props) {
     <>
       <MainPage />
       <LandingPage />
+      <LocalExhibition />
     </>
   );
 }

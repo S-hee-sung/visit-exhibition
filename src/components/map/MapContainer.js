@@ -135,7 +135,7 @@ const MapContainer = ({ searchPlace }) => {
 
         for (i = 1; i <= pagination.last; i++) {
           const el = document.createElement('a')
-          el.href = '#'
+          el.href = 'javascript: void(0)'
           el.innerHTML = i
 
           if (i === pagination.current) {

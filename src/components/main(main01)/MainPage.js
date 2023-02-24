@@ -25,6 +25,7 @@ const MainWrapper = styled.div`
   .imagecontainer {
     display: flex;
     gap: 2vh;
+    margin-top: 160px;
   }
   .subtext {
     color: #656565;

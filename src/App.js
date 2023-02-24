@@ -25,17 +25,20 @@ const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: inherit;
   }
-  
 `;
 
+
 function App() {
+
+
+
   return (
     <>
       <GlobalStyle />
-        <Header />
-        <Main />
-        <LocalExhibition />
-        <SwiperSlide />
+      <Header />
+      <Main />
+      <LocalExhibition />
+      <SwiperSlide />
 
 
     </>

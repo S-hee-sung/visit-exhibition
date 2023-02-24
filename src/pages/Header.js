@@ -1,14 +1,40 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import styled from 'styled-components';
 import backgroundImg from '../images/logo-no-background.png';
+import backgroundWhiteImg from '../images/logo-white.png';
 import MainNavbar from '../components/mainmenu/MainNavbar';
 import UtilityMenu from '../components/mainmenu/utilitymenu/UtilityMenu';
+import { useState, useEffect } from 'react';
+
+
 
 const HeaderContainer = styled.header`
   width: 100%;
   /* position: fixed; */
   height: 140px;
   margin: 0 auto;
+  position: fixed;
+  background: white;
+  z-index: 999;
+
+  .original_header {
+    width: 100%;
+    height: 140px;
+    margin: 0 auto;
+    position: fixed;
+    background: white;
+    z-index: 999;
+  }
+
+  .change_header {
+    width: 100%;
+    height: 140px;
+    margin: 0 auto;
+    position: fixed;
+    background: #222;
+    z-index: 999;
+    color: white;
+  }
   
   .header_inner {
     max-width: 1200px;
@@ -31,19 +57,30 @@ const HeaderContainer = styled.header`
 `;
 
 
+
 function Header() {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  console.log(scrollPosition);
+  const updateScroll = () => {
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+  }
+  useEffect(() => {
+    window.addEventListener("scroll", updateScroll)
+  }, []);
 
   return (
     <>
-      <HeaderContainer>
-        <div className='header_inner'>
-          <div className='header_Area'>
-            <img src={backgroundImg} />
-          </div>
-          {/* <div className='mainMenu_Area'>
+      <HeaderContainer >
+        <div className={scrollPosition < 60 ? "original_header" : "change_header"}>
+          <div className='header_inner'>
+            <div className='header_Area'>
+              <img src={backgroundImg} />
+            </div>
+            {/* <div className='mainMenu_Area'>
           </div> */}
-          <MainNavbar />
-          <UtilityMenu />
+            <MainNavbar />
+            <UtilityMenu />
+          </div>
         </div>
       </HeaderContainer>
     </>

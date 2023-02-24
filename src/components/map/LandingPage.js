@@ -13,6 +13,7 @@ const InputWrapper = styled.div`
   h3 {
     font-size: 24px;
     font-weight: 500;
+    padding-bottom: 18px;
   }
   p {
     height: 3px;
@@ -23,21 +24,21 @@ const InputWrapper = styled.div`
 
 const MapWrapper = styled.div`
   display: flex;
-  padding-top: 50px;
+  justify-content: center;
+  align-self: center;
+  padding: 30px;
 
   input {
-    margin-left: 40px;
     width: 400px;  
     height: 40px;
     border-radius: 10px;
   }
   button {
-    margin-left: 30px;
+    margin-left: 20px;
     width: 100px;
     height: 40px;
     border-radius: 10px;
   }
-
 `;
 
 
@@ -62,12 +63,12 @@ function LandingPage(props) {
         <p></p>
       </InputWrapper>
       <MapWrapper>
-        <MapContainer searchPlace={Place} />
-        <form onSubmit={handleSubmit}>
+        <form  onSubmit={handleSubmit}>
           <input placeholder="검색어를 입력하세요" onChange={onChange} value={InputText} />
           <button type="submit">검색</button>
         </form>
       </MapWrapper>
+        <MapContainer searchPlace={Place} />
     </AllBox>
   )
 }

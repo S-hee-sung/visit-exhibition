@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import mainImage from "../images/mainImage.png";
-import mainImage03 from "../images/mainImage03.jpg";
+import mainImage from "./mainImage.png";
+import mainImage03 from "./mainImage03.jpg";
 
 const MainWrapper = styled.div`
 .inner {
@@ -20,6 +20,7 @@ const MainWrapper = styled.div`
   }
   img {
     height: 409px;
+    overflow: hidden;
   }
   .imagecontainer {
     display: flex;

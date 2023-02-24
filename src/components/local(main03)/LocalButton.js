@@ -11,6 +11,12 @@ const ButtonWrapper = styled.div`
     color: #000;
     border-radius: 16px;
   }
+  button:hover {
+    cursor: pointer;
+    border: 1px solid #000;
+    background-color: #000;
+    color: #fff;
+  }
 `;
 
 const localButton = (props) => {
@@ -18,7 +24,7 @@ const localButton = (props) => {
 
   return (
     <ButtonWrapper>
-      <button onClick={onClick}>Seoul</button>
+      <button onClick={onClick}>{props.name}</button>
     </ButtonWrapper>
     
   )

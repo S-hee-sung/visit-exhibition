@@ -10,6 +10,7 @@ import Header from "./pages/Header";
 import Main from "./pages/Main";
 import LocalExhibition from "./components/local(main03)/LocalExhibition";
 import SwiperSlide from "./components/local(main03)/SwiperSlide";
+import Footer from "./pages/Footer";
 
 const GlobalStyle = createGlobalStyle`
   ${reset};
@@ -32,12 +33,11 @@ function App() {
   return (
     <>
       <GlobalStyle />
-        <Header />
-        <Main />
-        <LocalExhibition />
-        <SwiperSlide />
-
-
+      <Header />
+      <Main />
+      <LocalExhibition />
+      <SwiperSlide />
+      <Footer />
     </>
   );
 }

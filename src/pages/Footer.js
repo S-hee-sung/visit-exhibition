@@ -8,32 +8,47 @@ const FooterWrapper = styled.div`
   padding: 80px 0 0 0;
   .footerInner {
     max-width: 1200px;
-    height: 100%;
     margin: 0 auto;
     border-top: 3px solid #656565;
     padding: 20px 0 10px 0;
     display: flex;
-    background: white;
     justify-content: space-between;
     img {
       width: 300px;
     }
     button{
-      width: 210px;
+      width: 150px;
       height: 50px;
       background: none;
       border: 1px solid #656565;
+      font-size: 18px;
     }
-
+    .footerRightArea { 
+      flex: 1;
+      display: flex;
+      .textArea {
+        flex: 2;
+        height: 100%;
+        text-align: right;
+        display: flex;
+        justify-content: flex-end;
+        ul{
+          padding-left: 50px;
+          li{
+            color: #c8c8c8;
+            padding-bottom: 20px;
+            font-size: 12px;
+            white-space: nowrap;
+          }
+        }
+      }
+      .buttonArea{
+        flex: 1;
+        background: blue;
+        height: 100%;
+      }
+    }
   }
-`;
-
-const FooterText = styled.ul`
-float: left;
-margin-right: 50px;
-li{
-  padding-bottom: 20px;
-}
 `;
 
 
@@ -45,24 +60,43 @@ function Footer(props) {
         <div className="footerImageArea">
           <img src={backgroundImg}/>
         </div>
-        <div className="footerTextArea" style="">
-          <FooterText>
-            <li>goods shop</li>
-          </FooterText>
-          <FooterText>
-            <li>youtube</li>
-            <li>instagram</li>
-            <li>facebook</li>
-          </FooterText>
-          <FooterText>
-            <li>membership</li>
-            <li>exhibition</li>
-            <li>notice</li>
-            <li>Contact us</li>
-          </FooterText>
-          <button type="button">
-            family
-          </button>
+        <div className="footerRightArea">
+          <div className="textArea">
+            <ul>
+              <li>
+                good shop
+              </li>
+            </ul>
+            <ul>
+              <li>
+                youtube
+              </li>
+              <li>
+                instagram
+              </li>
+              <li>
+                facebook
+              </li>
+            </ul>
+            <ul>
+              <li>
+                membership
+              </li>
+              <li>
+                exhibition
+              </li>
+              <li>
+                notice
+              </li>
+              <li>
+                Contact us
+              </li>
+            </ul>
+
+          </div>
+          <div className="buttonArea">
+
+          </div>
         </div>
       </div>
     </FooterWrapper>

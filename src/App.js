@@ -11,7 +11,6 @@ import Main from "./pages/Main";
 import LocalExhibition from "./components/local(main03)/LocalExhibition";
 import SwiperSlide from "./components/local(main03)/SwiperSlide";
 
-
 const GlobalStyle = createGlobalStyle`
   ${reset};
 

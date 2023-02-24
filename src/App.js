@@ -10,7 +10,7 @@ import Header from "./pages/Header";
 import Main from "./pages/Main";
 import LocalExhibition from "./components/local(main03)/LocalExhibition";
 import SwiperSlide from "./components/local(main03)/SwiperSlide";
-
+import Footer from "./pages/Footer";
 
 const GlobalStyle = createGlobalStyle`
   ${reset};
@@ -26,17 +26,19 @@ const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: inherit;
   }
-  
 `;
 
+
 function App() {
+
+
+
   return (
     <>
       <GlobalStyle />
-        <Header />
-        <Main />
-
-
+      <Header />
+      <Main />
+      <Footer />
     </>
   );
 }

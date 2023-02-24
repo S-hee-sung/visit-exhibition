@@ -11,6 +11,9 @@ import Main from "./pages/Main";
 import LocalExhibition from "./components/local(main03)/LocalExhibition";
 import SwiperSlide from "./components/local(main03)/SwiperSlide";
 import Footer from "./pages/Footer";
+import { Route, Routes } from "react-router";
+import Login from "./components/mainmenu/utilitymenu/Login";
+import Layout from "./pages/Layout";
 
 const GlobalStyle = createGlobalStyle`
   ${reset};
@@ -36,9 +39,19 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Header />
-      <Main />
-      <Footer />
+
+      
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Main />} />
+          <Route path="/login" element={<Login />} />
+        </Route>
+      
+      </Routes>
+
+        {/* <LocalExhibition /> */}
+        <SwiperSlide />
+
     </>
   );
 }

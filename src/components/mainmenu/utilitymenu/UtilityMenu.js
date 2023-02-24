@@ -3,6 +3,10 @@ import styled from 'styled-components';
 import { Search, Person, Place } from '@mui/icons-material';
 import { useState, useEffect } from 'react';
 
+import { Link, useNavigate } from "react-router-dom";
+import Login from "./Login";
+
+
 const UtilityMenuArea = styled.div`
     justify-content: center;
     align-items: center;
@@ -31,6 +35,7 @@ const UtilityTopMenuArea = styled.div`
 
 function UtilityMenu(props) {
 
+  const navigate = useNavigate();
   const [scrollPosition, setScrollPosition] = useState(0);
   console.log(scrollPosition);
   const updateScroll = () => {
@@ -47,8 +52,8 @@ function UtilityMenu(props) {
           <Search sx={{ fontSize: 35, color: 'black' }}>
           </Search>
         </li>
-        <li>
-          <Person sx={{ fontSize: 35, color: 'black' }}>
+        <li onClick={() => navigate('/login')}>
+          <Person sx={{ fontSize: 35, color: 'black' }} >
           </Person>
         </li>
         <li>

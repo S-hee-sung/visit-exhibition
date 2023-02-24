@@ -40,13 +40,16 @@ export default () => {
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log('slide change')}
       >
-        <SwiperSlide><img src={data[0].src}/></SwiperSlide>
-        <SwiperSlide><img src={data[1].src}/></SwiperSlide>
-        <SwiperSlide><img src={data[2].src}/></SwiperSlide>
-        <SwiperSlide><img src={data[3].src}/></SwiperSlide>
-        <SwiperSlide><img src={data[4].src}/></SwiperSlide>
-        <SwiperSlide><img src={data[5].src}/></SwiperSlide>
-        <SwiperSlide><img src={data[6].src}/></SwiperSlide>
+        <SwiperSlide><img src={data[0].src}/>
+          {data[0].name}
+          {data[0].location}
+        </SwiperSlide>
+        <SwiperSlide><img src={data[1].src}/>{data[1].name}</SwiperSlide>
+        <SwiperSlide><img src={data[2].src}/>{data[2].name}</SwiperSlide>
+        <SwiperSlide><img src={data[3].src}/>{data[3].name}</SwiperSlide>
+        <SwiperSlide><img src={data[4].src}/>{data[4].name}</SwiperSlide>
+        <SwiperSlide><img src={data[5].src}/>{data[5].name}</SwiperSlide>
+        <SwiperSlide><img src={data[6].src}/>{data[6].name}</SwiperSlide>
       </Swiper>
     </div>
     </SlideWrapper>

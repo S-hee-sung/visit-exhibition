@@ -2,6 +2,7 @@ import React from 'react';
 import styled from "styled-components";
 import HorizonLine from "../main(main01)/HorizonLine";
 import LocalButton from "./LocalButton";
+import SwiperSlide from "../local(main03)/SwiperSlide";
 
 const LocalExhibitionWrapper = styled.div`
 .inner {
@@ -35,6 +36,7 @@ function localExhibition(props) {
         <LocalButton name="경기 남부"/>
         <LocalButton name="기타"/>
       </div>
+      <SwiperSlide />
       
       </div>
     </LocalExhibitionWrapper>

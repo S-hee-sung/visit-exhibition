@@ -2,43 +2,50 @@
   {
     "id": 1,
     "src": "./images/slide01.jpg",
-    "text": "첫번째 슬라이드 버튼",
-    "alt": "harmgerdes : panorama / [페레스프로젝트 서울] 서울 중구 동호로 249 서울신라호텔 B1층"
+    "name": "harmgerdes : panorama",
+    "location": "[페레스프로젝트 서울]",
+    "address": "서울 중구 동호로 249 서울신라호텔 B1층"
   },
   {
     "id": 2,
     "src": "./images/slide02.jpg",
-    "text": "두번째 슬라이드 버튼",
-    "alt": "NEW WAVE / [스페이스 사직] 서울특별시 종로구 경희궁3가길 8-4"
+    "name": "NEW WAVE",
+    "location": "[스페이스 사직]",
+    "address": "서울특별시 종로구 경희궁3가길 8-4"
   },
   {
     "id": 3,
     "src": "./images/slide03.jpg",
-    "text": "세번째 슬라이드 버튼",
-    "alt": "이현정초대전 / [정문규 미술관] 서울 종로구 성균관로5길 55-3"
+    "name": "이현정초대전",
+    "location": "[정문규 미술관]",
+    "address": "서울 종로구 성균관로5길 55-3"
   },
   {
     "id": 4,
     "src": "./images/slide04.jpg",
-    "text": "네번째 슬라이드 버튼",
-    "alt": "최민솔개인전 / [갤러리 도스] 서울 종로구 삼청로7길 37 갤러리도스"
+    "name": "최민솔개인전",
+    "location": "[갤러리 도스]",
+    "address": "서울 종로구 삼청로7길 37 갤러리도스"
   },
   {
     "id": 5,
     "src": "./images/slide05.webp",
-    "text": "다섯번째 슬라이드 버튼",
-    "alt": "데미안 / [K현대미술관] 서울 강남구 선릉로 807 K현대미술관"
+    "name": "데미안",
+    "location": "[K현대미술관]",
+    "address": "서울 강남구 선릉로 807 K현대미술관"
   },
   {
     "id": 6,
     "src": "./images/slide06.jpg",
-    "text": "다섯번째 슬라이드 버튼",
-    "alt": "조우 : Encounter / [엔버갤러리] 서울 강남구 압구정로 421-1"
+    "name": "조우 : Encounter",
+    "location": "[엔버갤러리]",
+    "address": "서울 강남구 압구정로 421-1"
   },
   {
     "id": 7,
     "src": "./images/slide07.jpg",
-    "text": "다섯번째 슬라이드 버튼",
-    "alt": "프리다 칼로 사진전 / [현대백화점 무역센터점] 서울 강남구 테헤란로 517"
+    "name": "프리다 칼로 사진전",
+    "location": "[현대백화점 무역센터점]",
+    "address": "서울 강남구 테헤란로 517"
   }
 ]

@@ -35,8 +35,6 @@ function App() {
       <GlobalStyle />
         <Header />
         <Main />
-        <LocalExhibition />
-        <SwiperSlide />
 
 
     </>

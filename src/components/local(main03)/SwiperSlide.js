@@ -1,16 +1,11 @@
 import React, { useState } from "react";
-import { Autoplay, Pagination } from 'swiper';
+import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from "styled-components";
 import data from "../../data.json";
 
-// Import Swiper styles
 import 'swiper/css';
-// import 'swiper/css/navigation';
-// import 'swiper/css/loop';
-import 'swiper/css/pagination';
 import SubButton from "./SubButton";
-// import 'swiper/css/scrollbar';
 
 
 const SlideWrapper = styled.div`
@@ -47,46 +42,41 @@ const SlideWrapper = styled.div`
 export default () => {
   return (
     <SlideWrapper>
-    <div className="inner">
-      <Swiper
-      // install Swiper modules
-        autoplay={{ delay: 1500 }}
-        loop={true}
-        modules={[Autoplay, Pagination]}
-        spaceBetween={50}
-        slidesPerView={4}
-        // navigation
-        pagination={{
-          clickable: true
-        }}
-        // scrollbar={{ draggable: true }}
-        // onSwiper={(swiper) => console.log(swiper)}
-        // onSlideChange={() => console.log('slide change')}
-      >
-        {data.map((swiperList)=> {
-          return <SwiperSlide>
-            <ul>
-              <li className="imageContainer">
-                <img src={swiperList.src}/>
-              </li>
-              <li>
-                {swiperList.name}
-              </li>
-              <li>
-                {swiperList.location}
-              </li>
-              <li>
-                {swiperList.address}
-              </li>
-              <li style={{fontWeight: 400}}>
-                <SubButton/>
-                </li>
-            </ul>
+      <div className="inner">
+        <Swiper
+          autoplay={{ delay: 1500 }}
+          loop={true}
+          modules={[Autoplay]}
+          spaceBetween={50}
+          slidesPerView={4}
+        >
+          {data.map((swiperList) => {
+            return <SwiperSlide>
+              <div>
+                <ul>
+                  <li className="imageContainer">
+                    <img src={swiperList.src} />
+                  </li>
+                  <li>
+                    {swiperList.name}
+                  </li>
+                  <li>
+                    {swiperList.location}
+                  </li>
+                  <li>
+                    {swiperList.address}
+                  </li>
+                  <li style={{ fontWeight: 400 }}>
+                    <SubButton />
+                  </li>
+                </ul>
+              </div>
+
             </SwiperSlide>
-        })}
-      </Swiper>
-    </div>
+          })}
+        </Swiper>
+      </div>
     </SlideWrapper>
-    
+
   );
 };

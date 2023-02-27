@@ -1,14 +1,11 @@
 import React, { useState } from "react";
-import { Autoplay, Navigation, Scrollbar, A11y } from 'swiper';
+import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from "styled-components";
 import data5 from "../../data5.json";
 
-// Import Swiper styles
 import 'swiper/css';
-import 'swiper/css/navigation';
-// import 'swiper/css/pagination';
-// import 'swiper/css/scrollbar';
+import SubButton from "./SubButton";
 
 
 const SlideWrapper = styled.div`
@@ -28,66 +25,60 @@ ul {
 /* ul .imageContainer {
     width: 10px
   } */
-ul *:nth-child(2) {
-  font-size: 1.0rem;
-  font-weight: 700;
-}
-ul *:nth-child(3) {
-  font-size: 0.9rem;
-}
-ul *:nth-child(4) {
-  font-size: 0.9rem;
-}
+  li:nth-child(2) {
+    line-height: 2.0rem;
+    font-size: 1.0rem;
+    font-weight: 700;
+  }
+  ul *:nth-child(3) {
+    line-height: 2.0;
+    font-size: 0.9rem;
+  }
+  ul *:nth-child(4) {
+    font-size: 0.9rem;
+  }
+  ul *:nth-child(5) {
+    padding: 10px 0 50px 0;
+  }
 `;
 
 export default () => {
   return (
     <SlideWrapper>
-    <div className="inner">
-      <Swiper
-      // install Swiper modules
-        autoplay={{ delay: 1500 }}
-        loop={true}
-        modules={[Autoplay, Navigation, Scrollbar, A11y]}
-        spaceBetween={50}
-        slidesPerView={4}
-        // navigation
-        // pagination={{
-        //   clickable: true
-        // }}
-        // scrollbar={{ draggable: true }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log('slide change')}
-      >
-        {/* <SwiperSlide><img src={data[0].src}/>{data[0].name}</SwiperSlide>
-        <SwiperSlide><img src={data[1].src}/>{data[1].name}</SwiperSlide>
-        <SwiperSlide><img src={data[2].src}/>{data[2].name}</SwiperSlide>
-        <SwiperSlide><img src={data[3].src}/>{data[3].name}</SwiperSlide>
-        <SwiperSlide><img src={data[4].src}/>{data[4].name}</SwiperSlide>
-        <SwiperSlide><img src={data[5].src}/>{data[5].name}</SwiperSlide>
-        <SwiperSlide><img src={data[6].src}/>{data[6].name}</SwiperSlide> */}
-        {data5.map((swiperList)=> {
-          return <SwiperSlide>
-            <ul>
-              <li className="imageContainer">
-                <img src={swiperList.src}/>
-              </li>
-              <li>
-                {swiperList.name}
-              </li>
-              <li>
-                {swiperList.location}
-              </li>
-              <li>
-                {swiperList.address}
-              </li>
-            </ul>
-              
+      <div className="inner">
+        <Swiper
+          autoplay={{ delay: 1500 }}
+          loop={true}
+          modules={[Autoplay]}
+          spaceBetween={50}
+          slidesPerView={4}
+        >
+          {data5.map((swiperList) => {
+            return <SwiperSlide>
+              <div>
+                <ul>
+                  <li className="imageContainer">
+                    <img src={swiperList.src} />
+                  </li>
+                  <li>
+                    {swiperList.name}
+                  </li>
+                  <li>
+                    {swiperList.location}
+                  </li>
+                  <li>
+                    {swiperList.address}
+                  </li>
+                  <li style={{ fontWeight: 400 }}>
+                    <SubButton />
+                  </li>
+                </ul>
+              </div>
             </SwiperSlide>
-        })}
-      </Swiper>
-    </div>
+          })}
+        </Swiper>
+      </div>
     </SlideWrapper>
-    
+
   );
 };

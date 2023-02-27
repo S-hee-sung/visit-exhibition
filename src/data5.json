@@ -4,7 +4,7 @@
     "src": "./images/slide05-1.jpg",
     "name": "봄 소품",
     "location": "[Gallery We]",
-    "address": "경기도 용인시 수지구 호수로52번길 25-17"
+    "address": "경기 용인시 수지구 호수로52번길 25-17"
   },
   {
     "id": 2,
@@ -18,7 +18,7 @@
     "src": "./images/slide05-3.jpg",
     "name": "백남준 효과",
     "location": "[국립현대미술관]",
-    "address": "경기 과천시 광명로 313 국립현대미술관"
+    "address": "경기 과천시 광명로 313"
   },
   {
     "id": 4,
@@ -39,13 +39,13 @@
     "src": "./images/slide05-6.gif",
     "name": "어둠 속의 대화",
     "location": "[롯데백화점 동탄점]",
-    "address": "경기 화성시 동탄역로 160 동탄역 롯데캐슬"
+    "address": "경기 화성시 동탄역로 160"
   },
   {
     "id": 7,
     "src": "./images/slide05-7.jpg ",
     "name": "SLICK LOUNGE",
     "location": "[GIFC 타워]",
-    "address": "경기 고양시 일산서구 킨텍스로 240 킨텍스"
+    "address": "경기 고양시 일산서구 킨텍스로 240"
   }
 ]

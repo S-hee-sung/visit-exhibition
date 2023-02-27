@@ -18,21 +18,21 @@
     "src": "./images/slide02-3.jpg",
     "name": "COLOR IN LIFE",
     "location": "[마이아트뮤지엄]",
-    "address": "서울 강남구 테헤란로 518 섬유센터빌딩 B1층"
+    "address": "서울 강남구 테헤란로 518"
   },
   {
     "id": 4,
     "src": "./images/slide02-4.png",
     "name": "Touchable moments",
     "location": "[KLAMP GALLERY]",
-    "address": "서울 강남구 논현로26길 39 B1,1F"
+    "address": "서울 강남구 논현로26길 39 B1"
   },
   {
     "id": 5,
     "src": "./images/slide02-5.webp",
     "name": "데미안",
     "location": "[K현대미술관]",
-    "address": "서울 강남구 선릉로 807 K현대미술관"
+    "address": "서울 강남구 선릉로 807"
   },
   {
     "id": 6,
@@ -53,6 +53,6 @@
     "src": "./images/slide02-8.png",
     "name": "두꺼비에 대한 단상",
     "location": "[GALLERY SAEM]",
-    "address": "서울 강남구 테헤란로13길 30 지하1층, 2층, 3층"
+    "address": "서울 강남구 테헤란로13길 30"
   }
 ]

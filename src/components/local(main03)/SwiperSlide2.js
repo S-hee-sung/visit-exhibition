@@ -57,7 +57,7 @@ export default () => {
         }}
         // scrollbar={{ draggable: true }}
         onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log('slide change')}
+        // onSlideChange={() => console.log('slide change')}
       >
         {/* <SwiperSlide><img src={data[0].src}/>{data[0].name}</SwiperSlide>
         <SwiperSlide><img src={data[1].src}/>{data[1].name}</SwiperSlide>

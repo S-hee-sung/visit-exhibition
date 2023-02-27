@@ -31,11 +31,14 @@ function CalendarSwiper() {
 					direction={'vertical'}
 					mousewheel
 					keyboard
-					modules={[Mousewheel, Keyboard, Autoplay]}
-        	slidesPerView={2}
+					modules={[ Mousewheel, Keyboard, Autoplay ]}
+					slidesPerView={2}
+		
 					threshold={20}
 					speed={1000}
+					loop={true}
 					autoplay={{ delay: 1000 }}
+					spaceBetween={50}
 					className="mySwiper"
 				>
 					<SwiperSlide>

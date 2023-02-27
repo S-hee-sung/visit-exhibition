@@ -27,10 +27,11 @@ const CalendarPageWrapper = styled.div`
 
 const CalendarPageCenter = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   
   .left {
-    width: 60%
+    width: 60%;
+    margin-top:20px;
   }
   /* .right {
     width: 40%

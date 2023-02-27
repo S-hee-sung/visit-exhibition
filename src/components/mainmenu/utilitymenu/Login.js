@@ -161,6 +161,7 @@ function Login(props) {
   const onClickConfirm = () => {
     if (id === User.id && pw === User.pw) {
       alert('로그인에 성공했습니다.');
+      navigate("/")
     } else {
       alert('등록되지 않는 회원입니다.')
     }
@@ -179,7 +180,7 @@ function Login(props) {
   return (
     <LoginWrapper>
       <div className='inner'>
-
+      
         <div className='titleWrap'>
           로그인
         </div>

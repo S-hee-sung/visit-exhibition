@@ -14,6 +14,7 @@ import Footer from "./pages/Footer";
 import { Route, Routes } from "react-router";
 import Login from "./components/mainmenu/utilitymenu/Login";
 import Layout from "./pages/Layout";
+import CalendarPage from "./components/book/CalendarPage";
 
 const GlobalStyle = createGlobalStyle`
   ${reset};
@@ -41,6 +42,7 @@ function App() {
       <GlobalStyle />
       <Routes>
         <Route path="/" element={<Layout />}>
+          <Route path="/cal" element={<CalendarPage />} />
           <Route index element={<Main />} />
           <Route path="/login" element={<Login />} />
         </Route>

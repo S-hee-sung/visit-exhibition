@@ -63,10 +63,10 @@ function UtilityMenu(props) {
       </ul>
       <UtilityTopMenuArea>
         <ul>
-          <li>
+          <li onClick={() => navigate('/login')}>
             로그인
           </li>
-          <li>
+          <li >
             회원가입
           </li>
           <li>

@@ -1,26 +1,24 @@
+
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Link, useNavigate } from "react-router-dom";
+import KakaoLogin from './KakaoLogin';
 
 
 const LoginWrapper = styled.div`
-padding-top: 140px;
+padding: 140px 0;
 width: 100%;
-height: 1000px;
-background: #f7f7f7;
 .inner {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: coral;
   height: 100%;
   .titleWrap {
     font-size: 32px;
     font-weight: bold;
     padding: 100px;
-    background: beige;
   }
   .memberWrap {
     display: flex;
@@ -28,20 +26,25 @@ background: #f7f7f7;
       width: 274px;
       height: 50px;
       padding: 0;
+      border: none;
+      font-weight: 600;
+      &:first-child{
+        background: white;
+        cursor: pointer;
+      }
+      &:last-child{
+        background: #f0f0f0;
+      }
     }
   } 
   .contentWrap {
-    background: skyblue;
+    margin-top: 20px;
     width: 550px;
     .inputWrap {
       display: flex;
-      border-radius: 12px;
       padding: 16px;
       background: white;
-      border: 1px solid #e2e0c0;
-      &:focus-within{
-        border: 1px solid beige;
-      }
+      border-bottom: 1px solid #dadada;
       .input {
         width: 100%;
         outline: none;
@@ -57,11 +60,18 @@ background: #f7f7f7;
     .errorMessageWrap{
       margin:10px 0;
       color: #ef0000;
-      font-size: 14px;
+      font-size: 12px;
     }
     .chekboxWrap{
       display: flex;
-
+      margin-bottom: 10px;
+      gap: 5px;
+      font-size: 12px;
+      input{
+        margin: 0;
+        width: 12px;
+        height: 12px;
+      }
     }
     .bottomButton{
       width: 100%;
@@ -69,6 +79,10 @@ background: #f7f7f7;
       height: 40px;
       border: none;
       font-weight: bold;
+      background-color: black;
+      color: white;
+      font-size: 20px;
+      padding: 10px 0;
       cursor: pointer;
       &:disabled{
         background-color: #dadada;
@@ -76,7 +90,6 @@ background: #f7f7f7;
       }
     }
     .joinFindWrap{
-      width: 300px;
       height: 30px;
       margin: 0 auto;
       ul{
@@ -86,11 +99,9 @@ background: #f7f7f7;
         height: 100%;
         cursor: pointer;
         font-size: 12px;
-        color: #dadada;
+        color: #666;
         margin: 10px 0;
-        li {
-          padding: 0 12px;
-        }
+        gap: 10px;
       }
     }
     .socialWrap{
@@ -174,8 +185,8 @@ function Login(props) {
         </div>
 
         <div className='memberWrap'>
-          <button onClick={() => navigate('/login')}>회원 로그인</button>
-          <button>비회원 주문조회</button>
+          <button onClick={() => navigate('/login')} className='userLogin'>회원 로그인</button>
+          <button disabled className='noUser'>비회원 주문조회</button>
         </div>
 
         <div className='contentWrap'>
@@ -197,7 +208,7 @@ function Login(props) {
             }
           </div>
 
-          <div className='inputWrap'>
+          <div className='inputWrap' style={{ marginBottom: '12px' }}>
             <input
               type='password'
               className='input'
@@ -240,7 +251,13 @@ function Login(props) {
                 회원가입
               </li>
               <li>
+                |
+              </li>
+              <li>
                 아이디 찾기
+              </li>
+              <li>
+                |
               </li>
               <li>
                 비밀번호 찾기
@@ -249,14 +266,9 @@ function Login(props) {
           </div>
 
           <div className='socialWrap'>
-            <button>
-              구글 아이디로 로그인
-            </button>
-            <button>
-              인스타그램 아이디로 로그인
-            </button>
+            <KakaoLogin />
           </div>
-          
+
         </div>
       </div>
 

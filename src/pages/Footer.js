@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import backgroundImg from '../images/logo-no-background.png';
+import { useState, } from "react";
+import FooterDropDown from "./FooterDropDown";
 
 const FooterWrapper = styled.div`
   width: 100%;
   background-color: #222;
-  height: 250px;
   padding: 80px 0 0 0;
   .footerInner {
     max-width: 1200px;
@@ -14,7 +15,7 @@ const FooterWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     img {
-      width: 300px;
+      width: 250px;
     }
     button{
       width: 150px;
@@ -46,7 +47,49 @@ const FooterWrapper = styled.div`
         flex: 1;
         background: blue;
         height: 100%;
+        
       }
+    }
+  }
+`;
+
+const DropDown = styled.div`
+  display: flex;
+  padding: 10px;
+  height: 20px;
+  margin-right: 100px;
+  margin-left: 20px;
+  border: 1px solid #656565;
+  cursor: pointer;
+  ul{
+    color: #c8c8c8;
+    white-space: nowrap;
+    font-size: 14px;
+  }
+`;
+
+const FooterBottom = styled.div`
+  max-width: 800px;
+  margin: 0 auto;
+  border-top: 3px solid #656565;
+  text-align: center;
+  line-height: 25px;
+  padding: 18px 0;
+  p{
+    font-size: 14px;
+    color: #c8c8c8;
+  }
+  ul{
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    color: #c3c3c3;
+    font-size: 10px;
+    margin-top: 14px;
+    a{
+      text-decoration: none;
+      color: #c3c3c3;
+      font-size: 10px;
     }
   }
 `;
@@ -54,11 +97,21 @@ const FooterWrapper = styled.div`
 
 
 function Footer(props) {
+
+  const [dropDown, setDropDown] = useState(false);
+
+  const updateScroll = () => {
+    setDropDown(window.scrollY || document.documentElement.scrollTop);
+  }
+  // useEffect(() => {
+  //   window.addEventListener("scroll", dropDown)
+  // }, []);
+
   return (
     <FooterWrapper>
       <div className="footerInner">
-        <div className="footerImageArea">
-          <img src={backgroundImg}/>
+        <div className="footerImageArea" style={{ marginLeft: '100px' }}>
+          <img src={backgroundImg} />
         </div>
         <div className="footerRightArea">
           <div className="textArea">
@@ -94,174 +147,43 @@ function Footer(props) {
             </ul>
 
           </div>
-          <div className="buttonArea">
-
-          </div>
+          <DropDown>
+            <ul onClick={() => { setDropDown(!dropDown) }}>
+              family Site
+              {dropDown && <FooterDropDown />}
+            </ul>
+          </DropDown>
         </div>
       </div>
+      <FooterBottom>
+        <p>14 Samcheong-ro, Jongno-gu, Seoul 03062 Korea<br />
+          Gallery Hyundai - All rights reserved 2023</p>
+        <ul>
+          <li>
+            <a href="#" style={{fontWeight:'bold'}}>개인정보처리관리</a>
+          </li>
+          <li>
+            |
+          </li>
+          <li>
+            <a href="#">이용약관</a>
+          </li>
+          <li>
+            |
+          </li>
+          <li>
+            <a href="#">통합검색 고객센터</a>
+          </li>
+          <li>
+            |
+          </li>
+          <li>
+            <a href="#">전체 서비스</a>
+          </li>
+        </ul>
+      </FooterBottom>
     </FooterWrapper>
   );
 }
 
 export default Footer;
-
-
-
-// .lineWrapper {
-//   width: 100%;
-//   height: 1px;
-//   background-color: #656565;
-// }
-
-// .inner {
-//   max-width: 1200px;
-//   margin: 0 auto;
-// }
-// `;
-
-// const FooterCenter = styled.div`
-// display: flex;
-// justify-content: space-around;
-// padding: 30px;
-
-
-
-// img {
-//   width: 300px;
-// }
-
-// .ul-flex {
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: center;
-//   color: #c8c8c8;
-//   margin-top: 10px;
-// }
-
-// .ul-flex > ul {
-//   padding-right : 40px;
-//   text-align: right;
-// }
-
-// .ul-flex > ul > li {
-//   padding: 3px;
-//   font-weight: 400;
-//   font-size: 12px;
-// }
-
-// .btn-opt {
-//   width: 200px;
-//   height: 40px;
-//   color: #fff;
-//   border: 1px solid #656565;
-//   background-color: #222;
-// }
-// `;
-
-// const FooterInput = styled.div`
-// text-align: center;
-// font-size: 12px;
-// font-weight: 400;
-// color: #c8c8c8;
-
-// .lineWrapper {
-//   width: 60%;
-//   height: 1px;
-//   margin: 0 auto;
-//   background-color: #656565;
-// }
-
-// .li-flex {
-//   display: flex;
-//   justify-content: flex-end;
-//   gap: 20px;
-  
-// }
-
-// p {
-//   padding-top: 15px;
-// }
-// `;
-
-
-
-
-/* background-color: #222;
-  padding: 80px 20px;
-  width: 100%;
-
-  .lineWrapper {
-    width: 100%;
-    height: 1px;
-    background-color: #656565;
-  }
-
-  .inner {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-`;
-
-const FooterCenter = styled.div`
-  display: flex;
-  justify-content: space-around;
-  padding: 30px;
-
-  
-
-  img {
-    width: 300px;
-  }
-
-  .ul-flex {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    color: #c8c8c8;
-    margin-top: 10px;
-  }
-
-  .ul-flex > ul {
-    padding-right : 40px;
-    text-align: right;
-  }
-
-  .ul-flex > ul > li {
-    padding: 3px;
-    font-weight: 400;
-    font-size: 12px;
-  }
-
-  .btn-opt {
-    width: 200px;
-    height: 40px;
-    color: #fff;
-    border: 1px solid #656565;
-    background-color: #222;
-  }
-`;
-
-const FooterInput = styled.div`
-  text-align: center;
-  font-size: 12px;
-  font-weight: 400;
-  color: #c8c8c8;
-
-  .lineWrapper {
-    width: 60%;
-    height: 1px;
-    margin: 0 auto;
-    background-color: #656565;
-  }
-
-  .li-flex {
-    display: flex;
-    justify-content: flex-end;
-    gap: 20px;
-    
-  }
-
-  p {
-    padding-top: 15px;
-  }
-`; */

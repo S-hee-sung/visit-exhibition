@@ -12,7 +12,7 @@ const LocalExhibitionWrapper = styled.div`
     margin: 0 auto;
   }
   h4 {
-    padding-top: 10vh;
+    padding-top: 20vh;
     font-size: 1.2rem;
     color: #000;
     font-weight: 600;
@@ -29,19 +29,9 @@ function localExhibition(props) {
   return (
     <LocalExhibitionWrapper>
       <div className='inner'>
-      <h4>National Exhibition</h4>
-      <HorizonLine />
-      {/* <div className='buttonComponents'>
-        <LocalButton name="서울"/>
-        <LocalButton name="인천"/>
-        <LocalButton name="경기 북부"/>
-        <LocalButton name="경기 남부"/>
-        <LocalButton name="기타"/>
-      </div>
-      <SwiperSlide /> */}
-
-      <Tab/>
-      
+        <h4>National Exhibition</h4>
+        <HorizonLine />
+        <Tab />
       </div>
     </LocalExhibitionWrapper>
     

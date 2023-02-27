@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Autoplay, Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import { Autoplay, Navigation, Scrollbar, A11y } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from "styled-components";
 import data5 from "../../data5.json";
@@ -7,7 +7,7 @@ import data5 from "../../data5.json";
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+// import 'swiper/css/pagination';
 // import 'swiper/css/scrollbar';
 
 
@@ -46,16 +46,16 @@ export default () => {
     <div className="inner">
       <Swiper
       // install Swiper modules
-        autoplay={{ delay: 1000 }}
+        autoplay={{ delay: 1500 }}
         loop={true}
-        modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
+        modules={[Autoplay, Navigation, Scrollbar, A11y]}
         spaceBetween={50}
         slidesPerView={4}
         // navigation
-        pagination={{
-          clickable: true
-        }}
-        scrollbar={{ draggable: true }}
+        // pagination={{
+        //   clickable: true
+        // }}
+        // scrollbar={{ draggable: true }}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log('slide change')}
       >

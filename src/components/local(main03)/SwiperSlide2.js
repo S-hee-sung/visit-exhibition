@@ -46,7 +46,7 @@ export default () => {
     <div className="inner">
       <Swiper
       // install Swiper modules
-        autoplay={{ delay: 1000 }}
+        autoplay={{ delay: 1500 }}
         loop={true}
         modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
         spaceBetween={50}
@@ -55,7 +55,7 @@ export default () => {
         pagination={{
           clickable: true
         }}
-        scrollbar={{ draggable: true }}
+        // scrollbar={{ draggable: true }}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log('slide change')}
       >

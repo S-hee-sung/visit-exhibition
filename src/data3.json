@@ -47,5 +47,12 @@
     "name": "Gustav Klimt, Gold in Motion",
     "location": "[예술의전당 디자인미술관]",
     "address": "서울 서초구 남부순환로 2406"
+  },
+  {
+    "id": 7,
+    "src": "./images/slide03-8.jpg",
+    "name": "눈물의 엔트로피",
+    "location": "[디스크리트레이블]",
+    "address": "서울 성동구 성수일로8길 39-1 2층"
   }
 ]

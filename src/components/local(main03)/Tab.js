@@ -41,6 +41,7 @@ const TabMenu = styled.ul`
     border: 1px solid #000;
     background-color: #000;
     color: #fff;
+    font-weight: 700;
   }
   & div.desc {
     text-align: center;
@@ -69,9 +70,9 @@ export const Tab = () => {
   ];
 
 
-  const selectMenuHandler = (index) => {
-    clickTab(index);
-  };
+  // const selectMenuHandler = (index) => {
+  //   clickTab(index);
+  // };
 
   return (
     <>
@@ -79,7 +80,7 @@ export const Tab = () => {
         <TabMenu>
           {menuArr.map((el,index) => (
               <li className={index === currentTab ? "submenu focused" : "submenu" }
-              onClick={() => selectMenuHandler(index)}>{el.name}</li>
+              onClick={() => clickTab(index)}>{el.name}</li>
             ))}
         </TabMenu>
         <Desc>

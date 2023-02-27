@@ -47,5 +47,12 @@
     "name": "그 겨울의 행복",
     "location": "[국립민속박물관]",
     "address": "서울 종로구 삼청로 37"
+  },
+  {
+    "id": 8,
+    "src": "./images/slide01-8.jpg",
+    "name": "The Anonnymous project",
+    "location": "[그라운드시소 서촌]",
+    "address": "서울특별시 종로구 자하문로6길 18-8"
   }
 ]

@@ -47,5 +47,12 @@
     "name": "프리다 칼로 사진전",
     "location": "[현대백화점 무역센터점]",
     "address": "서울 강남구 테헤란로 517"
+  },
+  {
+    "id": 8,
+    "src": "./images/slide02-8.png",
+    "name": "두꺼비에 대한 단상",
+    "location": "[GALLERY SAEM]",
+    "address": "서울 강남구 테헤란로13길 30 지하1층, 2층, 3층"
   }
 ]

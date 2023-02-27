@@ -1,17 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { Autoplay, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from "styled-components";
-import data from "../../data.json";
+import data from "../../data6.json";
 
-// Import Swiper styles
 import 'swiper/css';
 // import 'swiper/css/navigation';
-// import 'swiper/css/loop';
 import 'swiper/css/pagination';
-import SubButton from "./SubButton";
 // import 'swiper/css/scrollbar';
-
 
 const SlideWrapper = styled.div`
 .inner {
@@ -19,30 +15,40 @@ const SlideWrapper = styled.div`
     margin: 0 auto;
   }
   img {
-    height: 40vh;
-    width: 14vw;
+    margin-top: 50px;
+    height: 20vh;
+    width: 10vw;
+    margin-bottom: 20px;
   }
-  /* ul {
-    line-height: 1.2rem;
+  
+ul {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between; */
+  line-height: 1rem;
+  width: 10vw;
+}
+/* ul .imageContainer {
+    width: 10px
   } */
-  /* ul .imageContainer {
-      width: 10px
-    } */
-  li:nth-child(2) {
-    line-height: 2.0rem;
-    font-size: 1.0rem;
-    font-weight: 700;
-  }
-  ul *:nth-child(3) {
-    line-height: 2.0;
-    font-size: 0.9rem;
-  }
-  ul *:nth-child(4) {
-    font-size: 0.9rem;
-  }
-  ul *:nth-child(5) {
-    padding: 10px 0 50px 0;
-  }`;
+ul *:nth-child(2) {
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+ul *:nth-child(3) {
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+  padding: 6px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+ul *:nth-child(4) {
+  text-align: right;
+  font-size: 1.0rem;
+  padding: 10px 0 30px 0;
+}
+`;
 
 export default () => {
   return (
@@ -50,18 +56,16 @@ export default () => {
     <div className="inner">
       <Swiper
       // install Swiper modules
-        autoplay={{ delay: 1500 }}
+        autoplay={{ delay: 2000 }}
         loop={true}
         modules={[Autoplay, Pagination]}
-        spaceBetween={50}
-        slidesPerView={4}
+        spaceBetween={60}
+        slidesPerView={5}
         // navigation
         pagination={{
           clickable: true
         }}
         // scrollbar={{ draggable: true }}
-        // onSwiper={(swiper) => console.log(swiper)}
-        // onSlideChange={() => console.log('slide change')}
       >
         {data.map((swiperList)=> {
           return <SwiperSlide>
@@ -70,18 +74,16 @@ export default () => {
                 <img src={swiperList.src}/>
               </li>
               <li>
+                {swiperList.title}
+              </li>
+              <li>
                 {swiperList.name}
               </li>
               <li>
-                {swiperList.location}
+                {swiperList.price}
               </li>
-              <li>
-                {swiperList.address}
-              </li>
-              <li style={{fontWeight: 400}}>
-                <SubButton/>
-                </li>
             </ul>
+              
             </SwiperSlide>
         })}
       </Swiper>

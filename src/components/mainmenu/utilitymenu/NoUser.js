@@ -1,6 +1,8 @@
+import React from 'react';
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Link, useNavigate } from "react-router-dom";
+
 
 
 const LoginWrapper = styled.div`
@@ -59,10 +61,6 @@ background: #f7f7f7;
       color: #ef0000;
       font-size: 14px;
     }
-    .chekboxWrap{
-      display: flex;
-
-    }
     .bottomButton{
       width: 100%;
       padding: 0;
@@ -110,12 +108,12 @@ background: #f7f7f7;
 }
 `;
 
-const User = {
+const User  = {
   id: 'kws04181@naver.com',
   pw: 'react1818@'
 }
 
-function Login(props) {
+function NoUser(props) {
 
   const navigate = useNavigate();
 
@@ -147,14 +145,14 @@ function Login(props) {
     }
   };
 
-  const onClickConfirm = () => {
-    if (id === User.id && pw === User.pw) {
+  const onClickConfirm = () =>{
+    if(id === User.id && pw === User.pw){
       alert('로그인에 성공했습니다.');
-    } else {
+    } else{
       alert('등록되지 않는 회원입니다.')
     }
   }
-
+ 
   useEffect(() => {
     if (idValid && pwValid) {
       setNotAllow(false);
@@ -168,27 +166,23 @@ function Login(props) {
   return (
     <LoginWrapper>
       <div className='inner'>
-
         <div className='titleWrap'>
           로그인
         </div>
-
         <div className='memberWrap'>
           <button onClick={() => navigate('/login')}>회원 로그인</button>
-          <button>비회원 주문조회</button>
+          <button onClick={() => navigate('/nouser')}>비회원 주문조회</button>
         </div>
-
         <div className='contentWrap'>
           <div className='inputWrap'>
             <input
               type='text'
               className='input'
-              placeholder='이메일 입력'
+              placeholder='회원번호 입력'
               value={id}
               onChange={handleId}
             />
           </div>
-
           <div className='errorMessageWrap'>
             {
               !idValid && id.length > 0 && (
@@ -201,12 +195,11 @@ function Login(props) {
             <input
               type='password'
               className='input'
-              placeholder='비밀번호 입력'
+              placeholder='주문번호 입력'
               value={pw}
               onChange={handlePw}
             />
           </div>
-
           <div className='errorMessageWrap'>
             {
               !pwValid && pw.length > 0 && (
@@ -214,14 +207,14 @@ function Login(props) {
               )
             }
           </div>
-
           <div className='chekboxWrap'>
-            <input type="checkbox">
-            </input>
-            <p>로그인 상태 유지</p>
-            <input type="checkbox">
-            </input>
-            <p>아이디 저장</p>
+            <label>
+              <input type="checkbox">
+              </input>
+              <input type="checkbox">
+              </input>
+            </label>
+
           </div>
 
           <div >
@@ -233,7 +226,6 @@ function Login(props) {
               로그인
             </button>
           </div>
-
           <div className='joinFindWrap'>
             <ul>
               <li>
@@ -247,7 +239,6 @@ function Login(props) {
               </li>
             </ul>
           </div>
-
           <div className='socialWrap'>
             <button>
               구글 아이디로 로그인
@@ -256,7 +247,6 @@ function Login(props) {
               인스타그램 아이디로 로그인
             </button>
           </div>
-          
         </div>
       </div>
 
@@ -264,4 +254,4 @@ function Login(props) {
   );
 }
 
-export default Login;
+export default NoUser;

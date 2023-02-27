@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
 import styled from 'styled-components';
 import mainImage from "./mainImage.png";
 import mainImage03 from "./mainImage03.jpg";
@@ -35,14 +36,16 @@ const MainWrapper = styled.div`
   `;
 
 function MainPage(props) {
+  const navigate = useNavigate();
+
   return (
     <MainWrapper>
       <div className="inner">
         <h4>Main text area</h4>
         <p className="maintext">Lorem ipsum dolor sit amet,</p>
         <div className='imagecontainer'>
-          <img src={mainImage} alt="main_image" />
-          <img src={mainImage03} alt="main_image" />
+          <img src={mainImage} alt="main_image"  />
+          <img src={mainImage03} alt="main_image" onClick={() => navigate('/cal')} />
         </div>
         
         <p className="subtext">consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br/>labore et dolore magna aliqua, Lorem ipsum dolor sit amet</p>

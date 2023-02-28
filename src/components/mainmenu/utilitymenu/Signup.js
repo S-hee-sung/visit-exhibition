@@ -5,9 +5,8 @@ import { Link, useNavigate } from "react-router-dom";
 
 const SignupWrap = styled.div`
   padding-top: 140px;
+  padding-bottom: 140px;
   width: 100%;
-  height: 1000px;
-  background-color: coral;
   .inner {
     max-width: 1200px;
     margin: 0 auto;
@@ -44,11 +43,45 @@ const SignupWrap = styled.div`
         }
       }
     }
+    .bottomButton{
+      width: 100%;
+      padding: 0;
+      height: 40px;
+      border: none;
+      font-weight: bold;
+      background-color: black;
+      color: white;
+      font-size: 20px;
+      padding: 10px 0;
+      margin-top: 2px;
+      cursor: pointer;
+      &:disabled{
+        background-color: #dadada;
+        color: white;
+      }
+    }
     .errorMessageWrap{
       margin:10px 0;
       color: #ef0000;
       font-size: 12px;
     }
+    .chekboxWrap{
+      display: flex;
+      margin-bottom: 10px;
+      gap: 8px;
+      font-size: 12px;
+      flex-direction: column;
+      div{
+        display: flex;
+        gap: 10px;
+      }
+      input{
+        margin: 0;
+        width: 12px;
+        height: 12px;
+      }
+    }
+    
   }
   }
 `;
@@ -217,6 +250,30 @@ function Signup(props) {
                 <div>동일하지 않은 비민번호 입니다.</div>
               )
             }
+          </div>
+
+          <div className='chekboxWrap'>
+            <div>
+              [필수] 이용약관 동의
+              <input type="checkbox">
+              </input>
+              <p>동의</p>
+            </div>
+            <div>
+              <input type="checkbox">
+              </input>
+              <p>[선택] 이메일 수신을 동의하십니까?</p>
+            </div>
+          </div>
+
+          <div >
+            <button
+              className='bottomButton'
+              disabled={notAllow}
+              onClick={onClickConfirm}
+            >
+              회원가입
+            </button>
           </div>
         </div>
 

@@ -1,24 +1,20 @@
 import { useState } from "react"
 import styled from "styled-components"
+import HorizonLine from "../main(main01)/HorizonLine";
 import MapContainer from "./MapContainer"
 
 const AllBox = styled.div`
-  padding-top: 50px;
+  padding-top: 80px;
   max-width: 1200px;
   margin: 0 auto;
 
 `;
 
 const InputWrapper = styled.div`
-  h3 {
-    font-size: 24px;
-    font-weight: 500;
-    padding-bottom: 18px;
-  }
-  p {
-    height: 3px;
-    width: 100%;
-    background-color: black;
+  h4 {
+    font-size: 1.2rem;
+    color: #000;
+    font-weight: 600;
   }
 `;
 
@@ -59,12 +55,12 @@ function LandingPage(props) {
   return (
     <AllBox>
       <InputWrapper>
-        <h3>Search Exhibition</h3>
-        <p></p>
+        <h4>Search Exhibition</h4>
+        <HorizonLine />
       </InputWrapper>
       <MapWrapper>
         <form  onSubmit={handleSubmit}>
-          <input placeholder="검색어를 입력하세요" onChange={onChange} value={InputText} />
+          <input placeholder="전시회 위치를 입력하세요" onChange={onChange} value={InputText} />
           <button type="submit">검색</button>
         </form>
       </MapWrapper>

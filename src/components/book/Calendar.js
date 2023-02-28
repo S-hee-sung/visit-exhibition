@@ -1,48 +1,66 @@
-import { addMonths, subMonths } from 'date-fns';
-import React, { useState } from 'react';
-import styled from "styled-components";
-import RenderCells from '../calendarComponents/RenderCells';
-import RenderDays from '../calendarComponents/RenderDays';
-import RenderHeader from '../calendarComponents/RenderHeader';
+import FullCalendar from "@fullcalendar/react";
+import dayGridPlugin from '@fullcalendar/daygrid' 
 
-const CalendarWrapper = styled.div`
-  width: 100%;
-  height: 600px;
-`;
+
+const events = 
+  [
+    { title: '슬픔은 파도처럼 밀려와',
+      start: '2023-02-09',
+      end: '2023-03-09',
+      color: '#B2FA5C',
+      url: 'https://www.drawingroom.kr/exhibition/current'
+    },
+    { title: '이현정초대전',
+      start: '2023-02-15',
+      end: '2023-03-20',
+      color: '#FFBEFF',
+      url: 'https://chungmunkyu.modoo.at/?link=22ziudnq'
+    },
+    { title: '그해 겨울은 따뜻했네',
+      start: '2023-01-11',
+      end: '2023-02-28',
+      color: '#8C8CBE',
+      url: 'https://blog.naver.com/galleryindex'
+    },
+    { title: '그 겨울의 행복',
+      start: '2023-11-16',
+      end: '2023-03-02',
+      color: '#6E6ED7',
+      url: 'https://www.nfm.go.kr/user/planexhibition/home/20/selectPlanExhibitionNView.do?planExhibitionIdx=1031&page=1'
+    },
+    { title: 'The other face of material',
+      start: '2023-02-01',
+      end: '2023-03-08',
+      color: '#8C8CBE',
+      url: 'https://www.seojung-art.com/exhibition/view/AGDKWQP'
+    },
+    { title: '두꺼비에 대한 단상',
+      start: '2023-02-01',
+      end: '2023-03-11',
+      color: '#DCFFDC',
+      url: 'https://www.instagram.com/gallerysaem/'
+    }
+  ];
+
+
 
 
 function Calendar(props) {
-  const [currentMonth, setCurrentMonth] = useState(new Date());
-  const [selectedMonth, setSelectedMonth] = useState(new Date());
 
-  const prevMonth = () => {
-    setCurrentMonth(subMonths(currentMonth, 1));
-  };
-
-  const nextMonth = () => {
-    setCurrentMonth(addMonths(currentMonth, 1))
-  };
-
-  const onDateClick = () => {
-    setSelectedMonth();
-  };
 
   return (
-    <CalendarWrapper>
-      <RenderHeader 
-        currentMonth={currentMonth}
-        prevMonth={prevMonth}
-        nextMonth={nextMonth}
+    <>
+      <FullCalendar 
+        defaultView="dayGridMonth" 
+        plugins={[ dayGridPlugin ]}
+        navLinks= "true" 
+        events={events}
+        dayMaxEvents = {true}
+        height='600px'
       />
-      <RenderDays />
-      <RenderCells
-        currentMonth={currentMonth}
-        selectedMonth={selectedMonth}
-        onDateClick={onDateClick}
-
-      />
-    </CalendarWrapper>
+    </>
   );
+  
 }
 
 export default Calendar;

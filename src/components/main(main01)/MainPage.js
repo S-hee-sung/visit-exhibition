@@ -47,7 +47,6 @@ function MainPage(props) {
           <img src={mainImage} alt="main_image"  />
           <img src={mainImage03} alt="main_image" onClick={() => navigate('/cal')} />
         </div>
-        
         <p className="subtext">consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br/>labore et dolore magna aliqua, Lorem ipsum dolor sit amet</p>
       </div>
     </MainWrapper>

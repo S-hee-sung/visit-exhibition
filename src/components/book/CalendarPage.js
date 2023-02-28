@@ -1,17 +1,15 @@
 import React from 'react';
 import styled from "styled-components";
-import HorizonLine from '../main(main01)/HorizonLine';
+import HoLine from '../common/HorizonLine2';
 import Calendar  from "./Calendar";
 import CalendarSwiper from './CalendarSwiper';
 
 const CalendarPageWrapper = styled.div`
-  max-width: 1800px;
+  max-width: 1600px;
   margin: 0 auto;
-  height: 800px;
-  /* background-color: #ccc; */
 
   h4 {
-    padding-top: 10vh;
+    padding-top: 140px;
     font-size: 1.2rem;
     color: #000;
     font-weight: 600;
@@ -24,18 +22,20 @@ const CalendarPageWrapper = styled.div`
   }
 `;
 
-
 const CalendarPageCenter = styled.div`
   display: flex;
   justify-content: space-around;
+  padding: 80px 20px 120px 50px;
+
   
   .left {
-    width: 60%;
-    margin-top:20px;
+    width: 75%;
   }
-  /* .right {
-    width: 40%
-  } */
+  .right {
+    width: 25%;
+    padding-left: 50px;
+  }
+  
 `;
 
 
@@ -45,7 +45,7 @@ function CalendarPage(props) {
   return (
     <CalendarPageWrapper>
       <h4>Exhibition Calendar</h4>
-      <HorizonLine />
+      <HoLine />
       <CalendarPageCenter>
         <div className='left'>
           <Calendar />

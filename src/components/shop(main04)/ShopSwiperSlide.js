@@ -6,6 +6,7 @@ import data from "../../data6.json";
 import { AddShoppingCart, FavoriteBorder } from '@mui/icons-material';
 
 import 'swiper/css';
+import { useNavigate } from "react-router";
 
 
 const SlideWrapper = styled.div`
@@ -54,6 +55,9 @@ ul li:nth-child(4) {
 `;
 
 export default () => {
+
+  const navigate = useNavigate();
+
   return (
     <SlideWrapper>
       <div className="inner">
@@ -81,7 +85,7 @@ export default () => {
                     {swiperList.price}
                   </li>
                   <li className="icons">
-                    <AddShoppingCart sx={{ fontSize: 20, color: '#656565', cursor: 'pointer' }} />
+                    <AddShoppingCart sx={{ fontSize: 20, color: '#656565', cursor: 'pointer' }} onClick={() => navigate('/cart')}/>
                     <FavoriteBorder sx={{ fontSize: 20, color: '#FFC3C3', cursor: 'pointer' }} />
                   </li>
                 </ul>

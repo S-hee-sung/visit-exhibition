@@ -15,6 +15,7 @@ import { Route, Routes } from "react-router";
 import Login from "./components/mainmenu/utilitymenu/Login";
 import Layout from "./pages/Layout";
 import CalendarPage from "./components/book/CalendarPage";
+import Signup from "./components/mainmenu/utilitymenu/Signup";
 
 const GlobalStyle = createGlobalStyle`
   ${reset};
@@ -45,6 +46,7 @@ function App() {
           <Route path="/cal" element={<CalendarPage />} />
           <Route index element={<Main />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
         </Route>
       </Routes>
     </>

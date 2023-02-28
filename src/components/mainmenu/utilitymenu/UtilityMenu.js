@@ -65,7 +65,7 @@ function UtilityMenu(props) {
           <li onClick={() => navigate('/login')}>
             로그인
           </li>
-          <li >
+          <li onClick={() => navigate('/signup')}>
             회원가입
           </li>
           <li>

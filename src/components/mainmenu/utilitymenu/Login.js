@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Link, useNavigate } from "react-router-dom";
 import KakaoLogin from './KakaoLogin';
-
+import NaverLogin from './NaverLogin';
 
 const LoginWrapper = styled.div`
 padding: 140px 0;
@@ -107,7 +107,10 @@ width: 100%;
     .socialWrap{
       width: 100%;
       display: flex;
-      flex-direction: column;
+      margin-top: 20px;
+      justify-content: center;
+      gap: 20px;
+      cursor: pointer;
       button{
         height: 50px;
         font-weight: bold;
@@ -180,7 +183,7 @@ function Login(props) {
   return (
     <LoginWrapper>
       <div className='inner'>
-      
+
         <div className='titleWrap'>
           로그인
         </div>
@@ -248,7 +251,7 @@ function Login(props) {
 
           <div className='joinFindWrap'>
             <ul>
-              <li>
+              <li onClick={() => navigate('/signup')}>
                 회원가입
               </li>
               <li>
@@ -268,6 +271,7 @@ function Login(props) {
 
           <div className='socialWrap'>
             <KakaoLogin />
+            <NaverLogin />
           </div>
 
         </div>

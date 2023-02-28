@@ -64,3 +64,5 @@ function Calendar(props) {
 }
 
 export default Calendar;
+
+// npm install --save @fullcalendar/react @fullcalendar/core @fullcalendar/daygrid

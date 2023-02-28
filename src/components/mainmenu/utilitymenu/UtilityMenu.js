@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 
 import { Link, useNavigate } from "react-router-dom";
 import Login from "./Login";
+import { Nav } from 'react-bootstrap';
 
 
 const UtilityMenuArea = styled.div`
@@ -55,7 +56,7 @@ function UtilityMenu(props) {
           <Person sx={{ fontSize: 35, color: 'black' }} >
           </Person>
         </li>
-        <li>
+        <li onClick={() => navigate('/cart')}>
           <Place sx={{ fontSize: 35, color: 'black' }}>
           </Place>
         </li>

@@ -1,6 +1,6 @@
 import React from "react";
 
-const HorizonLine = () => {
+const HorizonLine2 = () => {
   return (
     <div
       style={{
@@ -9,9 +9,8 @@ const HorizonLine = () => {
         borderBottom: "2px solid #000",
         margin: "2vh 0 0 0"
       }}>
-
     </div>
   );
 };
 
-export default HorizonLine;
+export default HorizonLine2;

@@ -3,7 +3,6 @@ import styled from "styled-components"
 import HorizonLine from "../main(main01)/HorizonLine";
 import MapContainer from "./MapContainer"
 
-
 const AllBox = styled.div`
   padding-top: 80px;
   max-width: 1200px;

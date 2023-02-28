@@ -122,13 +122,13 @@ function Footer(props) {
             </ul>
             <ul>
               <li>
-                youtube
+                <a href="https://www.youtube.com/">youtube</a>
               </li>
               <li>
-                instagram
+                <a href="https://www.instagram.com/">instagram</a>
               </li>
               <li>
-                facebook
+                <a href="https://ko-kr.facebook.com/">facebook</a>
               </li>
             </ul>
             <ul>

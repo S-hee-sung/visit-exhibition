@@ -21,9 +21,6 @@ const StyledSwiper = styled(Swiper)`
 `;
 
 
-
-
-
 function CalendarSwiper() {
 	return (  
 			<>

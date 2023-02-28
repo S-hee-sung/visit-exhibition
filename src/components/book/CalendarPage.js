@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
-import HorizonLine from './HorizonLine2';
+import HoLine from '../common/HorizonLine2';
 import Calendar  from "./Calendar";
 import CalendarSwiper from './CalendarSwiper';
 
@@ -25,12 +25,15 @@ const CalendarPageWrapper = styled.div`
 const CalendarPageCenter = styled.div`
   display: flex;
   justify-content: space-around;
-  padding-top: 80px;
-  padding-bottom: 100px;
+  padding: 80px 20px 120px 50px;
 
   
   .left {
     width: 75%;
+  }
+  .right {
+    width: 25%;
+    padding-left: 50px;
   }
   
 `;
@@ -42,7 +45,7 @@ function CalendarPage(props) {
   return (
     <CalendarPageWrapper>
       <h4>Exhibition Calendar</h4>
-      <HorizonLine />
+      <HoLine />
       <CalendarPageCenter>
         <div className='left'>
           <Calendar />

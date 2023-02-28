@@ -1,13 +1,10 @@
 import React from "react";
-import { Autoplay, Pagination } from 'swiper';
+import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from "styled-components";
 import data from "../../data6.json";
 
 import 'swiper/css';
-// import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-// import 'swiper/css/scrollbar';
 
 const SlideWrapper = styled.div`
 .inner {
@@ -55,17 +52,11 @@ export default () => {
     <SlideWrapper>
     <div className="inner">
       <Swiper
-      // install Swiper modules
         autoplay={{ delay: 2000 }}
         loop={true}
-        modules={[Autoplay, Pagination]}
+        modules={[Autoplay]}
         spaceBetween={60}
         slidesPerView={5}
-        // navigation
-        pagination={{
-          clickable: true
-        }}
-        // scrollbar={{ draggable: true }}
       >
         {data.map((swiperList)=> {
           return <SwiperSlide>

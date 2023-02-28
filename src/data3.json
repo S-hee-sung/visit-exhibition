@@ -4,7 +4,7 @@
     "src": "./images/slide03-1.jpg",
     "name": "harmgerdes : panorama",
     "location": "[페레스프로젝트 서울]",
-    "address": "서울 중구 동호로 249 서울신라호텔 B1층"
+    "address": "서울 중구 동호로 249 신라호텔"
   },
   {
     "id": 2,
@@ -39,7 +39,7 @@
     "src": "./images/slide03-6.jpeg",
     "name": "나탈리 카르푸셴코 사진전",
     "location": "[그라운드시소 성수]",
-    "address": "서울 성동구 아차산로17길 49 생각공장 데시앙플렉스 지하 1층"
+    "address": "서울 성동구 아차산로17길 49"
   },
   {
     "id": 7,
@@ -53,6 +53,6 @@
     "src": "./images/slide03-8.jpg",
     "name": "눈물의 엔트로피",
     "location": "[디스크리트레이블]",
-    "address": "서울 성동구 성수일로8길 39-1 2층"
+    "address": "서울 성동구 성수일로8길 39-1"
   }
 ]

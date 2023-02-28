@@ -11,7 +11,7 @@
     "src": "./images/slide01-2.jpg",
     "name": "NEW WAVE",
     "location": "[스페이스 사직]",
-    "address": "서울특별시 종로구 경희궁3가길 8-4"
+    "address": "서울 종로구 경희궁3가길 8-4"
   },
   {
     "id": 3,
@@ -32,7 +32,7 @@
     "src": "./images/slide01-5.jpg",
     "name": "그해 겨울은 따뜻했네",
     "location": "[GALLERY INDEX]",
-    "address": "서울특별시 종로구 인사동길 45 인덕빌딩F3"
+    "address": "서울 종로구 인사동길 45 인덕빌딩F3"
   },
   {
     "id": 6,
@@ -53,6 +53,6 @@
     "src": "./images/slide01-8.jpg",
     "name": "The Anonnymous project",
     "location": "[그라운드시소 서촌]",
-    "address": "서울특별시 종로구 자하문로6길 18-8"
+    "address": "서울 종로구 자하문로6길 18-8"
   }
 ]

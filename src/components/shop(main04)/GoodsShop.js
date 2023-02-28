@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import HorizonLine from '../main(main01)/HorizonLine';
-import SwiperSlide6 from './SwiperSlide6';
+import ShopSwiperSlide from './ShopSwiperSlide';
 
 const GoodsShopWrapper = styled.div`
 .inner {
@@ -22,7 +22,7 @@ function GoodsShop(props) {
       <div className='inner'>
         <h4>Goods shop</h4>
         <HorizonLine />
-        <SwiperSlide6 />
+        <ShopSwiperSlide />
       </div>
     </GoodsShopWrapper>
   )

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from "styled-components";
-import data3 from "../../data3.json";
+import data from "../../data.json";
 
 import 'swiper/css';
 import SubButton from "./SubButton";
@@ -17,14 +17,12 @@ const SlideWrapper = styled.div`
     height: 40vh;
     width: 14vw;
   }
-
-  
-ul {
-  line-height: 1.4rem;
-}
-/* ul .imageContainer {
-    width: 10px
+  /* ul {
+    line-height: 1.2rem;
   } */
+  /* ul .imageContainer {
+      width: 10px
+    } */
   li:nth-child(2) {
     line-height: 2.0rem;
     font-size: 1.0rem;
@@ -39,10 +37,14 @@ ul {
   }
   ul *:nth-child(5) {
     padding: 10px 0 50px 0;
-  }
-`;
+  }`;
 
-export default () => {
+const ExhibitionSwiperSlide = (props) => {
+
+  const {slideList} = props;
+
+  console.log(slideList);
+
   return (
     <SlideWrapper>
       <div className="inner">
@@ -53,7 +55,7 @@ export default () => {
           spaceBetween={50}
           slidesPerView={4}
         >
-          {data3.map((swiperList) => {
+          {slideList.map((swiperList) => {
             return <SwiperSlide>
               <div>
                 <ul>
@@ -74,6 +76,7 @@ export default () => {
                   </li>
                 </ul>
               </div>
+
             </SwiperSlide>
           })}
         </Swiper>
@@ -82,3 +85,5 @@ export default () => {
 
   );
 };
+
+export default ExhibitionSwiperSlide;

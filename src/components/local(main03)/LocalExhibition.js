@@ -2,7 +2,6 @@ import React from 'react';
 import styled from "styled-components";
 import HorizonLine from "../main(main01)/HorizonLine";
 import LocalButton from "./LocalButton";
-import SwiperSlide from "../local(main03)/SwiperSlide";
 import Tab from "../local(main03)/Tab";
 
 

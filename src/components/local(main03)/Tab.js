@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import styled from 'styled-components';
-import SwiperSlide from './SwiperSlide';
-import SwiperSlide2 from "./SwiperSlide2";
-import SwiperSlide3 from "./SwiperSlide3";
-import SwiperSlide4 from "./SwiperSlide4";
-import SwiperSlide5 from "./SwiperSlide5";
-
+import ExhibitionSwiperSlide from './ExhibitionSwiperSlide';
+import data from "../../data.json";
+import data2 from "../../data2.json";
+import data3 from "../../data3.json";
+import data4 from "../../data4.json";
+import data5 from "../../data5.json";
 
 const TabMenu = styled.ul`
   display: flex;
@@ -53,26 +53,15 @@ const Desc = styled.div`
 `;
 
 export const Tab = () => {
-  const [currentTab, clickTab] = useState(0);
+  const [currentTab, setCurrentTab] = useState(0);
 
   const menuArr = [
-    // { name: '서울', content: <SwiperSlide/> },
-    // { name: '인천', content: <SwiperSlide2/> },
-    // { name: '경기 남부', content: <SwiperSlide3/> },
-    // { name: '경기 북부', content: 'Tab menu 4' },
-    // { name: '기타', content: 'Tab menu 5' },
-
-    { name: '서울 종로구', content: <SwiperSlide/> },
-    { name: '서울 강남구', content: <SwiperSlide2/> },
-    { name: '서울 기타', content: <SwiperSlide3/> },
-    { name: '인천', content: <SwiperSlide4/> },
-    { name: '경기', content: <SwiperSlide5/> },
+    { name: '서울 종로구', content: <ExhibitionSwiperSlide slideList={data} /> },
+    { name: '서울 강남구', content: <ExhibitionSwiperSlide slideList={data2} /> },
+    { name: '서울 기타', content: <ExhibitionSwiperSlide slideList={data3} /> },
+    { name: '인천', content: <ExhibitionSwiperSlide slideList={data4} /> },
+    { name: '경기', content: <ExhibitionSwiperSlide slideList={data5} /> },
   ];
-
-
-  // const selectMenuHandler = (index) => {
-  //   clickTab(index);
-  // };
 
   return (
     <>
@@ -80,7 +69,7 @@ export const Tab = () => {
         <TabMenu>
           {menuArr.map((el,index) => (
               <li className={index === currentTab ? "submenu focused" : "submenu" }
-              onClick={() => clickTab(index)}>{el.name}</li>
+              onClick={() => setCurrentTab(index)}>{el.name}</li>
             ))}
         </TabMenu>
         <Desc>

@@ -1,17 +1,15 @@
 import React from 'react';
 import styled from "styled-components";
-import HorizonLine from '../main(main01)/HorizonLine';
+import HorizonLine from './HorizonLine2';
 import Calendar  from "./Calendar";
 import CalendarSwiper from './CalendarSwiper';
 
 const CalendarPageWrapper = styled.div`
-  max-width: 1800px;
+  max-width: 1600px;
   margin: 0 auto;
-  height: 800px;
-  /* background-color: #ccc; */
 
   h4 {
-    padding-top: 10vh;
+    padding-top: 140px;
     font-size: 1.2rem;
     color: #000;
     font-weight: 600;
@@ -24,18 +22,17 @@ const CalendarPageWrapper = styled.div`
   }
 `;
 
-
 const CalendarPageCenter = styled.div`
   display: flex;
   justify-content: space-around;
+  padding-top: 80px;
+  padding-bottom: 100px;
+
   
   .left {
-    width: 60%;
-    margin-top:20px;
+    width: 75%;
   }
-  /* .right {
-    width: 40%
-  } */
+  
 `;
 
 

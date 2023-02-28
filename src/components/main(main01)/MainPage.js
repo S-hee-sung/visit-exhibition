@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router';
 import styled from 'styled-components';
 import mainImage from "./mainImage.png";
 import mainImage03 from "./mainImage03.jpg";
+import Button from 'react-bootstrap/Button';
 
 const MainWrapper = styled.div`
 .inner {
@@ -47,7 +48,7 @@ function MainPage(props) {
           <img src={mainImage} alt="main_image"  />
           <img src={mainImage03} alt="main_image" onClick={() => navigate('/cal')} />
         </div>
-        
+        <Button variant="outline-danger">Danger</Button>{' '}
         <p className="subtext">consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br/>labore et dolore magna aliqua, Lorem ipsum dolor sit amet</p>
       </div>
     </MainWrapper>

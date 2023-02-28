@@ -3,8 +3,10 @@ import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from "styled-components";
 import data from "../../data6.json";
+import { AddShoppingCart, FavoriteBorder } from '@mui/icons-material';
 
 import 'swiper/css';
+
 
 const SlideWrapper = styled.div`
 .inner {
@@ -28,11 +30,11 @@ ul {
 /* ul .imageContainer {
     width: 10px
   } */
-ul *:nth-child(2) {
+ul li:nth-child(2) {
   font-size: 0.7rem;
   font-weight: 700;
 }
-ul *:nth-child(3) {
+ul li:nth-child(3) {
   font-size: 0.8rem;
   font-weight: 700;
   white-space: nowrap;
@@ -40,46 +42,55 @@ ul *:nth-child(3) {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-ul *:nth-child(4) {
+ul li:nth-child(4) {
   text-align: right;
   font-size: 1.0rem;
-  padding: 10px 0 30px 0;
+  padding: 10px 0 0 0;
+}
+.icons {
+  display: flex;
+  gap: 10px;
 }
 `;
 
 export default () => {
   return (
     <SlideWrapper>
-    <div className="inner">
-      <Swiper
-        autoplay={{ delay: 2000 }}
-        loop={true}
-        modules={[Autoplay]}
-        spaceBetween={60}
-        slidesPerView={5}
-      >
-        {data.map((swiperList)=> {
-          return <SwiperSlide>
-            <ul>
-              <li className="imageContainer">
-                <img src={swiperList.src}/>
-              </li>
-              <li>
-                {swiperList.title}
-              </li>
-              <li>
-                {swiperList.name}
-              </li>
-              <li>
-                {swiperList.price}
-              </li>
-            </ul>
-              
+      <div className="inner">
+        <Swiper
+          autoplay={{ delay: 2000 }}
+          loop={true}
+          modules={[Autoplay]}
+          spaceBetween={60}
+          slidesPerView={5}
+        >
+          {data.map((swiperList) => {
+            return <SwiperSlide>
+              <div>
+                <ul>
+                  <li className="imageContainer">
+                    <img src={swiperList.src} />
+                  </li>
+                  <li>
+                    {swiperList.title}
+                  </li>
+                  <li>
+                    {swiperList.name}
+                  </li>
+                  <li>
+                    {swiperList.price}
+                  </li>
+                  <li className="icons">
+                    <AddShoppingCart sx={{ fontSize: 20, color: '#656565', cursor: 'pointer' }} />
+                    <FavoriteBorder sx={{ fontSize: 20, color: '#FFC3C3', cursor: 'pointer' }} />
+                  </li>
+                </ul>
+              </div>
             </SwiperSlide>
-        })}
-      </Swiper>
-    </div>
+          })}
+        </Swiper>
+      </div>
     </SlideWrapper>
-    
+
   );
 };

@@ -37,7 +37,6 @@ function UtilityMenu(props) {
 
   const navigate = useNavigate();
   const [scrollPosition, setScrollPosition] = useState(0);
-  console.log(scrollPosition);
   const updateScroll = () => {
     setScrollPosition(window.scrollY || document.documentElement.scrollTop);
   }

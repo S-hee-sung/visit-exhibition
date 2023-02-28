@@ -32,10 +32,8 @@ const HeaderContainer = styled.header`
     height: 140px;
     margin: 0 auto;
     position: fixed;
-    background: #222;
     z-index: 999;
-    color: white;
-  }
+  }  
   
   .header_inner {
     max-width: 1200px;
@@ -62,7 +60,6 @@ const HeaderContainer = styled.header`
 function Header() {
   const navigate = useNavigate();
   const [scrollPosition, setScrollPosition] = useState(0);
-  console.log(scrollPosition);
   const updateScroll = () => {
     setScrollPosition(window.scrollY || document.documentElement.scrollTop);
   }

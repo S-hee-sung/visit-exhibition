@@ -8,6 +8,7 @@ const MainWrapper = styled.div`
 .inner {
     max-width: 1200px;
     margin: 0 auto;
+    padding-top: 140px;
   }
   h4 {
     font-size: 1.2rem;
@@ -26,7 +27,6 @@ const MainWrapper = styled.div`
   .imagecontainer {
     display: flex;
     gap: 2vh;
-    margin-top: 160px;
   }
   .subtext {
     color: #656565;

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router';
 import styled from "styled-components";
 
 
@@ -26,13 +27,16 @@ const SubButtonWrapper=styled.div`
 const SubButton = (props) => {
   const { onClick } = props;
 
+  const navigate = useNavigate()
+
   return (
     <SubButtonWrapper>
       <div className='buttons'>
         <button onClick={onClick}>상세보기</button>
-        <button onClick={onClick}>바로예약</button>
+        <button onClick={() => navigate('/reservation')}>바로예약</button>
       </div>
-      
+
+
     </SubButtonWrapper>
   )
 }

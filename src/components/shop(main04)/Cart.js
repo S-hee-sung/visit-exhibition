@@ -1,31 +1,39 @@
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
+import { decreaseCount, increaseCount, removeItemFromCart, selectCartList } from './CartSlice';
+
 
 const CartWrapper = styled.div`
   width: 100%;
   margin: 0 auto;
-  height: 500px;
+  height: 700px;
   background-color: yellow;
   .inner {
     margin: 0 auto;
     max-width: 1200px;
-    height: 500px;
+    height: 700px;
     background-color: pink;
   }
   .cartTable {
+    width: 1100px;
     position: relative;
     margin: 0 auto;
-    top: 300px;
-    z-index: 99999;
-    border: 1px solid #656565;
+    top: 250px;
+    /* z-index: 99999; */
   }
-  th, td {
+  table, tr, th, td {
     width: 170px;
     height: 50px;
+    border: 1px solid #656565;
   }
 `;
 
 function Cart(props) {
+
+  const cartAdd = useSelector(selectCartList);
+  const dispatch = useDispatch();
+
   return (
     <CartWrapper>
       <div className="inner">
@@ -50,11 +58,25 @@ function Cart(props) {
           </tr>
         </table>
 
+        <tbody>
+          {cartAdd.map((cart, index) => (
+            <tr key={cart.id}>
+              <td>{index + 1}</td>
+              <td>{cart.title}</td>
+              <td>
+                <button onClick={() => { dispatch(decreaseCount(cart.id)); }}> - </button>
+                <button onClick={() => { dispatch(increaseCount(cart.id)); }}> + </button>
+              </td>
+              <td>{cart.price * cart.count}원</td>
+              <td>
+                <button onClick={(e) => {dispatch(removeItemFromCart(cart.id));}}> x </button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
       </div>
     </CartWrapper>
-
-  )
-
+  );
 }
 
 export default Cart;

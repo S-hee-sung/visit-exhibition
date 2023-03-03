@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 import styled from 'styled-components';
-import mainImage from "./mainImage.png";
 import mainImage03 from "./mainImage03.jpg";
 import mainImage02 from "../../../public/images/mainImage02.jpg"
 import Youtube from "./Youtube";

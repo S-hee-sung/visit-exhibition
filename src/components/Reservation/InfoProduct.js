@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import DateCalender from './DateCalender';
 import MiniCalendar from './MiniCalender';
 
 const InfoArea = styled.div`

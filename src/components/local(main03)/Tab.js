@@ -43,9 +43,6 @@ const TabMenu = styled.ul`
     color: #fff;
     font-weight: 700;
   }
-  & div.desc {
-    text-align: center;
-  }
 `;
 
 const Desc = styled.div`
@@ -66,7 +63,7 @@ export const Tab = () => {
   return (
     <>
       <div>
-        <TabMenu>
+        <TabMenu key={menuArr}>
           {menuArr.map((el,index) => (
               <li className={index === currentTab ? "submenu focused" : "submenu" }
               onClick={() => setCurrentTab(index)}>{el.name}</li>

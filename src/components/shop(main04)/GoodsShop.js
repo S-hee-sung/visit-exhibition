@@ -9,7 +9,7 @@ const GoodsShopWrapper = styled.div`
   margin: 0 auto;
 }
 h4 {
-  padding-top: 20vh;
+  padding-top: 10vh;
   font-size: 1.2rem;
   color: #000;
   font-weight: 600;

@@ -3,15 +3,18 @@ import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from "styled-components";
 import data from "../../data6.json";
-import { AddShoppingCart, FavoriteBorder } from '@mui/icons-material';
+import { AddShoppingCart } from '@mui/icons-material';
 
 import 'swiper/css';
+import { useNavigate } from "react-router";
+import LikeButton from "./LikeButton";
 
 
 const SlideWrapper = styled.div`
 .inner {
     max-width: 1200px;
     margin: 0 auto;
+    height: 450px;
   }
   img {
     margin-top: 50px;
@@ -49,11 +52,15 @@ ul li:nth-child(4) {
 }
 .icons {
   display: flex;
-  gap: 10px;
+  gap: 5px;
+  cursor: pointer;
 }
 `;
 
 export default () => {
+
+  const navigate = useNavigate();
+
   return (
     <SlideWrapper>
       <div className="inner">
@@ -81,8 +88,9 @@ export default () => {
                     {swiperList.price}
                   </li>
                   <li className="icons">
-                    <AddShoppingCart sx={{ fontSize: 20, color: '#656565', cursor: 'pointer' }} />
-                    <FavoriteBorder sx={{ fontSize: 20, color: '#FFC3C3', cursor: 'pointer' }} />
+                    <AddShoppingCart sx={{ fontSize: 20, color: '#656565', cursor: 'pointer' }} onClick={() => navigate('/cart')}/>
+                    {/* <FavoriteBorder sx={{ fontSize: 20, color: '#FFC3C3', cursor: 'pointer' }} /> */}
+                    <LikeButton />
                   </li>
                 </ul>
               </div>

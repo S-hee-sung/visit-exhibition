@@ -3,9 +3,8 @@ import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from "styled-components";
 import data from "../../data.json";
-
 import 'swiper/css';
-import SubButton from "./SubButton";
+import SubButton from "../local(main03)/SubButton";
 
 
 const SlideWrapper = styled.div`
@@ -41,7 +40,7 @@ const SlideWrapper = styled.div`
 
 const ExhibitionSwiperSlide = (props) => {
 
-  const {slideList} = props;
+  const { slideList } = props;
 
   console.log(slideList);
 

@@ -10,6 +10,7 @@ const MainWrapper = styled.div`
 .inner {
     max-width: 1200px;
     margin: 0 auto;
+    padding-top: 140px;
   }
   h4 {
     padding-top: 160px;

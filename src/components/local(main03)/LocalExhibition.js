@@ -24,7 +24,7 @@ const LocalExhibitionWrapper = styled.div`
   }
 `;
 
-function localExhibition(props) {
+function LocalExhibition(props) {
   return (
     <LocalExhibitionWrapper>
       <div className='inner'>
@@ -37,4 +37,4 @@ function localExhibition(props) {
   );
 }
 
-export default localExhibition;
+export default LocalExhibition;

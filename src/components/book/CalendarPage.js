@@ -4,6 +4,8 @@ import HoLine from '../common/HorizonLine2';
 import Calendar  from "./Calendar";
 import CalendarSwiper from './CalendarSwiper';
 
+import Payment from '../payload/Payment';
+
 const CalendarPageWrapper = styled.div`
   max-width: 1600px;
   margin: 0 auto;
@@ -54,6 +56,7 @@ function CalendarPage(props) {
           <CalendarSwiper />
         </div>
       </CalendarPageCenter>
+      <Payment />
     </CalendarPageWrapper>
   );
 }

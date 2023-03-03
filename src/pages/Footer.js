@@ -40,6 +40,11 @@ const FooterWrapper = styled.div`
             padding-bottom: 20px;
             font-size: 12px;
             white-space: nowrap;
+            cursor: pointer;
+            a{
+              text-decoration: none;
+              color: #c8c8c8;
+            }
           }
         }
       }

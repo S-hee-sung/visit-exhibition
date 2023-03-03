@@ -14,15 +14,16 @@ gap: 10px;
 function youtube(props) {
   return (
     <VideoSizeWrapper>
-        <ReactPlayer
+        {/* <ReactPlayer
           className="player"
           url={"https://youtu.be/__jsD5CdvZ4"}
           // width="400px"
           // heigth="320px"
           playing={true}
           muted={true}
-        // controls={true}
-        />
+          loop={true}
+        controls={true}
+        /> */}
         <ReactPlayer
           className="player"
           url={"https://youtu.be/9cmGRuWdmzg"}

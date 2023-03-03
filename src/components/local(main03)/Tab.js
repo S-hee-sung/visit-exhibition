@@ -43,9 +43,6 @@ const TabMenu = styled.ul`
     color: #fff;
     font-weight: 700;
   }
-  & div.desc {
-    text-align: center;
-  }
 `;
 
 const Desc = styled.div`

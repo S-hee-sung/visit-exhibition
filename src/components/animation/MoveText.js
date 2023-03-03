@@ -26,20 +26,19 @@ const AnimatedTitle = styled.div`
     to { transform: translateX(-50%); }
   }
   @media (hover: hover) and (min-width: 700px){
-  .animated-title .content {-webkit-transform: translateY(calc(100% - 8rem)); transform: translateY(calc(100% - 8rem));}
-      }
-      `;
+		.animated-title .content {-webkit-transform: translateY(calc(100% - 8rem)); transform: translateY(calc(100% - 8rem));}}
+	`;
 
 function MoveText(props) {
-    return (
-        <AnimatedTitle>
-            <div class="track">
-                <div class="content">
-                    &nbsp;Srolln ones cuture People&nbsp;Srolln ones cuture People&nbsp;SEONG DESIGN CUTURE PEOPLE&nbsp;Srolln ones cuture People&nbsp;SEONG DESIGN CUTURE PEOPLE&nbsp;Srolln ones cuture People
-                </div>
-            </div>
-        </AnimatedTitle>
-    );
+	return (
+		<AnimatedTitle>
+			<div class="track">
+				<div class="content">
+					&nbsp;Srolln ones cuture People&nbsp;Srolln ones cuture People&nbsp;SEONG DESIGN CUTURE PEOPLE&nbsp;Srolln ones cuture People&nbsp;SEONG DESIGN CUTURE PEOPLE&nbsp;Srolln ones cuture People
+				</div>
+			</div>
+		</AnimatedTitle>
+	);
 }
 
 export default MoveText;

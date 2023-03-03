@@ -14,11 +14,11 @@ main.sec2.page (
 
 main.sec3.page 
   swipe- 화진
-  => 예약.page - 성원
+  => 예약.page - 성원 
   => 결제 연동 - 희성
 
 main.sec4.page (굿즈샵) + 장바구니.page - 화진
 
 footer.page - 희성 -> 성원
 
-오른쪽 하단 배너 - messenger.page(상담,고객센터) - ?
+오른쪽 하단 배너 - messenger.page(상담,고객센터) - 희성

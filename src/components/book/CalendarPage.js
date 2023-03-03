@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from "styled-components";
 import HoLine from '../common/HorizonLine2';
+import Payment from '../payload/Payment';
 import Calendar  from "./Calendar";
 import CalendarSwiper from './CalendarSwiper';
 
@@ -54,6 +55,7 @@ function CalendarPage(props) {
           <CalendarSwiper />
         </div>
       </CalendarPageCenter>
+      <Payment />
     </CalendarPageWrapper>
   );
 }

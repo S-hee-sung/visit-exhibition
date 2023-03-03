@@ -32,8 +32,8 @@ const AnimatedTitle = styled.div`
 function MoveText(props) {
 	return (
 		<AnimatedTitle>
-			<div class="track">
-				<div class="content">
+			<div className='track'>
+				<div className='content'>
 					&nbsp;Srolln ones cuture People&nbsp;Srolln ones cuture People&nbsp;SEONG DESIGN CUTURE PEOPLE&nbsp;Srolln ones cuture People&nbsp;SEONG DESIGN CUTURE PEOPLE&nbsp;Srolln ones cuture People
 				</div>
 			</div>

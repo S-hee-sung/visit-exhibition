@@ -1,9 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 import styled from 'styled-components';
-import mainImage from "./mainImage.png";
-import mainImage03 from "./mainImage03.jpg";
-import mainImage02 from "../../../public/images/mainImage02.jpg"
+// import mainImage02 from "../../../public/images/mainImage02.jpg"
 import Youtube from "./Youtube";
 
 const MainWrapper = styled.div`
@@ -60,7 +58,7 @@ function MainPage(props) {
           {/* <img src={mainImage} alt="main_image"  /> */}
           <Youtube style={{ width: '1200px', height: '720px' }}/>
           {/* <img src={mainImage03} alt="main_image" onClick={() => navigate('/cal')} /> */}
-          <img src={mainImage02} alt="main_image" />
+          {/* <img src={mainImage02} alt="main_image" /> */}
           <button className="calendarButton" onClick={() => navigate('/cal')}>전시 일정 확인하기<br/><br/>&gt;</button>
         </div>
         

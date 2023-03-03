@@ -69,11 +69,11 @@ export const Tab = () => {
         <TabMenu>
           {menuArr.map((el,index) => (
               <li className={index === currentTab ? "submenu focused" : "submenu" }
-              onClick={() => setCurrentTab(index)}>{el.name}</li>
+              onClick={() => setCurrentTab(index)} key={index}>{el.name}</li>
             ))}
         </TabMenu>
         <Desc>
-          <p>{menuArr[currentTab].content}</p>
+          <div>{menuArr[currentTab].content}</div>
         </Desc>
       </div>
     </>

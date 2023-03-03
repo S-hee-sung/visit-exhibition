@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from "styled-components";
 import HoLine from '../common/HorizonLine2';
-import Payment from '../payload/Payment';
 import Calendar  from "./Calendar";
 import CalendarSwiper from './CalendarSwiper';
+
+import Payment from '../payload/Payment';
 
 const CalendarPageWrapper = styled.div`
   max-width: 1600px;

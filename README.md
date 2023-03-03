@@ -14,10 +14,10 @@ main.sec2.page (
 
 main.sec3.page 
   swipe- 화진
-  => 예약.page - 성원 
-  => 결제 연동 - 희성
+  => 예약 및 장바구니.page(티켓 예약) - 성원 
+  => 결제 연동(kg이니시스) - 희성
 
-main.sec4.page (굿즈샵) + 장바구니.page - 화진
+main.sec4.page (굿즈샵) + 장바구니.page(상품 구매) - 화진
 
 footer.page - 희성 -> 성원
 

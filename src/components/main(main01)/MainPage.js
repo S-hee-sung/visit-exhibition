@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router';
 import styled from 'styled-components';
 import mainImage from "./mainImage.png";
 import mainImage03 from "./mainImage03.jpg";
+import Youtube from "./Youtube";
 
 const MainWrapper = styled.div`
 .inner {
@@ -44,8 +45,9 @@ function MainPage(props) {
         <h4>Main text area</h4>
         <p className="maintext">Lorem ipsum dolor sit amet,</p>
         <div className='imagecontainer'>
-          <img src={mainImage} alt="main_image"  />
-          <img src={mainImage03} alt="main_image" onClick={() => navigate('/cal')} />
+          {/* <img src={mainImage} alt="main_image"  /> */}
+          <Youtube style={{ width: '1200px', height: '720px' }}/>
+          {/* <img src={mainImage03} alt="main_image" onClick={() => navigate('/cal')} /> */}
         </div>
         <p className="subtext">consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br/>labore et dolore magna aliqua, Lorem ipsum dolor sit amet</p>
       </div>

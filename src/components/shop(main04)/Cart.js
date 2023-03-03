@@ -1,7 +1,7 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+// import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
-import { decreaseCount, increaseCount, removeItemFromCart, selectCartList } from './CartSlice';
+// import { decreaseCount, increaseCount, removeItemFromCart, selectCartList } from './CartSlice';
 
 
 const CartWrapper = styled.div`
@@ -31,8 +31,8 @@ const CartWrapper = styled.div`
 
 function Cart(props) {
 
-  const cartAdd = useSelector(selectCartList);
-  const dispatch = useDispatch();
+  // const cartAdd = useSelector(selectCartList);
+  // const dispatch = useDispatch();
 
   return (
     <CartWrapper>
@@ -58,7 +58,7 @@ function Cart(props) {
           </tr>
         </table>
 
-        <tbody>
+        {/* <tbody>
           {cartAdd.map((cart, index) => (
             <tr key={cart.id}>
               <td>{index + 1}</td>
@@ -73,7 +73,7 @@ function Cart(props) {
               </td>
             </tr>
           ))}
-        </tbody>
+        </tbody> */}
       </div>
     </CartWrapper>
   );

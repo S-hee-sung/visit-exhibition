@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import MiniCalendar from './MiniCalender';
-import Test from './Test';
 
 const InfoArea = styled.div`
     flex: 6;
@@ -67,7 +66,6 @@ function InfoProduct(props) {
       <div className='infoProductArea1'>
         <div className='infoArea'>
           <div className='categoryArea'>
-            <Test/>
           </div>
           <div className='infoList'>
             <ul>

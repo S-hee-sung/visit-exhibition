@@ -2,18 +2,18 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   cartList: [
-    // {
-    //   id: "1",
-    //   title: "ALL OF THEM WITCHES' PUZZLE 500",
-    //   price: 28900,
-    //   count: 1
-    // },
-    // {
-    //   id: "2",
-    //   title: "백자청화초화문편병 굽접시",
-    //   price: 32900,
-    //   count: 3
-    // },
+//     // {
+//     //   id: "1",
+//     //   title: "ALL OF THEM WITCHES' PUZZLE 500",
+//     //   price: 28900,
+//     //   count: 1
+//     // },
+//     // {
+//     //   id: "2",
+//     //   title: "백자청화초화문편병 굽접시",
+//     //   price: 32900,
+//     //   count: 3
+//     // },
   ]
 };
 
@@ -31,6 +31,7 @@ const cartSlice = createSlice({
     },
 
     addItemToCart: (state, { payload: item }) => {
+      console.log("리덕스 아이템", item);
       const targetItem = state.cartList.find((cart) => cart.id === item.id);
       if (targetItem) {
         targetItem.count += item.count;

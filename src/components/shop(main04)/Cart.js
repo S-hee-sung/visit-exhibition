@@ -2,6 +2,7 @@ import React from "react";
 // import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 // import { decreaseCount, increaseCount, removeItemFromCart, selectCartList } from './CartSlice';
+import data from "../../data6.json";
 
 
 const CartWrapper = styled.div`
@@ -22,7 +23,7 @@ const CartWrapper = styled.div`
     top: 250px;
     /* z-index: 99999; */
   }
-  table, tr, th, td {
+  td {
     width: 170px;
     height: 50px;
     border: 1px solid #656565;
@@ -34,28 +35,32 @@ function Cart(props) {
   // const cartAdd = useSelector(selectCartList);
   // const dispatch = useDispatch();
 
+  console.log(data[0].name);
+
   return (
     <CartWrapper>
       <div className="inner">
         <table className="cartTable">
-          <tr>
-            <th>No.</th>
-            <th>상품명</th>
-            <th>수량</th>
-            <th>가격</th>
-          </tr>
-          <tr>
-            <td>A</td>
-            <td>B</td>
-            <td>C</td>
-            <td>D</td>
-          </tr>
-          <tr>
-            <td>E</td>
-            <td>F</td>
-            <td>G</td>
-            <td>H</td>
-          </tr>
+          <thead>
+            <td>No.</td>
+            <td>상품명</td>
+            <td>수량</td>
+            <td>가격</td>
+          </thead>
+          <tbody>
+            <tr>
+              <td>{data[0].id}</td>
+              <td>{data[0].name}</td>
+              <td>C</td>
+              <td>{data[0].price}</td>
+            </tr>
+            <tr>
+              <td>E</td>
+              <td>F</td>
+              <td>G</td>
+              <td>H</td>
+            </tr>
+          </tbody>
         </table>
 
         {/* <tbody>

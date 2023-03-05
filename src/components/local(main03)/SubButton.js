@@ -11,12 +11,12 @@ const SubButtonWrapper = styled.div`
     cursor: pointer;
     box-sizing: border-box;
     margin: 0 auto;
-    margin-top: 20px;
-    width: 120px;
-    height: 30px;
-    border: 1px solid #656565;
+    margin-top: 10px;
+    width: 140px;
+    height: 40px;
+    border: 1px solid #C8C8C8;
     background-color: #fff;
-    border-radius: 8px;
+    border-radius: 5px;
   }
   button:hover {
     border: 1px solid dodgerblue;
@@ -30,7 +30,6 @@ function SubButton(props) {
   return (
     <SubButtonWrapper>
       <div className='buttons'>
-        <button>상세보기</button>
         <button onClick={() => navigate(`/reservation/${data[0].id}`)}>바로예약</button>
       </div>
     </SubButtonWrapper>

@@ -28,11 +28,6 @@ function TitelLine(props) {
   return (
     <TitleWrap>
       <h1>Exhibition</h1>
-      <ul className='dateWrap'>
-        <li>2023.03.11 ~ 2023.03.12</li>
-        <li>|</li>
-        <li>서울 종로구 성균관로5길 55-3 </li>
-      </ul>
       <div className='line'/>
     </TitleWrap>
   );

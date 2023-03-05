@@ -46,7 +46,7 @@ function App() {
           <Route index element={<Main />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-          <Route path="/reservation/:reservationEl" element={<Reservation />} />
+          <Route path="/reservation" element={<Reservation />} />
         </Route>
       </Routes>
     </>

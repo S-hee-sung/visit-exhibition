@@ -163,6 +163,7 @@ function Footer(props) {
       <FooterBottom>
         <p>14 Samcheong-ro, Jongno-gu, Seoul 03062 Korea<br />
           Gallery Hyundai - All rights reserved 2023</p>
+          
         <ul>
           <li>
             <a href="#" style={{fontWeight:'bold'}}>개인정보처리관리</a>

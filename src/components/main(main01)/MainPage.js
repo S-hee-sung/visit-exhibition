@@ -1,14 +1,14 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 import styled from 'styled-components';
-// import mainImage02 from "../../../public/images/mainImage02.jpg"
+import mainImage03 from "./mainImage03.png";
 import Youtube from "./Youtube";
 
 const MainWrapper = styled.div`
 .inner {
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: 140px;
+    padding-top: 80px;
   }
   h4 {
     padding-top: 160px;
@@ -22,14 +22,15 @@ const MainWrapper = styled.div`
     color: #656565;
     font-size: 1.0rem;
   }
-  img {
-    height: 409px;
-    overflow: hidden;
-  }
   .imagecontainer {
     display: flex;
-    gap: 2vh;
-    /* margin-top: 160px; */
+    flex-direction: row;
+    gap: 10px;
+  }
+  img {
+    height: 360px;
+    width: 540px;
+    overflow: hidden;
   }
   .calendarButton {
     border: 1px solid #fff;
@@ -43,6 +44,7 @@ const MainWrapper = styled.div`
     /* position: absolute; */
     /* right: 0; */
     cursor: pointer;
+    white-space: nowrap;
   }
   `;
 
@@ -52,16 +54,15 @@ function MainPage(props) {
   return (
     <MainWrapper>
       <div className="inner">
-        <h4>Main text area</h4>
+        <h4>visit exhibihion.</h4>
         {/* <p className="maintext">Lorem ipsum dolor sit amet,</p> */}
         <div className='imagecontainer'>
-          {/* <img src={mainImage} alt="main_image"  /> */}
-          <Youtube style={{ width: '1200px', height: '720px' }}/>
-          {/* <img src={mainImage03} alt="main_image" onClick={() => navigate('/cal')} /> */}
-          {/* <img src={mainImage02} alt="main_image" /> */}
+          <div>
+            <Youtube style={{ width: '1200px', height: '720px' }}/>
+          </div>
+          <img src={mainImage03} alt="main_image" />
           <button className="calendarButton" onClick={() => navigate('/cal')}>전시 일정 확인하기<br/><br/>&gt;</button>
         </div>
-        
       </div>
     </MainWrapper>
       

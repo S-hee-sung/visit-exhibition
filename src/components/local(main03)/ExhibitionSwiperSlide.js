@@ -71,7 +71,6 @@ const ExhibitionSwiperSlide = (props) => {
                     {swiperList.address}
                   </li>
                   <li style={{ fontWeight: 400 }}>
-                    <SubButton />
                   </li>
                 </ul>
               </div>
@@ -79,6 +78,9 @@ const ExhibitionSwiperSlide = (props) => {
             </SwiperSlide>
           })}
         </Swiper>
+      </div>
+      <div>
+        <SubButton />
       </div>
     </SlideWrapper>
 

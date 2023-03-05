@@ -3,7 +3,7 @@ import styled from "styled-components";
 import ReactPlayer from "react-player";
 
 const VideoSizeWrapper = styled.div`
-width: 1190px;
+/* width: 1190px; */
 /* height: 723px; */
 /* background-color: yellow; */
 display: flex;
@@ -31,7 +31,7 @@ function youtube(props) {
           heigth="100%"
           playing={true}
           muted={true}
-        // controls={true}
+          loop={true}
         />
     </VideoSizeWrapper>
 

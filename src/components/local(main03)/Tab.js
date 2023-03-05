@@ -63,7 +63,7 @@ export const Tab = () => {
   return (
     <>
       <div>
-        <TabMenu>
+        <TabMenu key={menuArr}>
           {menuArr.map((el,index) => (
               <li className={index === currentTab ? "submenu focused" : "submenu" }
               onClick={() => setCurrentTab(index)} key={index}>{el.name}</li>

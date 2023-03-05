@@ -8,7 +8,7 @@ const CalenderWrap = styled.div`
   .header{
     display: flex;
     gap: 20px;
-    font-size: 24px;
+    font-size: 20px;
     justify-content: center;
     color: #333;
     padding: 10px 0;

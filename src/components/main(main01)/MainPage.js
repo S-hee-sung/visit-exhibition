@@ -5,15 +5,20 @@ import mainImage03 from "./mainImage03.png";
 import Youtube from "./Youtube";
 
 const MainWrapper = styled.div`
+    background: url(https://weaverloft.com/common/img/main/new/main.png) no-repeat center fixed;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 50px;
+    background-size: 100%;
 .inner {
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: 80px;
+    padding-top: 30px;
   }
   h4 {
     padding-top: 160px;
     font-size: 1.2rem;
-    color: #656565;
+    color: #fff;
     font-weight: 600;
     padding-bottom: 10px;
   }
@@ -26,6 +31,16 @@ const MainWrapper = styled.div`
     display: flex;
     flex-direction: row;
     gap: 10px;
+    .youbuteWrap{
+      position: relative;
+      .youtubeCover{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        /* background: black; */
+        top: 0;
+      }
+    }
   }
   img {
     height: 360px;
@@ -57,16 +72,17 @@ function MainPage(props) {
         <h4>visit exhibihion.</h4>
         {/* <p className="maintext">Lorem ipsum dolor sit amet,</p> */}
         <div className='imagecontainer'>
-          <div>
-            <Youtube style={{ width: '1200px', height: '720px' }}/>
+          <div className='youbuteWrap'>
+            <Youtube style={{ width: '1200px', height: '720px' }} />
+            <div className='youtubeCover' />
           </div>
-          <img src={mainImage03} alt="main_image" />
-          <button className="calendarButton" onClick={() => navigate('/cal')}>전시 일정 확인하기<br/><br/>&gt;</button>
+          <img src='https://cdn.pixabay.com/photo/2019/05/31/13/35/art-gallery-4242219_1280.jpg' alt="main_image" />
+          <button className="calendarButton" onClick={() => navigate('/cal')}>전시 일정 확인하기<br /><br />&gt;</button>
         </div>
       </div>
     </MainWrapper>
-      
-      
+
+
   );
 }
 

@@ -30,7 +30,7 @@ function SubButton(props) {
   return (
     <SubButtonWrapper>
       <div className='buttons'>
-        <button onClick={() => navigate(`/reservation/${data[0].id}`)}>바로예약</button>
+        <button onClick={() => navigate(`/reservation`)}>바로예약</button>
       </div>
     </SubButtonWrapper>
   )

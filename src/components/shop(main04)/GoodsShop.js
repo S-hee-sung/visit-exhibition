@@ -7,6 +7,8 @@ const GoodsShopWrapper = styled.div`
 .inner {
   max-width: 1200px;
   margin: 0 auto;
+  height: 100%;
+  padding-bottom: 20px;
 }
 h4 {
   padding-top: 10vh;

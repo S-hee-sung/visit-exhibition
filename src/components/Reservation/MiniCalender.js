@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import CalenderButton from './CalenderButton';
 
 const CalenderWrap = styled.div`
   display: flex;
   gap: 10px;
+  height: 100%;
   flex-direction: column;
   .header{
     display: flex;
@@ -54,6 +56,11 @@ const CalenderWrap = styled.div`
       /* background: red; */
       padding: 10px;
     }
+    .selected{
+      background: rgb(236, 125, 44);
+      color: white;
+      border-radius: 50%;
+    }
   }
   .selected-date{
     display: flex;
@@ -64,6 +71,11 @@ const CalenderWrap = styled.div`
     padding: 20px;
     font-weight: bold;
     cursor: pointer;
+  }
+  .complete-data-wrap{
+    width: 100%;
+    height: 100%;
+    background: yellow;
   }
 `;
 
@@ -141,8 +153,41 @@ const MiniCalendar = () => {
       <div className="selected-date">
         {selectedDate ? `${selectedDate.toDateString()} 선택 완료` : '관람 날짜를 선택해주세요.'}
       </div>
+      <div className='complete-data-wrap'>
+        결제
+
+      </div>
     </CalenderWrap>
   );
 };
 
 export default MiniCalendar;
+
+// const [showList, setShowList] = useState(false);
+// const [selectedItem, setSelectedItem] = useState(null);
+// const [listItems, setListItems] = useState(['Item 1', 'Item 2', 'Item 3']);
+
+// const handleButtonClick = () => {
+//   setShowList(!showList);
+// };
+
+// const handleListItemClick = (item) => {
+//   setSelectedItem(item);
+//   setShowList(false);
+// };
+
+// return (
+//   <div>
+//     <button onClick={handleButtonClick}>Select an item</button>
+//     {showList && (
+//       <ul>
+//         {listItems.map((item, index) => (
+//           <li key={index} onClick={() => handleListItemClick(item)}>
+//             {item}
+//           </li>
+//         ))}
+//       </ul>
+//     )}
+//     {selectedItem && <p>You selected {selectedItem}</p>}
+//   </div>
+// );

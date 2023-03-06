@@ -69,7 +69,7 @@ function UtilityMenu(props) {
           <li onClick={() => navigate('/signup')}>
             회원가입
           </li>
-          <li>
+          <li onClick={() => navigate('/chat')}>
             고객센터
           </li>
         </ul>

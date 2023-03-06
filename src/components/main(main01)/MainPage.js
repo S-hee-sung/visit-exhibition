@@ -5,7 +5,7 @@ import mainImage03 from "./mainImage03.png";
 import Youtube from "./Youtube";
 
 const MainWrapper = styled.div`
-    background: url(https://weaverloft.com/common/img/main/new/main.png) no-repeat center fixed;
+    background: url(https://weaverloft.com/common/img/main/new/main.png) no-repeat fixed;
     width: 100%;
     height: 100%;
     padding-bottom: 50px;

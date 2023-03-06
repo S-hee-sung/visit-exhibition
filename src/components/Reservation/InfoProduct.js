@@ -26,7 +26,8 @@ const InfoArea = styled.div`
           background: white;
           padding-top: 0;
           img{
-            width: 80%;
+            width: 440px;
+            height: 600px;
           }
         }
         .categoryArea{
@@ -39,11 +40,18 @@ const InfoArea = styled.div`
               flex-direction: column;
               gap: 10px;
               font-size: 14px;
+              white-space: pre-line;
               font-style: bold;
               padding: 10px;
               cursor: pointer;
+              width: 120px;
+              height: 140px;
+              text-align: center;
+              height: 100%;
+              p{
+                font-weight: bold;
+              }
             }
-
             img{
               width: 120px;
               height: 140px;
@@ -111,7 +119,7 @@ function InfoProduct(props) {
         <div className='infoArea'>
           <div className='categoryArea'>
             <div className='contentImg'>
-              <img src={contents[activeContentIndex].imageSrc} width='50%' />
+              <img src={contents[activeContentIndex].imageSrc} />
             </div>
             <div className='tapContents'>
               {contents.map((content, index) => (

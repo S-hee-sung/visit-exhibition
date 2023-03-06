@@ -13,12 +13,12 @@ const MainWrapper = styled.div`
 .inner {
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: 30px;
+    padding-top: 140px;
   }
   h4 {
-    padding-top: 160px;
+    padding-top: 100px;
     font-size: 1.2rem;
-    color: #fff;
+    /* color: #fff; */
     font-weight: 600;
     padding-bottom: 10px;
   }

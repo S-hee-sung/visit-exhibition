@@ -43,10 +43,10 @@ const CalenderWrap = styled.div`
     display: flex;
     flex-wrap: wrap;
     font-size: 18px;
-    gap: 10px;
+    gap: 20px;
     /* background: wheat; */
     justify-content: space-between;
-    height: 100%;
+    /* height: 100%; */
     div{
       cursor: pointer;
       font-weight: bold;
@@ -74,7 +74,7 @@ const CalenderWrap = styled.div`
   }
   .complete-data-wrap{
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     background: yellow;
   }
 `;
@@ -151,11 +151,7 @@ const MiniCalendar = () => {
         {renderDaysOfMonth()}
       </div>
       <div className="selected-date">
-        {selectedDate ? `${selectedDate.toDateString()} 선택 완료` : '관람 날짜를 선택해주세요.'}
-      </div>
-      <div className='complete-data-wrap'>
-        결제
-
+        {selectedDate ? `${selectedDate.toDateString()} 예약 하기` : '관람 날짜를 선택해주세요.'}
       </div>
     </CalenderWrap>
   );

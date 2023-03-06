@@ -1,135 +1,120 @@
-[
-  {
-    "id": 1,
-    "src": "./images/product01.jpg",
-    "title": "[MAX DALTON]",
-    "name": "'ALL OF THEM WITCHES' PUZZLE 500",
-    "price": 28900
-  },
-  {
-    "id": 2,
-    "src": "./images/product02.jpg",
-    "title": "[국립중앙박물관]",
-    "name": "백자청화초화문편병 굽접시",
-    "price": 32900
-  },
-  {
-    "id": 3,
-    "src": "./images/product03.jpg",
-    "title": "[그라운드 시소]",
-    "name": "나탈리 카르푸셴코 나무 엽서",
-    "price": 9000
-  },
-  {
-    "id": 4,
-    "src": "./images/product04.jpg",
-    "title": "[국립중앙박물관]",
-    "name": "[의궤 전시] 머그 접시 세트",
-    "price": 49000
-  },
-  {
-    "id": 5,
-    "src": "./images/product05.jpg",
-    "title": "[국립중앙박물관]",
-    "name": "머그컵 세트",
-    "price": 100000
-  },
-  {
-    "id": 6,
-    "src": "./images/product06.jpg",
-    "title": "[그라운드 시소]",
-    "name": "어노니머스 프로젝트 스마트폰 케이스",
-    "price": 18000
-  },
-  {
-    "id": 7,
-    "src": "./images/product07.jpg",
-    "title": "[그라운드 시소]",
-    "name": "요시고사진전 클리어북마크",
-    "price": 2000
-  },
-  {
-    "id": 8,
-    "src": "./images/product08.jpg",
-    "title": "[앤디워홀전:비기닝 서울]",
-    "name": "벨벳언더그라운드CD + 포스터",
-    "price": 30000
-  },
-  {
-    "id": 9,
-    "src": "./images/product09.jpg",
-    "title": "[앤디워홀전:비기닝 서울]",
-    "name": "마릴린/플라워 노트세트",
-    "price": 14000
-  },
-  {
-    "id": 10,
-    "src": "./images/product10.png",
-    "title": "[국립현대미술관]",
-    "name": "MMCA 3단 암막 양우산(오렌지)",
-    "price": 42000
-  },
-  {
-    "id": 11,
-    "src": "./images/product11.png",
-    "title": "[국립현대미술관]",
-    "name": "파우치 세트(핑크, 블루)",
-    "price": 50000
-  },
-  {
-    "id": 12,
-    "src": "./images/slide02-1.jpg",
-    "name": "The other face of material",
-    "location": "[서정아트 강남]",
-    "address": "서울 강남구 봉은사로47길 12"
-  },
-  {
-    "id": 13,
-    "src": "./images/slide02-2.jpg",
-    "name": "Tube Seoul",
-    "location": "[K현대미술관]",
-    "address": "서울 강남구 선릉로 807"
-  },
-  {
-    "id": 14,
-    "src": "./images/slide02-3.jpg",
-    "name": "COLOR IN LIFE",
-    "location": "[마이아트뮤지엄]",
-    "address": "서울 강남구 테헤란로 518"
-  },
-  {
-    "id": 15,
-    "src": "./images/slide02-4.png",
-    "name": "Touchable moments",
-    "location": "[KLAMP GALLERY]",
-    "address": "서울 강남구 논현로26길 39 B1"
-  },
-  {
-    "id": 16,
-    "src": "./images/slide02-5.webp",
-    "name": "데미안",
-    "location": "[K현대미술관]",
-    "address": "서울 강남구 선릉로 807"
-  },
-  {
-    "id": 17,
-    "src": "./images/slide02-6.jpg",
-    "name": "조우 : Encounter",
-    "location": "[엔버갤러리]",
-    "address": "서울 강남구 압구정로 421-1"
-  },
-  {
-    "id": 18,
-    "src": "./images/slide02-7.jpg",
-    "name": "프리다 칼로 사진전",
-    "location": "[현대백화점 무역센터점]",
-    "address": "서울 강남구 테헤란로 517"
-  },
-  {
-    "id": 19,
-    "src": "./images/slide02-8.png",
-    "name": "두꺼비에 대한 단상",
-    "location": "[GALLERY SAEM]",
-    "address": "서울 강남구 테헤란로13길 30"
-  }
-]
+{
+  "data" : [
+    {
+      "desc": "<div style='padding:5px;'>슬픔은 파도처럼 밀려와</div>",
+      "positions": [37.58032083332333, 126.96925189327204]
+    },
+    {
+      "desc": "<div style='padding:5px;'>NEW WAVE</div>",
+      "positions": [37.573310499406084, 126.96703604828245]
+    },
+    {
+      "desc": "<div style='padding:5px;'>이현정초대전</div>",
+      "positions": [37.58524414470307, 126.99473307753141]
+    },
+    {
+      "desc": "<div style='padding:5px;'>최민솔개인전</div>",
+      "positions": [37.58375769355032, 126.97977958632414]
+    },
+    {
+      "desc": "<div style='padding:5px;'>그해 겨울은 따뜻했네</div>",
+      "positions": [37.57419344559273, 126.98442797120563]
+    },
+    {
+      "desc": "<div style='padding:5px;'>김종영미술관</div>",
+      "positions": [37.613035887615645, 126.97750645009633]
+    },
+    {
+      "desc": "<div style='padding:5px;'>그 겨울의 행복</div>",
+      "positions": [37.581663624613455, 126.97886539140995]
+    },
+    {
+      "desc": "<div style='padding:5px;'>The Anonnymous project</div>",
+      "positions": [37.57783498645025, 126.9729117732011]
+    },
+    {
+      "desc": "<div style='padding:5px;'>The Anonnymous project</div>",
+      "positions": [37.510623559451346, 127.04121569700396]
+    },
+    {
+      "desc": "<div style='padding:5px;'>Tube Seoul</div>",
+      "positions": [37.52437717172216, 127.03916888666346]
+    },
+    {
+      "desc": "<div style='padding:5px;'>COLOR IN LIFE</div>",
+      "positions": [37.507587841577454, 127.06057692858644]
+    },
+    {
+      "desc": "<div style='padding:5px;'>Touchable moments</div>",
+      "positions": [37.48377567696113, 127.0452939029222]
+    },
+    {
+      "desc": "<div style='padding:5px;'>데미안</div>",
+      "positions": [37.52437717172216, 127.03916888666346]
+    },
+    {
+      "desc": "<div style='padding:5px;'>조우 : Encounter</div>",
+      "positions": [37.52751117108263, 127.04342425587278]
+    },
+    {
+      "desc": "<div style='padding:5px;'>유행이 끝나면 깨워주세요</div>",
+      "positions": [37.47202795110733, 126.63431019048306]
+    },
+    {
+      "desc": "<div style='padding:5px;'>vita nova new life</div>",
+      "positions": [37.47277758253201, 126.62059155897465]
+    },
+    {
+      "desc": "<div style='padding:5px;'>Alice in Wonderyarn</div>",
+      "positions": [37.376705478951344, 126.66765104944392]
+    },
+    {
+      "desc": "<div style='padding:5px;'>Dear future me 展</div>",
+      "positions": [37.4424979178226, 126.70150964902709]
+    },
+    {
+      "desc": "<div style='padding:5px;'>놀이터를 부탁해</div>",
+      "positions": [37.39281226046901, 126.63588336442947]
+    },
+    {
+      "desc": "<div style='padding:5px;'>봄 소품</div>",
+      "positions": [37.35211107764467, 127.0688536240274]
+    },
+    {
+      "desc": "<div style='padding:5px;'>경유지</div>",
+      "positions": [37.78888895426441, 126.69939973444019]
+    },
+    {
+      "desc": "<div style='padding:5px;'>백남준 효과</div>",
+      "positions": [37.431001358981376, 127.0199261649026]
+    },
+    {
+      "desc": "<div style='padding:5px;'>WE ARE COLLECTORS</div>",
+      "positions": [37.20161759922587, 127.00608271822468]
+    },
+    {
+      "desc": "<div style='padding:5px;'>어둠 속의 대화</div>",
+      "positions": [37.20067263722487, 127.09791250708346]
+    },
+    {
+      "desc": "<div style='padding:5px;'>harmgerdes : panorama</div>",
+      "positions": [37.557273590173374, 127.00645103888694]
+    },
+    {
+      "desc": "<div style='padding:5px;'>마리아 스바르보바 사진전</div>",
+      "positions": [37.4802371334905, 127.0142093594949]
+    },
+    {
+      "desc": "<div style='padding:5px;'>서울살이와 집</div>",
+      "positions": [37.62017040601401, 127.07692939573413]
+    },
+    {
+      "desc": "<div style='padding:5px;'>나탈리 카르푸셴코 사진전</div>",
+      "positions": [37.54676450172011, 127.06527534383493]
+    },
+    {
+      "desc": "<div style='padding:5px;'>눈물의 엔트로피</div>",
+      "positions": [37.54575700585124, 127.05501323519256]
+    }
+  ]
+}

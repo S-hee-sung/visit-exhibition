@@ -71,8 +71,8 @@ export default () => {
           spaceBetween={60}
           slidesPerView={5}
         >
-          {data.map((swiperList) => {
-            return <SwiperSlide>
+          {data.map((swiperList, index) => {
+            return <SwiperSlide key={index}>
               <div>
                 <ul>
                   <li className="imageContainer">

@@ -1,325 +1,340 @@
 import { useEffect } from "react";
 import styled from "styled-components";
-
-const MapWrapper = styled.div`
-  padding-top: 50px;
-
-  .mapStyled {
-    width: 100%; 
-    height: 100%; 
-    position: relative;
-    overflow: hidden; 
-  }
-  .map_wrap, .map_wrap * {
-    margin: 0;
-    padding: 0;
-    font-family: 'Malgun Gothic',dotum,'돋움',sans-serif;
-    font-size: 12px;
-  }
-  .map_wrap a, .map_wrap a:hover, .map_wrap a:active {
-    color: #000;
-    text-decoration: none;
-  }
-  .map_wrap {
-    position: relative;
-    width: 100%;
-    height: 500px;
-  }
-  #menu_wrap {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 250px;
-    margin: 10px 0 30px 10px;
-    padding: 5px;
-    overflow-y: auto;
-    background: rgba(255, 255, 255, 0.7);
-    z-index: 1;
-    font-size: 12px;
-    border-radius: 10px;
-  }
-  .bg_white {background:#fff;}
-  #menu_wrap hr {display: block; height: 1px;border: 0; border-top: 2px solid #5F5F5F;margin:3px 0;}
-  #menu_wrap .option{text-align: center;}
-  #menu_wrap .option p {margin:10px 0;}  
-  #menu_wrap .option button {margin-left:5px;}
-  #placesList li {list-style: none;}
-  #placesList .item {position:relative;border-bottom:1px solid #888;overflow: hidden;cursor: pointer;min-height: 65px;}
-  #placesList .item span {display: block;margin-top:4px;}
-  #placesList .item h5, #placesList .item .info {text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
-  #placesList .item .info{padding:10px 0 10px 55px;}
-  #placesList .info .gray {color:#8a8a8a;}
-  #placesList .info .jibun {padding-left:26px;background:url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/places_jibun.png) no-repeat;}
-  #placesList .info .tel {color:#009900;}
-  #placesList .item .markerbg {float:left;position:absolute;width:36px; height:37px;margin:10px 0 0 10px;background:url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png) no-repeat;}
-  #placesList .item .marker_1 {background-position: 0 -10px;}
-  #placesList .item .marker_2 {background-position: 0 -56px;}
-  #placesList .item .marker_3 {background-position: 0 -102px}
-  #placesList .item .marker_4 {background-position: 0 -148px;}
-  #placesList .item .marker_5 {background-position: 0 -194px;}
-  #placesList .item .marker_6 {background-position: 0 -240px;}
-  #placesList .item .marker_7 {background-position: 0 -286px;}
-  #placesList .item .marker_8 {background-position: 0 -332px;}
-  #placesList .item .marker_9 {background-position: 0 -378px;}
-  #placesList .item .marker_10 {background-position: 0 -423px;}
-  #placesList .item .marker_11 {background-position: 0 -470px;}
-  #placesList .item .marker_12 {background-position: 0 -516px;}
-  #placesList .item .marker_13 {background-position: 0 -562px;}
-  #placesList .item .marker_14 {background-position: 0 -608px;}
-  #placesList .item .marker_15 {background-position: 0 -654px;}
-  #pagination {margin:10px auto;text-align: center;}
-  #pagination a {display:inline-block;margin-right:10px;}
-  #pagination .on {font-weight: bold; cursor: default;color:#777;}
-`;
+import data from "./mapData.json";
 
 const { kakao } = window;
 
+const MapWrapper = styled.div`
+	padding-top: 50px;
+
+	.customoverlay {
+		position: relative;
+		bottom: 40px;
+		border-radius: 6px;
+		border: 1px solid #ccc;
+		border-bottom: 2px solid #ddd;
+		float: left;
+	}
+	.customoverlay:after {
+		content: "";
+		position: absolute;
+		margin-left: -12px;
+		left: 50%;
+		bottom: -12px;
+		width: 22px;
+		height: 12px;
+		background: url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png);
+	}
+	.customoverlay a {
+		display: block;
+		text-decoration: none;
+		color: #000;
+		text-align: center;
+		border-radius: 6px;
+		font-size: 14px;
+		font-weight: bold;
+		overflow: hidden;
+		background: #000
+			url(https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png)
+			no-repeat right 14px center;
+	}
+	.customoverlay .title {
+		display: block;
+		text-align: center;
+		background: #fff;
+		margin-right: 35px;
+		padding: 10px 15px;
+		font-size: 14px;
+		font-weight: bold;
+	}
+	.radius_border{border:1px solid #919191;border-radius:5px;}     
+	.custom_zoomcontrol {
+		position:absolute;
+		top:50px;
+		right:10px;
+		width:36px;
+		height:80px;overflow:hidden;z-index:1;background-color:#f5f5f5;} 
+	.custom_zoomcontrol span {display:block;width:36px;height:40px;text-align:center;cursor:pointer;}     
+	.custom_zoomcontrol span img {width:15px;height:15px;padding:12px 0;border:none;}             
+	.custom_zoomcontrol span:first-child{border-bottom:1px solid #bfbfbf;} 
+`;
+
 function Map(props) {
-  const { place, handleSubmit, onChange, InputText } = props;
+	// ref, state로 만들지 결정
+	let markers = [];
 
-  useEffect(() => {
-    var markers = [];
+	let db = {
+		data: [
+			{
+				"desc": "<div style='padding:5px;'>슬픔은 파도처럼 밀려와</div>",
+				"positions": [37.58032083332333, 126.96925189327204]
+			},
+			{
+				"desc": "<div style='padding:5px;'>NEW WAVE</div>",
+				"positions": [37.573310499406084, 126.96703604828245]
+			},
+			{
+				"desc": "<div style='padding:5px;'>이현정초대전</div>",
+				"positions": [37.58524414470307, 126.99473307753141]
+			},
+			{
+				"desc": "<div style='padding:5px;'>최민솔개인전</div>",
+				"positions": [37.58375769355032, 126.97977958632414]
+			},
+			{
+				"desc": "<div style='padding:5px;'>그해 겨울은 따뜻했네</div>",
+				"positions": [37.57419344559273, 126.98442797120563]
+			},
+			{
+				"desc": "<div style='padding:5px;'>김종영미술관</div>",
+				"positions": [37.613035887615645, 126.97750645009633]
+			},
+			{
+				"desc": "<div style='padding:5px;'>그 겨울의 행복</div>",
+				"positions": [37.581663624613455, 126.97886539140995]
+			},
+			{
+				"desc": "<div style='padding:5px;'>The Anonnymous project</div>",
+				"positions": [37.57783498645025, 126.9729117732011]
+			},
+			{
+				"desc": "<div style='padding:5px;'>The Anonnymous project</div>",
+				"positions": [37.510623559451346, 127.04121569700396]
+			},
+			{
+				"desc": "<div style='padding:5px;'>Tube Seoul</div>",
+				"positions": [37.52437717172216, 127.03916888666346]
+			},
+			{
+				"desc": "<div style='padding:5px;'>COLOR IN LIFE</div>",
+				"positions": [37.507587841577454, 127.06057692858644]
+			},
+			{
+				"desc": "<div style='padding:5px;'>Touchable moments</div>",
+				"positions": [37.48377567696113, 127.0452939029222]
+			},
+			{
+				"desc": "<div style='padding:5px;'>데미안</div>",
+				"positions": [37.52437717172216, 127.03916888666346]
+			},
+			{
+				"desc": "<div style='padding:5px;'>조우 : Encounter</div>",
+				"positions": [37.52751117108263, 127.04342425587278]
+			},
+			{
+				"desc": "<div style='padding:5px;'>유행이 끝나면 깨워주세요</div>",
+				"positions": [37.47202795110733, 126.63431019048306]
+			},
+			{
+				"desc": "<div style='padding:5px;'>vita nova new life</div>",
+				"positions": [37.47277758253201, 126.62059155897465]
+			},
+			{
+				"desc": "<div style='padding:5px;'>Alice in Wonderyarn</div>",
+				"positions": [37.376705478951344, 126.66765104944392]
+			},
+			{
+				"desc": "<div style='padding:5px;'>Dear future me 展</div>",
+				"positions": [37.4424979178226, 126.70150964902709]
+			},
+			{
+				"desc": "<div style='padding:5px;'>놀이터를 부탁해</div>",
+				"positions": [37.39281226046901, 126.63588336442947]
+			},
+			{
+				"desc": "<div style='padding:5px;'>봄 소품</div>",
+				"positions": [37.35211107764467, 127.0688536240274]
+			},
+			{
+				"desc": "<div style='padding:5px;'>경유지</div>",
+				"positions": [37.78888895426441, 126.69939973444019]
+			},
+			{
+				"desc": "<div style='padding:5px;'>백남준 효과</div>",
+				"positions": [37.431001358981376, 127.0199261649026]
+			},
+			{
+				"desc": "<div style='padding:5px;'>WE ARE COLLECTORS</div>",
+				"positions": [37.20161759922587, 127.00608271822468]
+			},
+			{
+				"desc": "<div style='padding:5px;'>어둠 속의 대화</div>",
+				"positions": [37.20067263722487, 127.09791250708346]
+			},
+			{
+				"desc": "<div style='padding:5px;'>harmgerdes : panorama</div>",
+				"positions": [37.557273590173374, 127.00645103888694]
+			},
+			{
+				"desc": "<div style='padding:5px;'>마리아 스바르보바 사진전</div>",
+				"positions": [37.4802371334905, 127.0142093594949]
+			},
+			{
+				"desc": "<div style='padding:5px;'>서울살이와 집</div>",
+				"positions": [37.62017040601401, 127.07692939573413]
+			},
+			{
+				"desc": "<div style='padding:5px;'>나탈리 카르푸셴코 사진전</div>",
+				"positions": [37.54676450172011, 127.06527534383493]
+			},
+			{
+				"desc": "<div style='padding:5px;'>눈물의 엔트로피</div>",
+				"positions": [37.54575700585124, 127.05501323519256]
+			}
+		]
+	};
+	
 
-    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-    mapOption = {
-      center: new kakao.maps.LatLng(37.566826, 126.9786567), // 지도의 중심좌표
-      level: 3 // 지도의 확대 레벨
-    };  
+	useEffect(() => {
+		const mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		mapOption = {
+			center: new kakao.maps.LatLng(37.56682, 126.97865), // 지도의 중심좌표
+			level: 9, // 지도의 확대 레벨
+			mapTypeId : kakao.maps.MapTypeId.ROADMAP // 지도종류
+		}; 
 
-// 지도를 생성합니다    
-let map = new kakao.maps.Map(mapContainer, mapOption); 
+		// 지도를 생성한다 
+		const map = new kakao.maps.Map(mapContainer, mapOption);
 
-// 장소 검색 객체를 생성합니다
-let ps = new kakao.maps.services.Places();  
+		// 마커 클러스터러를 생성합니다 
+		const clusterer = new kakao.maps.MarkerClusterer({
+			map: map, // 마커들을 클러스터로 관리하고 표시할 지도 객체 
+			averageCenter: true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정 
+		});
 
-// 검색 결과 목록이나 마커를 클릭했을 때 장소명을 표출할 인포윈도우를 생성합니다
-let infowindow = new kakao.maps.InfoWindow({zIndex:1});
+		function displayMarker(locPosition, message) {
+			// 지도에 마커와 인포윈도우(말풍선)를 표시하는 함수입니다
+			// 마커를 생성합니다
+			const marker = new kakao.maps.Marker({  
+					map: map, 
+					position: locPosition
+			}); 
+			
+			const iwContent = message, // 인포윈도우(말풍선)에 표시할 내용
+						iwRemoveable = true;
 
-// 키워드로 장소를 검색합니다
-searchPlaces();
+			// 인포윈도우(말풍선)를 생성합니다
+			const infowindow = new kakao.maps.InfoWindow({
+					content : iwContent,
+					removable : iwRemoveable
+			});
+			
+			// 인포윈도우(말풍선)를 마커위에 표시합니다 
+			infowindow.open(map, marker);
+			
+			// 지도 중심좌표를 접속위치로 변경합니다
+			map.setCenter(locPosition);      
+		}
+		const geolocationT = () => {
+			// geolocation true 기능 함수
+			// GeoLocation을 이용해서 접속 위치를 얻어옵니다
+			navigator.geolocation.getCurrentPosition((position) => {
+				const {latitude, longitude} = position.coords
+				const locPosition = new kakao.maps.LatLng(latitude, longitude), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
+							message = '<div style="padding:5px;">현재 위치!!</div>'; // 인포윈도우(말풍선)에 표시될 내용입니다
+					
+				// 마커와 인포윈도우(말풍선)를 표시합니다
+				displayMarker(locPosition, message);
+			});
+		};
 
-// 키워드 검색을 요청하는 함수입니다
-function searchPlaces() {
-  // let keyword = document.getElementById('keyword').value;
+		const geolocationF = () => {
+			// geolocation false 인경우 기능 함수
+			const locPosition = new kakao.maps.LatLng(33.450701, 126.570667),    
+			message = 'geolocation을 사용할수 없어요..'
 
-  // if (!keyword.replace(/^\s+|\s+$/g, '')) {
-  //   alert('키워드를 입력해주세요!');
-  //   return false;
-  // }
-  
-  let place = document.getElementById('keyword').value;
+			displayMarker(locPosition, message);
+		};
 
-  // 장소검색 객체를 통해 키워드로 장소검색을 요청합니다
-  // ps.keywordSearch( keyword, placesSearchCB); 
-  ps.keywordSearch( place, placesSearchCB); 
-}
+		const makeOverListener = (map, marker, infowindow) => {
+			// 인포윈도우(말풍선)를 표시하는 클로저를 만드는 함수입니다
+			return function() {
+				infowindow.open(map, marker);
+			};
+		};
 
-// 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
-function placesSearchCB(data, status, pagination) {
-  if (status === kakao.maps.services.Status.OK) {
-    // 정상적으로 검색이 완료됐으면 검색 목록과 마커를 표출합니다
-    displayPlaces(data);
+		const makeOutListener = (infowindow) => {
+			// 인포윈도우(말풍선)를 닫는 클로저를 만드는 함수입니다 
+			return function() {
+				infowindow.close();
+			};
+		};
+		
+    const init = async() => {
+			markers = new Array;
+			// db = JSON.parse(await getData());
+			db = data;
+			// HTML5의 geolocSation으로 사용할 수 있는지 확인합니다 
+			if (navigator.geolocation) {
+				geolocationT();
+			} else { // HTML5의 GeoLocation을 사용할 수 없을때 마커 표시 위치와 인포윈도우(말풍선) 내용을 설정합니다
+				geolocationF();
+			}
+		}
+		
+		// console.log(db);
 
-    // 페이지 번호를 표출합니다
-    displayPagination(pagination);
+		const imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
+		
+		// data.json있는 데이터 불러와 뿌려준다. //
+		db.data.forEach((item, i) => {
+			const {desc, positions} = item;
+			
+			// 마커 이미지의 이미지 크기 입니다
+      const imageSize = new kakao.maps.Size(24, 35);
 
-    } else if (status === kakao.maps.services.Status.ZERO_RESULT) {
-      alert('검색 결과가 존재하지 않습니다.');
-      return;
+      // 마커 이미지를 생성합니다
+      const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
 
-    } else if (status === kakao.maps.services.Status.ERROR) {
-      alert('검색 결과 중 오류가 발생했습니다.');
-      return;
-  }
-}
+			// 지도에 마커를 생성하고 표시한다.
+			const marker = new kakao.maps.Marker({
+				position: new kakao.maps.LatLng(positions[0], positions[1]),
+				map: map, //마커를 표시할 지도 객체
+				image: markerImage, // 마커 이미지
+			});
 
-// 검색 결과 목록과 마커를 표출하는 함수입니다
-function displayPlaces(places) {
+			// 인포윈도우(말풍선)를 생성합니다
+			const infowindow = new kakao.maps.InfoWindow({
+				content : desc
+			});
+			
+			// 마커 위에 인포윈도우(말풍선)를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+			markers.push(marker);
 
-  let listEl = document.getElementById('placesList'), 
-  menuEl = document.getElementById('menu_wrap'),
-  fragment = document.createDocumentFragment(), 
-  bounds = new kakao.maps.LatLngBounds(), 
-  listStr = '';
-    
-  // 검색 결과 목록에 추가된 항목들을 제거합니다
-  removeAllChildNods(listEl);
+			// 커스텀 오버레이에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+			// <a href="https://map.kakao.com/link/map/${desc},${positions[0]},${positions[1]}"" target="_blank">
+      const temp_html = `<div class="customoverlay">
+                        <a href="javascrift:void(0)">
+													<span class="title">${desc}</span>
+                        </a></div>`;
 
-  // 지도에 표시되고 있는 마커를 제거합니다
-  removeMarker();
-    
-  for ( var i=0; i<places.length; i++ ) {
+      // 커스텀 오버레이를 생성합니다
+      new kakao.maps.CustomOverlay({
+        map: map,
+        position: new kakao.maps.LatLng(positions[0], positions[1]),
+        content: temp_html,
+        yAnchor: 1,
+      });
 
-    // 마커를 생성하고 지도에 표시합니다
-    let placePosition = new kakao.maps.LatLng(places[i].y, places[i].x),
-        marker = addMarker(placePosition, i), 
-        itemEl = getListItem(i, places[i]); // 검색 결과 항목 Element를 생성합니다
+			// 마커에 mouseover 이벤트와 mouseout 이벤트를 등록합니다
+			// 이벤트 리스너로는 클로저를 만들어 등록합니다 
+			// for문에서 클로저를 만들어 주지 않으면 마지막 마커에만 이벤트가 등록됩니다
+			kakao.maps.event.addListener(marker, 'mouseover', makeOverListener(map, marker, infowindow));
+			kakao.maps.event.addListener(marker, 'mouseout', makeOutListener(infowindow));
+		});
+		// data.json있는 데이터 불러와 뿌려준다. //
 
-    // 검색된 장소 위치를 기준으로 지도 범위를 재설정하기위해
-    // LatLngBounds 객체에 좌표를 추가합니다
-    bounds.extend(placePosition);
-
-    // 마커와 검색결과 항목에 mouseover 했을때 해당 장소에 인포윈도우에 장소명을 표시
-    // mouseout 했을 때는 인포윈도우를 닫습니다
-
-    (function(marker, title) {
-        kakao.maps.event.addListener(marker, 'mouseover', function() {
-            displayInfowindow(marker, title);
-        });
-
-        kakao.maps.event.addListener(marker, 'mouseout', function() {
-            infowindow.close();
-        });
-
-        itemEl.onmouseover =  function () {
-            displayInfowindow(marker, title);
-        };
-
-        itemEl.onmouseout =  function () {
-            infowindow.close();
-        };
-    })(marker, places[i].place_name);
-
-    fragment.appendChild(itemEl);
-  }
-
-    // 검색결과 항목들을 검색결과 목록 Element에 추가합니다
-    listEl.appendChild(fragment);
-    menuEl.scrollTop = 0;
-
-    // 검색된 장소 위치를 기준으로 지도 범위를 재설정합니다
-    map.setBounds(bounds);
-}
-
-// 검색결과 항목을 Element로 반환하는 함수입니다
-function getListItem(index, places) {
-
-  let el = document.createElement('li'),
-  itemStr = '<span class="markerbg marker_' + (index+1) + '"></span>' +
-            '<div class="info">' +
-            '<h5>' + places.place_name +'</h5>';
-
-  if (places.road_address_name) {
-      itemStr += '<span>' + places.road_address_name + '</span>' +
-                  '<span class="jibun gray">' +  places.address_name  + '</span>';
-  } else {
-      itemStr += '<span>' + places.address_name  + '</span>'; 
-  }
-                
-    itemStr += '<span class="tel">' + places.phone  + '</span>' +
-                '</div>';           
-
-  el.innerHTML = itemStr;
-  el.className = 'item';
-
-  return el;
-}
-
-// 마커를 생성하고 지도 위에 마커를 표시하는 함수입니다
-function addMarker(position, idx, title) {
-    let imageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_number_blue.png', // 마커 이미지 url, 스프라이트 이미지를 씁니다
-        imageSize = new kakao.maps.Size(36, 37),  // 마커 이미지의 크기
-        imgOptions =  {
-          spriteSize : new kakao.maps.Size(36, 691), // 스프라이트 이미지의 크기
-          spriteOrigin : new kakao.maps.Point(0, (idx*46)+10), // 스프라이트 이미지 중 사용할 영역의 좌상단 좌표
-          offset: new kakao.maps.Point(13, 37) // 마커 좌표에 일치시킬 이미지 내에서의 좌표
-        },
-        markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imgOptions),
-          marker = new kakao.maps.Marker({
-          position: position, // 마커의 위치
-          image: markerImage 
-        });
-
-    marker.setMap(map); // 지도 위에 마커를 표출합니다
-    markers.push(marker);  // 배열에 생성된 마커를 추가합니다
-
-    return marker;
-}
-
-// 지도 위에 표시되고 있는 마커를 모두 제거합니다
-function removeMarker() {
-  for ( let i = 0; i < markers.length; i++ ) {
-    markers[i].setMap(null);
-  }   
-  markers = [];
-}
-
-// 검색결과 목록 하단에 페이지번호를 표시는 함수입니다
-function displayPagination(pagination) {
-  let paginationEl = document.getElementById('pagination'),
-      fragment = document.createDocumentFragment(),
-      i; 
-
-  // 기존에 추가된 페이지번호를 삭제합니다
-  while (paginationEl.hasChildNodes()) {
-    paginationEl.removeChild (paginationEl.lastChild);
-  }
-
-  for (i=1; i<=pagination.last; i++) {
-    let el = document.createElement('a');
-    el.href = "#";
-    el.innerHTML = i;
-
-    if (i===pagination.current) {
-        el.className = 'on';
-    } else {
-        el.onclick = (function(i) {
-            return function() {
-                pagination.gotoPage(i);
-            }
-        })(i);
-    }
-
-    fragment.appendChild(el);
-  }
-  paginationEl.appendChild(fragment);
-}
-
-// 검색결과 목록 또는 마커를 클릭했을 때 호출되는 함수입니다
-// 인포윈도우에 장소명을 표시합니다
-function displayInfowindow(marker, title) {
-    let content = '<div style="padding:5px;z-index:1;">' + title + '</div>';
-
-    infowindow.setContent(content);
-    infowindow.open(map, marker);
-}
-
- // 검색결과 목록의 자식 Element를 제거하는 함수입니다
-function removeAllChildNods(el) {   
-    while (el.hasChildNodes()) {
-        el.removeChild (el.lastChild);
-    }
-}
-  }, []);
+		// 클러스터러에 마커들을 추가합니다
+		clusterer.addMarkers(markers);
+		init();
+	}, []);
 
 
-  return (  
-    <MapWrapper>
-      <div className="map_wrap">
-        <div 
-          id="map" 
-          className="mapStyled">
-        </div>
-
-        <div id="menu_wrap" className="bg_white">
-          <div className="option">
-            <div>
-              <form onsubmit="searchPlaces(); return false;">
-              {/* <form onSubmit={handleSubmit}> */}
-                키워드 : <input type="text" value="서울 전시회" id="keyword" size="15" /> 
-                {/* 키워드 : <input type="text" value={InputText} id="keyword" size="15" />  */}
-                <button type="submit">검색하기</button> 
-              </form>
-            </div>
-          </div>
-        <hr />
-        <ul id="placesList"></ul>
-        <div id="pagination"></div>
-        </div>
-</div>
-    </MapWrapper>
-  );
+	return (  
+		<MapWrapper>
+			<div id="map" style={{ width: '100%', height: '500px' }}></div>
+		</MapWrapper>
+	);
 }
 
 export default Map;

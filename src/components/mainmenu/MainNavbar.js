@@ -52,7 +52,7 @@ function MainNavbar() {
       <Nav defaultActiveKey="/home" as="ul">
         {mainMenuList.map((list) => {
           return <Nav.Item as='li' key={list.id}>
-            <Nav.Link href='/home'>{list.title}</Nav.Link>
+            <Nav.Link>{list.title}</Nav.Link>
           </Nav.Item>
         })}
       </Nav>

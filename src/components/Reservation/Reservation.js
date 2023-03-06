@@ -8,7 +8,7 @@ import InfoProduct from './InfoProduct';
 const ReservationWrap = styled.div`
   width: 100%;
   padding-top: 140px;
-  padding-bottom: 50px;
+  padding-bottom: 20px;
   height: 100%;
   .inner {
     max-width: 1200px;

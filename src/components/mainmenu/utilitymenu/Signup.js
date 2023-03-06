@@ -100,12 +100,14 @@ function Signup(props) {
   const [pw, setPw] = useState('');
   const [pwReconfirm, setPwReconfirm] = useState('');
   const [reName, setReName] = useState('');
+  const [checked, setChecked] = useState(false);
 
   const [idValid, setIdValid] = useState(false);
   const [pwValid, setPwValid] = useState(false);
   const [pwReconfirmValid, setPwReconfirmValid] = useState(false);
   const [reNameValid, setreNameValid] = useState(false);
   const [notAllow, setNotAllow] = useState(true)
+  const [checkedValid, setCheckedValid] = useState(true);
 
   const handleId = (e) => {
     setId(e.target.value);
@@ -143,20 +145,20 @@ function Signup(props) {
 
   const onClickConfirm = () => {
     if (id === User.id && pw === User.pw) {
-      alert('로그인에 성공했습니다.');
+      alert('회원가입에 성공했습니다.');
       navigate("/")
     } else {
-      alert('등록되지 않는 회원입니다.')
+      alert('올바른 형식으로 작성해주세요.')
     }
   }
 
   useEffect(() => {
-    if (idValid && pwValid && pwReconfirmValid && reNameValid) {
+    if (idValid && pwValid && pwReconfirmValid && reNameValid && checkedValid) {
       setNotAllow(false);
       return
     }
     setNotAllow(true);
-  }, [idValid, pwValid, pwReconfirmValid, reNameValid]);
+  }, [idValid, pwValid, pwReconfirmValid, reNameValid , checkedValid]);
 
 
   return (
@@ -179,14 +181,6 @@ function Signup(props) {
               value={reName}
               onChange={handleReplaceName}
             />
-          </div>
-
-          <div className='errorMessageWrap'>
-            {
-              !reNameValid && reName.length > 0 && (
-                <div>한글만 입력 가능합니다.</div>
-              )
-            }
           </div>
 
           <div className='nameWrap'>
@@ -269,7 +263,7 @@ function Signup(props) {
           <div >
             <button
               className='bottomButton'
-              disabled={notAllow}
+              // disabled={notAllow}
               onClick={onClickConfirm}
             >
               회원가입

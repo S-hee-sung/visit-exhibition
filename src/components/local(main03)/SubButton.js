@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 import styled from "styled-components";
-import data from "../../data.json";
 
 const SubButtonWrapper = styled.div`
   .buttons {

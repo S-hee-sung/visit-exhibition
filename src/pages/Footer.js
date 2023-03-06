@@ -122,11 +122,6 @@ function Footer(props) {
           <div className="textArea">
             <ul>
               <li>
-                good shop
-              </li>
-            </ul>
-            <ul>
-              <li>
                 <a href="https://www.youtube.com/">youtube</a>
               </li>
               <li>

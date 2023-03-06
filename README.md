@@ -12,13 +12,18 @@ main.sec2.page (
   카카오 지도api - 전시회 위치 검색 
   GeoLocation api - 현재 위치 검색 ) - 희성
 
-main.sec3.page 
-  swipe- 화진
-  => 예약 및 장바구니.page(티켓 예약) - 성원 
+main.sec3.page(swiper)  -화진
+  => 예약.page(티켓 구매) - 성원 
   => 결제 연동(kg이니시스) - 희성
 
-main.sec4.page (굿즈샵) + 장바구니.page(상품 구매) - 화진
+main.sec4.page(swiper) -화진 
+  => 장바구니.page(상품 구매) - 화진
 
 footer.page - 희성 -> 성원
 
-오른쪽 하단 배너 - messenger.page(상담,고객센터) - 희성
+messenger.page(상담,고객센터) - 희성
+
+
+
+
+https://triplexlab.tistory.com/155

@@ -39,6 +39,18 @@ const events =
       end: '2023-03-11',
       color: '#DCFFDC',
       url: 'https://www.instagram.com/gallerysaem/'
+    },
+    { title: '데미안',
+      start: '2023-01-15',
+      end: '2023-03-26',
+      color: '#7BA87B',
+      url: 'https://twitter.com/nangman_b20'
+    },
+    { title: '프리다 칼로 사진전',
+      start: '2022-12-23',
+      end: '2023-03-26',
+      color: '#FFE1E6',
+      url: 'https://booking.naver.com/booking/5/bizes/803416'
     }
   ];
 

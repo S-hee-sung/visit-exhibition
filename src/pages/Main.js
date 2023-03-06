@@ -9,8 +9,8 @@ function Main(props) {
   return (
     <>
       <MainPage />
-      <LandingPage />
       <LocalExhibition />
+      <LandingPage />
       <GoodsShop  />
     </>
   );

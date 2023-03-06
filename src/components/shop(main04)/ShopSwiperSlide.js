@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from "styled-components";
 import data from "../../data6.json";
 import { AddShoppingCart } from '@mui/icons-material';
 
-import 'swiper/css';
-import { useNavigate } from "react-router";
+// import 'swiper/css';
+// import { useNavigate, useParams } from "react-router";
 import LikeButton from "./LikeButton";
+
+import { addItemToCart } from "../shop(main04)/CartSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 
 const SlideWrapper = styled.div`
@@ -59,7 +62,32 @@ ul li:nth-child(4) {
 
 export default () => {
 
-  const navigate = useNavigate();
+  // const product = useSelector(state => state.cart.cartList);
+  const product = [
+    {
+      id: '1',
+      title: 'ALL OF THEM WITCHES\' PUZZLE 500',
+      price: 28900,
+      count: 1
+    },
+    {
+      id: '2',
+      title: '백자청화초화문편병 굽접시',
+      price: 32900,
+      count: 3
+    }
+  ];
+  console.log(product[0].id);
+
+  const dispatch = useDispatch();
+
+  const [ activeIndex, setActiveIndex ] = useState(0);
+
+  const handleItemToCart = (index) => {
+
+  }
+
+  
 
   return (
     <SlideWrapper>
@@ -88,7 +116,16 @@ export default () => {
                     {swiperList.price}
                   </li>
                   <li className="icons">
-                    <AddShoppingCart sx={{ fontSize: 20, color: '#656565', cursor: 'pointer' }} onClick={() => navigate('/cart')}/>
+                    <AddShoppingCart
+                      sx={{ fontSize: 20, color: '#656565', cursor: 'pointer' }}
+                      onClick={() => {
+                        dispatch(addItemToCart({
+                          id: product[1].id,
+                          title: product[1].title,
+                          price: product[1].price,
+                          count: product[1].count
+                        }))
+                      }}/>
                     {/* <FavoriteBorder sx={{ fontSize: 20, color: '#FFC3C3', cursor: 'pointer' }} /> */}
                     <LikeButton />
                   </li>

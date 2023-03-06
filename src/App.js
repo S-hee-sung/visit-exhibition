@@ -15,6 +15,7 @@ import Layout from "./pages/Layout";
 import CalendarPage from "./components/book/CalendarPage";
 import Signup from "./components/mainmenu/utilitymenu/Signup";
 import Reservation from "./components/Reservation/Reservation";
+import Cart from "./components/shop(main04)/Cart";
 
 const GlobalStyle = createGlobalStyle`
   ${reset};
@@ -47,6 +48,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/reservation" element={<Reservation />} />
+          <Route path="/cart" element={<Cart />} />
         </Route>
       </Routes>
     </>

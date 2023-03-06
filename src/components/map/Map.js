@@ -202,12 +202,12 @@ function Map(props) {
 			averageCenter: true, // 클러스터에 포함된 마커들의 평균 위치를 클러스터 마커 위치로 설정 
 		});
 
+		// 지도에 마커와 인포윈도우(말풍선)를 표시하는 함수입니다
 		function displayMarker(locPosition, message) {
-			// 지도에 마커와 인포윈도우(말풍선)를 표시하는 함수입니다
 			// 마커를 생성합니다
 			const marker = new kakao.maps.Marker({  
-					map: map, 
-					position: locPosition
+				map: map, 
+				position: locPosition
 			}); 
 			
 			const iwContent = message, // 인포윈도우(말풍선)에 표시할 내용

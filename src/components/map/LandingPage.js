@@ -1,6 +1,7 @@
 import { useState } from "react"
 import styled from "styled-components"
 import HorizonLine from "../main(main01)/HorizonLine";
+import Map from "./Map";
 import MapContainer from "./MapContainer"
 
 const AllBox = styled.div`
@@ -64,7 +65,8 @@ function LandingPage(props) {
           <button type="submit">검색</button>
         </form>
       </MapWrapper>
-        <MapContainer searchPlace={Place} />
+        <Map searchPlace={Place} onSubmit={handleSubmit} onChange={onChange} value={InputText} />
+        {/* <MapContainer searchPlace={Place} /> */}
     </AllBox>
   )
 }

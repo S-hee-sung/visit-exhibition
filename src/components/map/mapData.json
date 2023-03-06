@@ -1,0 +1,135 @@
+[
+  {
+    "id": 1,
+    "src": "./images/product01.jpg",
+    "title": "[MAX DALTON]",
+    "name": "'ALL OF THEM WITCHES' PUZZLE 500",
+    "price": 28900
+  },
+  {
+    "id": 2,
+    "src": "./images/product02.jpg",
+    "title": "[국립중앙박물관]",
+    "name": "백자청화초화문편병 굽접시",
+    "price": 32900
+  },
+  {
+    "id": 3,
+    "src": "./images/product03.jpg",
+    "title": "[그라운드 시소]",
+    "name": "나탈리 카르푸셴코 나무 엽서",
+    "price": 9000
+  },
+  {
+    "id": 4,
+    "src": "./images/product04.jpg",
+    "title": "[국립중앙박물관]",
+    "name": "[의궤 전시] 머그 접시 세트",
+    "price": 49000
+  },
+  {
+    "id": 5,
+    "src": "./images/product05.jpg",
+    "title": "[국립중앙박물관]",
+    "name": "머그컵 세트",
+    "price": 100000
+  },
+  {
+    "id": 6,
+    "src": "./images/product06.jpg",
+    "title": "[그라운드 시소]",
+    "name": "어노니머스 프로젝트 스마트폰 케이스",
+    "price": 18000
+  },
+  {
+    "id": 7,
+    "src": "./images/product07.jpg",
+    "title": "[그라운드 시소]",
+    "name": "요시고사진전 클리어북마크",
+    "price": 2000
+  },
+  {
+    "id": 8,
+    "src": "./images/product08.jpg",
+    "title": "[앤디워홀전:비기닝 서울]",
+    "name": "벨벳언더그라운드CD + 포스터",
+    "price": 30000
+  },
+  {
+    "id": 9,
+    "src": "./images/product09.jpg",
+    "title": "[앤디워홀전:비기닝 서울]",
+    "name": "마릴린/플라워 노트세트",
+    "price": 14000
+  },
+  {
+    "id": 10,
+    "src": "./images/product10.png",
+    "title": "[국립현대미술관]",
+    "name": "MMCA 3단 암막 양우산(오렌지)",
+    "price": 42000
+  },
+  {
+    "id": 11,
+    "src": "./images/product11.png",
+    "title": "[국립현대미술관]",
+    "name": "파우치 세트(핑크, 블루)",
+    "price": 50000
+  },
+  {
+    "id": 12,
+    "src": "./images/slide02-1.jpg",
+    "name": "The other face of material",
+    "location": "[서정아트 강남]",
+    "address": "서울 강남구 봉은사로47길 12"
+  },
+  {
+    "id": 13,
+    "src": "./images/slide02-2.jpg",
+    "name": "Tube Seoul",
+    "location": "[K현대미술관]",
+    "address": "서울 강남구 선릉로 807"
+  },
+  {
+    "id": 14,
+    "src": "./images/slide02-3.jpg",
+    "name": "COLOR IN LIFE",
+    "location": "[마이아트뮤지엄]",
+    "address": "서울 강남구 테헤란로 518"
+  },
+  {
+    "id": 15,
+    "src": "./images/slide02-4.png",
+    "name": "Touchable moments",
+    "location": "[KLAMP GALLERY]",
+    "address": "서울 강남구 논현로26길 39 B1"
+  },
+  {
+    "id": 16,
+    "src": "./images/slide02-5.webp",
+    "name": "데미안",
+    "location": "[K현대미술관]",
+    "address": "서울 강남구 선릉로 807"
+  },
+  {
+    "id": 17,
+    "src": "./images/slide02-6.jpg",
+    "name": "조우 : Encounter",
+    "location": "[엔버갤러리]",
+    "address": "서울 강남구 압구정로 421-1"
+  },
+  {
+    "id": 18,
+    "src": "./images/slide02-7.jpg",
+    "name": "프리다 칼로 사진전",
+    "location": "[현대백화점 무역센터점]",
+    "address": "서울 강남구 테헤란로 517"
+  },
+  {
+    "id": 19,
+    "src": "./images/slide02-8.png",
+    "name": "두꺼비에 대한 단상",
+    "location": "[GALLERY SAEM]",
+    "address": "서울 강남구 테헤란로13길 30"
+  }
+]

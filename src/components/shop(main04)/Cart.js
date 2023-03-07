@@ -1,22 +1,29 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { Button, Table } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { selectCartList, increaseCount } from "../shop(main04)/CartSlice";
+import HorizonLine from "../main(main01)/HorizonLine";
 
 
 const CartWrapper = styled.div`
   width: 100%;
   margin: 0 auto;
   height: 700px;
-  background-color: yellow;
+  /* background-color: yellow; */
   .inner {
     margin: 0 auto;
     max-width: 1200px;
     height: 700px;
     padding-top: 220px;
-    background-color: pink;
+    text-align: center;
+    /* background-color: pink; */
+  }
+  .paymentBtn {
+    display: flex;
+    justify-content: end;
+    margin-top: 30px;
   }
 `;
 
@@ -24,7 +31,7 @@ function Cart(props) {
 
   const cartAdd = useSelector(selectCartList);
   console.log(cartAdd);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   // console.log(data);
 
@@ -49,8 +56,8 @@ function Cart(props) {
                 <td>{cart.price}</td>
                 <td>
                   <Button variant="outline-secondary"> - </Button>
-                  {/* <Button variant="outline-secondary"
-                    onClick={() => { dispatch(increaseCount(cart.id)); }}> + </Button> */}
+                  <Button variant="outline-secondary"
+                    onClick={() => { dispatch(increaseCount(cart.id)); }}> + </Button>
                 </td>
                 <td>
                   <Button variant="outline-success"> x </Button>
@@ -59,6 +66,10 @@ function Cart(props) {
             ))}
           </tbody>
         </Table>
+        <HorizonLine />
+        <div className="paymentBtn">
+          <Button variant="outline-dark">결제하기</Button>
+        </div>
       </div>
     </CartWrapper>
   );

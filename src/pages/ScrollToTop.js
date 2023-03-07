@@ -1,25 +1,28 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { Navigation } from '@mui/icons-material';
+import { ArrowDropUp } from '@mui/icons-material';
 
 
 const ScrollWrap = styled.div`
   position: fixed;
-  right: 5%;
+  right: 2%;
   bottom: 5%;
   z-index: 5;
+  padding: 0;
   #top{
   font-weight: bold;
+  padding: 0;
   font-size: 15px;
-  padding :15px 10px;
   background-color: #000;
-  color:#fff;
-  border: 1px solid rgb(210, 204, 193);
+  /* opacity: 0.7; */
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
+  color:#fff;
   outline: none;
+  padding: 5px;
   cursor: pointer;
-  &:hover{
-    color :rgb(142, 26, 26);  }
+  font-size: 15px;
   }
 `;
 
@@ -52,7 +55,7 @@ function ScrollToTop(props) {
 
   return showButton && (
     <ScrollWrap>
-      <button id='top' onClick={scrollTop}><Navigation /></button>
+      <button id='top' onClick={scrollTop}>Top</button>
     </ScrollWrap>
   );
 }

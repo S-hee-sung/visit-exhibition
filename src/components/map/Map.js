@@ -304,7 +304,7 @@ function Map(props) {
 			// 커스텀 오버레이에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
 			// <a href="https://map.kakao.com/link/map/${desc},${positions[0]},${positions[1]}"" target="_blank">
       const temp_html = `<div class="customoverlay">
-                        <a href="javascrift:void(0)">
+                        <a>
 													<span class="title">${desc}</span>
                         </a></div>`;
 

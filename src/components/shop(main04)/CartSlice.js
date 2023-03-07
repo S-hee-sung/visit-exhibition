@@ -23,25 +23,15 @@ const initialState = {
   ]
 }
 
-// cartList: [
-//   {
-//     id: "1",
-//     title: "ALL OF THEM WITCHES' PUZZLE 500",
-//     price: 28900,
-//     count: 1
-//   },
-//   {
-//     id: "2",
-//     title: "백자청화초화문편병 굽접시",
-//     price: 32900,
-//     count: 3
-//   },
-// ]
-
 const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
+    increaseCount: (state, action) => {
+      const targetItem = state.cartList.find((cart) => { return cart.id === action.id; });
+      targetItem.count += 1;
+    },
+
     addItemToCart: (state, action) => {
       console.log(action);
 
@@ -55,7 +45,7 @@ const cartSlice = createSlice({
   }
 });
 
-export const { addItemToCart } = cartSlice.actions;
+export const { addItemToCart, increaseCount } = cartSlice.actions;
 
 export const selectCartList = state => state.cart.cartList;
 

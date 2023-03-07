@@ -10,7 +10,7 @@ const LocalExhibitionWrapper = styled.div`
     margin: 0 auto;
   }
   h4 {
-    padding-top: 50px;
+    padding-top: 70px;
     font-size: 1.2rem;
     color: #000;
     font-weight: 600;

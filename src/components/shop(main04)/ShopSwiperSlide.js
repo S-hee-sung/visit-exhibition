@@ -148,7 +148,7 @@ export default () => {
           장바구니에 상품을 담았습니다. 장바구니로 이동하시겠습니까?
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="outline-primary">취소</Button>
+          <Button variant="outline-primary" onClick={handleClose}>취소</Button>
           <Button variant="primary" onClick={() => { navigate('/cart'); }}>확인</Button>
         </Modal.Footer>
       </Modal>

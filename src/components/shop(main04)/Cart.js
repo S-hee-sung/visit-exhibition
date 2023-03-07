@@ -3,19 +3,19 @@ import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { Button, Table } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { selectCartList, increaseCount } from "../shop(main04)/CartSlice";
+import { selectCartList, increaseCount, removeItemFromCart } from "../shop(main04)/CartSlice";
 import HorizonLine from "../main(main01)/HorizonLine";
 
 
 const CartWrapper = styled.div`
   width: 100%;
   margin: 0 auto;
-  height: 700px;
+  height: 100%;
   /* background-color: yellow; */
   .inner {
     margin: 0 auto;
     max-width: 1200px;
-    height: 700px;
+    height: 100%;
     padding-top: 220px;
     text-align: center;
     /* background-color: pink; */
@@ -24,6 +24,7 @@ const CartWrapper = styled.div`
     display: flex;
     justify-content: end;
     margin-top: 30px;
+    margin-bottom: 50px;
   }
 `;
 
@@ -56,11 +57,13 @@ function Cart(props) {
                 <td>{cart.price}</td>
                 <td>
                   <Button variant="outline-secondary"> - </Button>
+                    {` ${cart.count} `}
                   <Button variant="outline-secondary"
                     onClick={() => { dispatch(increaseCount(cart.id)); }}> + </Button>
                 </td>
                 <td>
-                  <Button variant="outline-success"> x </Button>
+                  <Button variant="outline-success"
+                    onClick={(e) => {dispatch(removeItemFromCart(cart.id));}}> x </Button>
                 </td>
               </tr>
             ))}

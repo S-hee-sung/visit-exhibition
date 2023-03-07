@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from "styled-components";
 import HorizonLine from "../main(main01)/HorizonLine";
-import LocalButton from "./LocalButton";
 import Tab from "../local(main03)/Tab";
 
 
@@ -11,7 +10,7 @@ const LocalExhibitionWrapper = styled.div`
     margin: 0 auto;
   }
   h4 {
-    padding-top: 16vh;
+    padding-top: 70px;
     font-size: 1.2rem;
     color: #000;
     font-weight: 600;
@@ -20,7 +19,6 @@ const LocalExhibitionWrapper = styled.div`
     display: flex;
     justify-content: space-around;
     padding: 5vh;
-    /* gap: 9vh; */
   }
 `;
 

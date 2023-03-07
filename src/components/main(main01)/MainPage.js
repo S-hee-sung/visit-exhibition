@@ -5,7 +5,7 @@ import mainImage03 from "./mainImage03.png";
 import Youtube from "./Youtube";
 
 const MainWrapper = styled.div`
-    background: url(https://weaverloft.com/common/img/main/new/main.png) no-repeat center fixed;
+    background: url(https://weaverloft.com/common/img/main/new/main.png) no-repeat fixed;
     width: 100%;
     height: 100%;
     padding-bottom: 50px;
@@ -13,12 +13,12 @@ const MainWrapper = styled.div`
 .inner {
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: 30px;
+    padding-top: 140px;
   }
   h4 {
-    padding-top: 160px;
+    padding-top: 100px;
     font-size: 1.2rem;
-    color: #fff;
+    /* color: #fff; */
     font-weight: 600;
     padding-bottom: 10px;
   }
@@ -31,6 +31,7 @@ const MainWrapper = styled.div`
     display: flex;
     flex-direction: row;
     gap: 10px;
+    position: relative;
     .youbuteWrap{
       position: relative;
       .youtubeCover{
@@ -48,10 +49,17 @@ const MainWrapper = styled.div`
     overflow: hidden;
   }
   .calendarButton {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    right: 0;
+    top: 50%;
     border: 1px solid #fff;
     background-color: #fff;
     color: #8d8d8d;
-    font-size: 0.8rem;
+    font-size: 1.5rem;
+    font-weight: bold;
     border-top: 2px solid #C8C8C8;;
     border-bottom: 2px solid #C8C8C8;
     line-height: 1.5rem;
@@ -60,6 +68,14 @@ const MainWrapper = styled.div`
     /* right: 0; */
     cursor: pointer;
     white-space: nowrap;
+    border: none;
+    transition: 0.3s;
+    transform: translate(0, -50%);
+    &:hover{
+      background: black;
+      color: white;
+      border: none;
+    }
   }
   `;
 
@@ -77,7 +93,7 @@ function MainPage(props) {
             <div className='youtubeCover' />
           </div>
           <img src='https://cdn.pixabay.com/photo/2019/05/31/13/35/art-gallery-4242219_1280.jpg' alt="main_image" />
-          <button className="calendarButton" onClick={() => navigate('/cal')}>전시 일정 확인하기<br /><br />&gt;</button>
+          <button className="calendarButton" onClick={() => navigate('/cal')}>&gt;</button>
         </div>
       </div>
     </MainWrapper>

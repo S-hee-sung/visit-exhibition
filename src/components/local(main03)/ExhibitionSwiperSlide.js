@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from "styled-components";
-import data from "../../data.json";
 import 'swiper/css';
 import SubButton from "../local(main03)/SubButton";
 
@@ -16,12 +15,6 @@ const SlideWrapper = styled.div`
     height: 40vh;
     width: 14vw;
   }
-  /* ul {
-    line-height: 1.2rem;
-  } */
-  /* ul .imageContainer {
-      width: 10px
-    } */
   li:nth-child(2) {
     line-height: 2.0rem;
     font-size: 1.0rem;
@@ -42,7 +35,7 @@ const ExhibitionSwiperSlide = (props) => {
 
   const { slideList } = props;
 
-  console.log(slideList);
+  // console.log(slideList);
 
   return (
     <SlideWrapper>
@@ -54,8 +47,8 @@ const ExhibitionSwiperSlide = (props) => {
           spaceBetween={50}
           slidesPerView={4}
         >
-          {slideList.map((swiperList) => {
-            return <SwiperSlide>
+          {slideList.map((swiperList,index) => {
+            return <SwiperSlide key={index}>
               <div>
                 <ul>
                   <li className="imageContainer">

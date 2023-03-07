@@ -16,6 +16,7 @@ import CalendarPage from "./components/book/CalendarPage";
 import Signup from "./components/mainmenu/utilitymenu/Signup";
 import Reservation from "./components/Reservation/Reservation";
 import Cart from "./components/shop(main04)/Cart";
+import Chat from "./components/messenger/Chat";
 
 const GlobalStyle = createGlobalStyle`
   ${reset};
@@ -50,6 +51,7 @@ function App() {
           <Route path="/reservation" element={<Reservation />} />
           <Route path="/cart" element={<Cart />} />
         </Route>
+          <Route path="/chat" element={<Chat />} />
       </Routes>
     </>
   );

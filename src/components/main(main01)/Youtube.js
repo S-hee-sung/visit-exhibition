@@ -26,7 +26,7 @@ function youtube(props) {
         /> */}
         <ReactPlayer
           className="player"
-          url={"https://youtu.be/9cmGRuWdmzg"}
+          url={"https://www.youtu.be/9cmGRuWdmzg"}
           // width="400px"
           heigth="100%"
           playing={true}

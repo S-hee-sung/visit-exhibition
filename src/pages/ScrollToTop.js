@@ -5,7 +5,7 @@ import { Navigation } from '@mui/icons-material';
 
 const ScrollWrap = styled.div`
   position: fixed;
-  right: 10%;
+  right: 5%;
   bottom: 5%;
   z-index: 5;
   #top{

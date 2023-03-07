@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from "styled-components";
 import data from "../../data6.json";
 import { AddShoppingCart } from '@mui/icons-material';
 
-import 'swiper/css';
-import { useNavigate } from "react-router";
+// import 'swiper/css';
+// import { useNavigate, useParams } from "react-router";
 import LikeButton from "./LikeButton";
+
+import { addItemToCart } from "../shop(main04)/CartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { Button, Modal } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from "react-router";
 
 
 const SlideWrapper = styled.div`
@@ -59,8 +65,33 @@ ul li:nth-child(4) {
 
 export default () => {
 
-  const navigate = useNavigate();
+  // const product = useSelector(state => state.cart.cartList);
+  // const product = [
+  //   {
+  //     id: '1',
+  //     title: 'ALL OF THEM WITCHES\' PUZZLE 500',
+  //     price: 28900,
+  //     count: 1
+  //   },
+  //   {
+  //     id: '2',
+  //     title: '백자청화초화문편병 굽접시',
+  //     price: 32900,
+  //     count: 3
+  //   }
+  // ];
+  // console.log(product[0].id);
 
+  const dispatch = useDispatch();
+
+  // modal
+  const [ showModal, setShowModal ] = useState(false);
+
+  const handleClose = () => setShowModal(false);
+  const handleOpen = () => setShowModal(true);
+
+  const navigate = useNavigate();
+  
   return (
     <SlideWrapper>
       <div className="inner">
@@ -88,7 +119,17 @@ export default () => {
                     {swiperList.price}
                   </li>
                   <li className="icons">
-                    <AddShoppingCart sx={{ fontSize: 20, color: '#656565', cursor: 'pointer' }} onClick={() => navigate('/cart')}/>
+                    <AddShoppingCart
+                      sx={{ fontSize: 20, color: '#656565', cursor: 'pointer' }}
+                      onClick={() => {
+                        dispatch(addItemToCart({
+                          id: swiperList.id,
+                          title: swiperList.name,
+                          price: swiperList.price
+                        }));
+                        handleOpen();
+                      }}
+                      />
                     {/* <FavoriteBorder sx={{ fontSize: 20, color: '#FFC3C3', cursor: 'pointer' }} /> */}
                     <LikeButton />
                   </li>
@@ -98,7 +139,19 @@ export default () => {
           })}
         </Swiper>
       </div>
-    </SlideWrapper>
 
+      <Modal show={showModal} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>알림</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          장바구니에 상품을 담았습니다. 장바구니로 이동하시겠습니까?
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="outline-primary">취소</Button>
+          <Button variant="primary" onClick={() => { navigate('/cart'); }}>확인</Button>
+        </Modal.Footer>
+      </Modal>
+    </SlideWrapper>
   );
 };

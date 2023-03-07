@@ -20,7 +20,7 @@ main.sec4.page(swiper) - 화진
   => 장바구니.page(상품 구매) - 화진
 
 footer.page - 희성 -> 성원
-messenger.page(상담,고객센터) - 희성
+오른쪽 하단 - messenger.page(고객센터) - 희성
 
 
 

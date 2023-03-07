@@ -1,27 +1,36 @@
 import React from 'react';
 import { useNavigate } from 'react-router';
 import styled from 'styled-components';
-import mainImage03 from "./mainImage03.png";
 import Youtube from "./Youtube";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { ArrowForwardIos } from '@mui/icons-material';
+
 
 const MainWrapper = styled.div`
-    background: url(https://weaverloft.com/common/img/main/new/main.png) no-repeat fixed;
+    background: url(https://weaverloft.com/common/img/main/new/main.png) no-repeat;
     width: 100%;
     height: 100%;
-    padding-bottom: 50px;
     background-size: 100%;
+    background-position: bottom;
+    padding-bottom: 30px;
 .inner {
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: 140px;
-  }
-  h4 {
-    padding-top: 100px;
+    padding-top:200px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  .textContainer{
+    display: flex;
+    color: white;
     font-size: 1.2rem;
     /* color: #fff; */
     font-weight: 600;
     padding-bottom: 10px;
   }
+  }
+
   .maintext {
     width: 600px;
     color: #656565;
@@ -30,8 +39,7 @@ const MainWrapper = styled.div`
   .imagecontainer {
     display: flex;
     flex-direction: row;
-    gap: 10px;
-    position: relative;
+    justify-content: space-between;
     .youbuteWrap{
       position: relative;
       .youtubeCover{
@@ -43,38 +51,31 @@ const MainWrapper = styled.div`
       }
     }
   }
-  img {
-    height: 360px;
-    width: 540px;
-    overflow: hidden;
-  }
-  .calendarButton {
-    position: absolute;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    right: 0;
-    top: 50%;
-    border: 1px solid #fff;
-    background-color: #fff;
-    color: #8d8d8d;
-    font-size: 1.5rem;
-    font-weight: bold;
-    border-top: 2px solid #C8C8C8;;
-    border-bottom: 2px solid #C8C8C8;
-    line-height: 1.5rem;
-    padding-top: 14px;
-    /* position: absolute; */
-    /* right: 0; */
-    cursor: pointer;
-    white-space: nowrap;
-    border: none;
-    transition: 0.3s;
-    transform: translate(0, -50%);
-    &:hover{
-      background: black;
-      color: white;
+
+  .buttonArea{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    .calendarButtonLeft {
+      padding: 20px 10px;
+      text-align: center;
+      width: 25%;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       border: none;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+      background: white;
+      color: black;
+      transition: 0.3s ease-in-out;
+      white-space: nowrap;
+      &:hover{
+        background: black;
+        color: white;
+      }
     }
   }
   `;
@@ -85,15 +86,25 @@ function MainPage(props) {
   return (
     <MainWrapper>
       <div className="inner">
-        <h4>visit exhibihion.</h4>
-        {/* <p className="maintext">Lorem ipsum dolor sit amet,</p> */}
+        <div className='textContainer'>
+          <h4>visit exhibihion.</h4>
+          {/* <p className="maintext">Lorem ipsum dolor sit amet,</p> */}
+        </div>
         <div className='imagecontainer'>
           <div className='youbuteWrap'>
-            <Youtube style={{ width: '1200px', height: '720px' }} />
+            <Youtube />
             <div className='youtubeCover' />
           </div>
-          <img src='https://cdn.pixabay.com/photo/2019/05/31/13/35/art-gallery-4242219_1280.jpg' alt="main_image" />
-          <button className="calendarButton" onClick={() => navigate('/cal')}>&gt;</button>
+          <img src='https://cdn.pixabay.com/photo/2019/05/31/13/35/art-gallery-4242219_1280.jpg' alt="main_image" style={{ width: '550px', height: '360px' }} />
+        </div>
+        <div className='buttonArea'>
+          <div
+            className="calendarButtonLeft"
+            onClick={() => navigate('/cal')}
+          >
+            전체 전시 일정 확인하기<br />
+            <ArrowForwardIos />
+          </div>
         </div>
       </div>
     </MainWrapper>

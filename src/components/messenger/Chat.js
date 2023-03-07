@@ -13,7 +13,8 @@ const Container = styled.div`
 const MessageList = styled.ul`
   list-style: none;
   overflow-y: auto;
-
+  /* width: 200px; */
+  height: 100%;
 `;
 
 const MessageItemLeft = styled.li`
@@ -36,6 +37,10 @@ const MessageItem = styled.li`
     css`
       text-align: right;
   `}
+`;
+
+const AnswerStyled = styled.div`
+  color: red;
 `;
 
 const InputForm = styled.form`
@@ -66,14 +71,32 @@ const Button = styled.button`
 const Chat = () => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
+  const [answer, setAnswer] = useState(null);
 
-
-  // 메시지 전송
-  const sendMessage = (event) => {
-    event.preventDefault();
+  // 채팅 입력 및 답변 받기
+  const handleSend = (e) => {
+    e.preventDefault();
     if (message.trim() !== "") {
       setMessages((prevMessages) => [...prevMessages, message]);
       setMessage("");
+    }
+
+    // 선택지에 따라 답변을 결정
+    switch (message) {
+      case '안녕하세요':
+        setAnswer('안녕하세요!');
+        break;
+      case '전시회 일정':
+        setAnswer('일정은 웹사이트에서 확인하세요 ><');
+        break;
+      case '전시회 위치':
+        setAnswer('일정도 웹사이트에서 확인해주세요 ^^');
+        break;
+      case '안녕히 계세요':
+        setAnswer('안녕히 가세요!');
+        break;
+      default:
+        setAnswer('죄송해요, 잘 모르겠어요.');
     }
   };
 
@@ -91,7 +114,10 @@ const Chat = () => {
         <ChatTop />
         <MessageItemLeft>무엇을 도와드릴까요?</MessageItemLeft>
         {messageList}
-        <InputForm onSubmit={sendMessage}>
+        {answer && <AnswerStyled> Answer : {answer}</AnswerStyled>}
+        <InputForm 
+          onSubmit={handleSend}
+          >
           <Input
             type="text"
             value={message}

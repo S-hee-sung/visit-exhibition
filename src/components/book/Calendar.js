@@ -63,7 +63,7 @@ function Calendar(props) {
   return (
     <>
       <FullCalendar 
-        defaultView="dayGridMonth" 
+        // defaultView="dayGridMonth" 
         plugins={[ dayGridPlugin ]}
         navLinks= "true" 
         events={events}

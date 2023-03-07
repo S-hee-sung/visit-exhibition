@@ -1,7 +1,9 @@
 import React from "react";
-// import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
-// import { decreaseCount, increaseCount, removeItemFromCart, selectCartList } from './CartSlice';
+import { Button, Table } from "react-bootstrap";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { selectCartList, increaseCount } from "../shop(main04)/CartSlice";
 
 
 const CartWrapper = styled.div`
@@ -13,67 +15,50 @@ const CartWrapper = styled.div`
     margin: 0 auto;
     max-width: 1200px;
     height: 700px;
+    padding-top: 220px;
     background-color: pink;
-  }
-  .cartTable {
-    width: 1100px;
-    position: relative;
-    margin: 0 auto;
-    top: 250px;
-    /* z-index: 99999; */
-  }
-  table, tr, th, td {
-    width: 170px;
-    height: 50px;
-    border: 1px solid #656565;
   }
 `;
 
 function Cart(props) {
 
-  // const cartAdd = useSelector(selectCartList);
+  const cartAdd = useSelector(selectCartList);
+  console.log(cartAdd);
   // const dispatch = useDispatch();
+
+  // console.log(data);
 
   return (
     <CartWrapper>
       <div className="inner">
-        <table className="cartTable">
-          <tr>
-            <th>No.</th>
-            <th>상품명</th>
-            <th>수량</th>
-            <th>가격</th>
-          </tr>
-          <tr>
-            <td>A</td>
-            <td>B</td>
-            <td>C</td>
-            <td>D</td>
-          </tr>
-          <tr>
-            <td>E</td>
-            <td>F</td>
-            <td>G</td>
-            <td>H</td>
-          </tr>
-        </table>
-
-        {/* <tbody>
-          {cartAdd.map((cart, index) => (
-            <tr key={cart.id}>
-              <td>{index + 1}</td>
-              <td>{cart.title}</td>
-              <td>
-                <button onClick={() => { dispatch(decreaseCount(cart.id)); }}> - </button>
-                <button onClick={() => { dispatch(increaseCount(cart.id)); }}> + </button>
-              </td>
-              <td>{cart.price * cart.count}원</td>
-              <td>
-                <button onClick={(e) => {dispatch(removeItemFromCart(cart.id));}}> x </button>
-              </td>
+        <Table hover>
+          <thead>
+            <tr>
+              <th>no</th>
+              <th>상품명</th>
+              <th>가격</th>
+              <th>수량</th>
+              <th>삭제</th>
             </tr>
-          ))}
-        </tbody> */}
+          </thead>
+          <tbody>
+            {cartAdd.map((cart, index) => (
+              <tr key={cart.id}>
+                <td>{index + 1}</td>
+                <td>{cart.title}</td>
+                <td>{cart.price}</td>
+                <td>
+                  <Button variant="outline-secondary"> - </Button>
+                  {/* <Button variant="outline-secondary"
+                    onClick={() => { dispatch(increaseCount(cart.id)); }}> + </Button> */}
+                </td>
+                <td>
+                  <Button variant="outline-success"> x </Button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
       </div>
     </CartWrapper>
   );

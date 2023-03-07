@@ -35,7 +35,7 @@ const ExhibitionSwiperSlide = (props) => {
 
   const { slideList } = props;
 
-  console.log(slideList);
+  // console.log(slideList);
 
   return (
     <SlideWrapper>

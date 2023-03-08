@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { Button, Table } from "react-bootstrap";
@@ -59,8 +59,8 @@ function Cart(props) {
           </thead>
           <tbody>
             {cartAdd.map((cart, index) => (
-              <>
-                <tr key={cart.id}>
+              <Fragment key={cart.id}>
+                <tr>
                   <td>{index + 1}</td>
                   <td>{cart.title}</td>
                   <td>{`${cart.price}원`.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</td>
@@ -77,7 +77,7 @@ function Cart(props) {
                       onClick={(e) => { dispatch(removeItemFromCart(cart.id)); }}> x </Button>
                   </td>
                 </tr>
-              </>
+              </Fragment>
             ))}
           </tbody>
         </Table>

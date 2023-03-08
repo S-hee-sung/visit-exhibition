@@ -41,7 +41,17 @@ const UtilityTopMenuArea = styled.div`
 //   );
 
 function UtilityMenu(props) {
-  
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  function handleLogin() {
+    setIsLoggedIn(true);
+  }
+
+  function handleLogout() {
+    setIsLoggedIn(false);
+  }
+
   const navigate = useNavigate();
   const [scrollPosition, setScrollPosition] = useState(0);
   const updateScroll = () => {
@@ -70,12 +80,12 @@ function UtilityMenu(props) {
       <UtilityTopMenuArea>
         <ul>
           <li onClick={() => navigate('/login')}>
-            로그인
+            {isLoggedIn ? '로그아웃' : '로그인'}
           </li>
           <li onClick={() => navigate('/signup')}>
             회원가입
           </li>
-          <li onClick={() => {window.open("http://localhost:3000/chat", "Popup","toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=300, height=350, top=800, left=1700")}}>
+          <li onClick={() => { window.open("http://localhost:3000/chat", "Popup", "toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=300, height=350, top=800, left=1700") }}>
             고객센터
             {/* <a href='http://localhost:3000/chat' target='_blank' rel='noreferrer'>고객센터</a> */}
           </li>

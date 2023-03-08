@@ -59,7 +59,7 @@ const MainWrapper = styled.div`
     .calendarButtonLeft {
       padding: 20px 10px;
       text-align: center;
-      width: 25%;
+      width: 320px;
       height: 30px;
       display: flex;
       justify-content: center;

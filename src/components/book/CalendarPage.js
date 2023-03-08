@@ -56,7 +56,7 @@ function CalendarPage(props) {
           <CalendarSwiper />
         </div>
       </CalendarPageCenter>
-      <Payment />
+      {/* <Payment /> */}
     </CalendarPageWrapper>
   );
 }

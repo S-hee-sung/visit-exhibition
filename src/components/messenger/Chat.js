@@ -27,20 +27,19 @@ const MessageItemLeft = styled.li`
 `;
 
 const MessageItem = styled.li`
-  background-color: #f8f8f8;
+  /* background-color: #f8f8f8; */
   border-radius: 8px;
   margin: 8px 0;
   padding: 8px;
-  text-align: left;
-  ${(props) =>
-    props.isRight &&
-    css`
-      text-align: right;
-  `}
+  text-align: right;
 `;
 
 const AnswerStyled = styled.div`
   color: red;
+  border-radius: 8px;
+  margin: 8px 0;
+  padding: 8px;
+  text-align: left;
 `;
 
 const InputForm = styled.form`
@@ -84,7 +83,7 @@ const Chat = () => {
     // 선택지에 따라 답변을 결정
     switch (message) {
       case '안녕하세요':
-        setAnswer('안녕하세요!');
+        setAnswer('안녕하세요! 저는 Vs Exhibition의 채팅봇입니다.');
         break;
       case '전시회 일정':
         setAnswer('일정은 웹사이트에서 확인하세요 ><');
@@ -92,8 +91,8 @@ const Chat = () => {
       case '전시회 위치':
         setAnswer('일정도 웹사이트에서 확인해주세요 ^^');
         break;
-      case '안녕히 계세요':
-        setAnswer('안녕히 가세요!');
+      case '사용 방법':
+        setAnswer('이런! 아쉽게도 저도 잘 몰라요');
         break;
       default:
         setAnswer('죄송해요, 잘 모르겠어요.');
@@ -103,8 +102,9 @@ const Chat = () => {
   const messageList = (
     <MessageList>
       {messages.map((message, index) => (
-        <MessageItem key={index} isRight={true}>{message}</MessageItem>
+        <MessageItem key={index}>{message}</MessageItem>
       ))}
+      {answer && <AnswerStyled> Answer : {answer}</AnswerStyled>}
     </MessageList>
   );
 
@@ -112,9 +112,11 @@ const Chat = () => {
     <>
       <Container>
         <ChatTop />
-        <MessageItemLeft>무엇을 도와드릴까요?</MessageItemLeft>
+        <MessageItemLeft>
+          무엇을 도와드릴까요? <br />
+          키워드: [전시회 일정, 전시회 위치, 사용 방법]
+        </MessageItemLeft>
         {messageList}
-        {answer && <AnswerStyled> Answer : {answer}</AnswerStyled>}
         <InputForm 
           onSubmit={handleSend}
           >

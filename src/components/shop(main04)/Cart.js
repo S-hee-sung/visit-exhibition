@@ -91,7 +91,7 @@ function Cart(props) {
             </tr>
           </thead>
           <tbody>
-            <tr key={''}>
+            <tr>
                 <td>{''}</td>
                 <td style={{ fontSize: 30, fontWeight: 700, color: '#EC7D2C' }}>{`${totalCount}개`}</td>
                 <td style={{ fontSize: 30, fontWeight: 700, color: '#EC7D2C' }}>{`${totalPrice}원`.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</td>

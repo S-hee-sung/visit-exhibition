@@ -21,12 +21,6 @@ const CartWrapper = styled.div`
     text-align: center;
     /* background-color: pink; */
   }
-  .paymentBtn {
-    display: flex;
-    justify-content: end;
-    margin-top: 30px;
-    margin-bottom: 50px;
-  }
 `;
 
 function Cart(props) {
@@ -69,7 +63,7 @@ function Cart(props) {
                 <tr key={cart.id}>
                   <td>{index + 1}</td>
                   <td>{cart.title}</td>
-                  <td>{cart.price}</td>
+                  <td>{`${cart.price}원`.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</td>
                   <td>
                     <Button variant="outline-warning" size="sm"
                       onClick={() => { dispatch(decreaseCount(cart.id)); }}> - </Button>
@@ -77,7 +71,7 @@ function Cart(props) {
                     <Button variant="outline-warning" size="sm"
                       onClick={() => { dispatch(increaseCount(cart.id)); }}> + </Button>
                   </td>
-                  <td>{` ${cart.count * cart.price} `}</td>
+                  <td>{` ${cart.count * cart.price}원`.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</td>
                   <td>
                     <Button variant="outline-danger" size="sm"
                       onClick={(e) => { dispatch(removeItemFromCart(cart.id)); }}> x </Button>
@@ -92,22 +86,20 @@ function Cart(props) {
           <thead>
             <tr>
               <th></th>
-              <th>주문 수량</th>
+              <th>총 주문 수량</th>
               <th>최종 결제 금액</th>
             </tr>
           </thead>
           <tbody>
-            <tr key={''}>
+            <tr>
                 <td>{''}</td>
-                <td>{totalCount}</td>
-                <td>{totalPrice}</td>
+                <td style={{ fontSize: 30, fontWeight: 700, color: '#EC7D2C' }}>{`${totalCount}개`}</td>
+                <td style={{ fontSize: 30, fontWeight: 700, color: '#EC7D2C' }}>{`${totalPrice}원`.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</td>
               </tr>
           </tbody>
         </Table>
         <HorizonLine />
-        <div className="paymentBtn">
-          <Payment />
-        </div>
+        <Payment />
       </div>
     </CartWrapper>
   );

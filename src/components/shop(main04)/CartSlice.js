@@ -44,11 +44,18 @@ const cartSlice = createSlice({
     addItemToCart: (state, action) => {
       console.log("add action", action);
 
-      const targetItem = state.cartList.find((item) => item.id === action.payload.id);
+      const targetItem = state.cartList.find((cart) => {
+        console.log("actionId", action.payload.id);
+        console.log("cartId", cart.id);
 
+        return cart.id === action.payload.id;
+      });
+
+      // console.log("cart.id", cart.id);
+      console.log("target", targetItem);
 
       if (targetItem) {
-        targetItem.count += action.count;
+        targetItem.count += action.payload.count;
       } else {
         state.cartList.push(action.payload);
       }

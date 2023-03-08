@@ -75,8 +75,6 @@ function Header() {
             <div className='header_Area' onClick={() => navigate('/')}>
               <img src={backgroundImg} />
             </div>
-            {/* <div className='mainMenu_Area'>
-          </div> */}
             <MainNavbar />
             <UtilityMenu />
           </div>

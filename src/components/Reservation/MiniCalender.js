@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import CalenderButton from './CalenderButton';
+import { useNavigate } from "react-router-dom";
 
 const CalenderWrap = styled.div`
   display: flex;
@@ -133,6 +134,16 @@ const MiniCalendar = () => {
     return days;
   };
 
+  const confirmResult = () => {
+    if (window.confirm(`${selectedDate.toDateString()}예약 날짜가 맞습니까?`)) {
+      navigate('/login')
+    } else {
+      alert("취소합니다.")
+    }
+  }
+
+  const navigate = useNavigate();
+
   return (
     <CalenderWrap>
       <div className="header">
@@ -150,7 +161,7 @@ const MiniCalendar = () => {
       <div className="days-of-month">
         {renderDaysOfMonth()}
       </div>
-      <div className="selected-date">
+      <div className="selected-date" onClick={confirmResult}>
         {selectedDate ? `${selectedDate.toDateString()} 예약 하기` : '관람 날짜를 선택해주세요.'}
       </div>
     </CalenderWrap>
@@ -158,32 +169,3 @@ const MiniCalendar = () => {
 };
 
 export default MiniCalendar;
-
-// const [showList, setShowList] = useState(false);
-// const [selectedItem, setSelectedItem] = useState(null);
-// const [listItems, setListItems] = useState(['Item 1', 'Item 2', 'Item 3']);
-
-// const handleButtonClick = () => {
-//   setShowList(!showList);
-// };
-
-// const handleListItemClick = (item) => {
-//   setSelectedItem(item);
-//   setShowList(false);
-// };
-
-// return (
-//   <div>
-//     <button onClick={handleButtonClick}>Select an item</button>
-//     {showList && (
-//       <ul>
-//         {listItems.map((item, index) => (
-//           <li key={index} onClick={() => handleListItemClick(item)}>
-//             {item}
-//           </li>
-//         ))}
-//       </ul>
-//     )}
-//     {selectedItem && <p>You selected {selectedItem}</p>}
-//   </div>
-// );

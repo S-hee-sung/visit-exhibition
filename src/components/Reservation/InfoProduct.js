@@ -66,11 +66,13 @@ const InfoArea = styled.div`
           .row{
             display: flex;
             gap: 60px;
+            flex-direction: row;
             ul{
               display: flex;
               font-weight: bold;
               flex-direction: column;
               font-size: 18px;
+              width: 1px;
               li{
                 margin: 20px 0;
                 &li:last-child{
@@ -137,12 +139,14 @@ function InfoProduct(props) {
                 <li>위치</li>
                 <li>등급</li>
                 <li>가격</li>
+                <li>위치</li>
               </ul>
               <ul style={{ fontWeight: "500", color: "#333" }}>
                 <li>{contents[activeContentIndex].content}</li>
                 <li>{contents[activeContentIndex].address}</li>
                 <li>전체이용가능</li>
                 <li>입장 <span className='focus'>{contents[activeContentIndex].price}</span>원</li>
+                <li>{contents[activeContentIndex].address}원</li>
               </ul>
             </div>
             <div className='calChoice'>

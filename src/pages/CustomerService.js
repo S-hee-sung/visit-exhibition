@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { ArrowDropUp } from '@mui/icons-material';
+import { SupportAgent } from '@mui/icons-material';
 
 
 const ScrollWrap = styled.div`
   position: fixed;
   right: 2%;
-  bottom: 35px;
+  bottom: 100px;
   z-index: 5;
   padding: 0;
   #top{
@@ -26,7 +26,7 @@ const ScrollWrap = styled.div`
   }
 `;
 
-function ScrollToTop(props) {
+function CustomerService(props) {
 
   const [showButton, setShowButton] = useState(false);
 
@@ -55,9 +55,9 @@ function ScrollToTop(props) {
 
   return showButton && (
     <ScrollWrap>
-      <button id='top' onClick={scrollTop}>Top</button>
+      <button id='top' onClick={() => {window.open("http://localhost:3000/chat", "Popup","toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=500, height=500, top=800, left=1700")}}><SupportAgent /></button>
     </ScrollWrap>
   );
 }
 
-export default ScrollToTop;
+export default CustomerService;

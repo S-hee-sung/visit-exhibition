@@ -8,6 +8,7 @@ align-items: center;
 font-family: 'Noto Sans';
   ul {
     display: flex;
+    flex-wrap: nowrap;
     li{
       a{
       padding: 20px 0;

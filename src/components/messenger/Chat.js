@@ -27,16 +27,11 @@ const MessageItemLeft = styled.li`
 `;
 
 const MessageItem = styled.li`
-  background-color: #f8f8f8;
+  /* background-color: #f8f8f8; */
   border-radius: 8px;
   margin: 8px 0;
   padding: 8px;
-  text-align: left;
-  ${(props) =>
-    props.isRight &&
-    css`
-      text-align: right;
-  `}
+  text-align: right;
 `;
 
 const AnswerStyled = styled.div`
@@ -107,7 +102,7 @@ const Chat = () => {
   const messageList = (
     <MessageList>
       {messages.map((message, index) => (
-        <MessageItem key={index} isRight={true}>{message}</MessageItem>
+        <MessageItem key={index}>{message}</MessageItem>
       ))}
       {answer && <AnswerStyled> Answer : {answer}</AnswerStyled>}
     </MessageList>

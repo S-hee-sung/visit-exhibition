@@ -1,4 +1,25 @@
 import React, { useEffect } from 'react';
+import styled from "styled-components";
+
+const PaymentBtnWrapper = styled.div`
+  display: flex;
+  justify-content: end;
+  padding: 30px 0 70px 0;
+.paymentBtn {
+  width: 140px;
+  height: 50px;
+  color: #fff;
+  background-color: #000;
+  box-sizing: border-box;
+  border: 1px solid #000;
+  border-radius: 10px;
+  text-align: center;
+}
+.paymentBtn:hover {
+  background-color: #656565;
+  border: 1px solid #656565;
+}
+`;
 
 const Payment = () => {
   useEffect(() => {
@@ -43,11 +64,11 @@ const onClickPayment = () => {
   }
   
   return (
-    <>
-      <button onClick={onClickPayment} >
+    <PaymentBtnWrapper>
+      <button className='paymentBtn' onClick={onClickPayment} >
         결제하기
       </button>
-    </>
+    </PaymentBtnWrapper>
   );
 }
   

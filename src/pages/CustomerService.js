@@ -55,7 +55,7 @@ function CustomerService(props) {
 
   return showButton && (
     <ScrollWrap>
-      <button id='top' onClick={() => {window.open("http://localhost:3000/chat", "Popup","toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=500, height=500, top=800, left=1700")}}><SupportAgent /></button>
+      <button id='top' onClick={() => {window.open("http://localhost:3000/chat", "Popup","toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=400, height=400, top=800, left=1700")}}><SupportAgent /></button>
     </ScrollWrap>
   );
 }

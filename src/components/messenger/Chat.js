@@ -29,7 +29,6 @@ const MessageItemLeft = styled.li`
 const MessageItem = styled.li`
   /* background-color: #f8f8f8; */
   border-radius: 8px;
-  margin: 8px 0;
   padding: 8px;
   text-align: right;
 `;
@@ -37,8 +36,8 @@ const MessageItem = styled.li`
 const AnswerStyled = styled.div`
   color: red;
   border-radius: 8px;
-  margin: 8px 0;
-  padding: 8px;
+  /* margin: 8px 0; */
+  /* padding: 8px; */
   text-align: left;
 `;
 
@@ -104,7 +103,6 @@ const Chat = () => {
       {messages.map((message, index) => (
         <MessageItem key={index}>{message}</MessageItem>
       ))}
-      {answer && <AnswerStyled> Answer : {answer}</AnswerStyled>}
     </MessageList>
   );
 
@@ -117,6 +115,7 @@ const Chat = () => {
           키워드: [전시회 일정, 전시회 위치, 사용 방법]
         </MessageItemLeft>
         {messageList}
+        {answer && <AnswerStyled> ChatBot : {answer}</AnswerStyled>}
         <InputForm 
           onSubmit={handleSend}
           >

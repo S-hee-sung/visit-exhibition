@@ -84,8 +84,8 @@ function UtilityMenu(props) {
           </li>
           <li onClick={() => navigate('/signup')}>
             회원가입
-          </li>
-          <li onClick={() => { window.open("http://localhost:3000/chat", "Popup", "toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=300, height=350, top=800, left=1700") }}>
+          </li> 
+          <li onClick={() => { window.open("http://localhost:3000/chat", "Popup", "toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=400, height=400, top=800, left=1700") }}>
             고객센터
             {/* <a href='http://localhost:3000/chat' target='_blank' rel='noreferrer'>고객센터</a> */}
           </li>

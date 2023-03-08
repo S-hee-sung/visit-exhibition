@@ -34,7 +34,13 @@ const cartSlice = createSlice({
       const targetItem = state.cartList.find((cart) => { return cart.id === action.payload; });
       targetItem.count += 1;
     },
+    decreaseCount: (state, action) => {
 
+      console.log("decrease action", action);
+      
+      const targetItem = state.cartList.find((cart) => { return cart.id === action.payload; });
+      targetItem.count -= 1;
+    },
     addItemToCart: (state, action) => {
       console.log("add action", action);
 
@@ -52,7 +58,7 @@ const cartSlice = createSlice({
   }
 });
 
-export const { addItemToCart, increaseCount, removeItemFromCart } = cartSlice.actions;
+export const { addItemToCart, increaseCount, decreaseCount, removeItemFromCart } = cartSlice.actions;
 
 export const selectCartList = state => state.cart.cartList;
 

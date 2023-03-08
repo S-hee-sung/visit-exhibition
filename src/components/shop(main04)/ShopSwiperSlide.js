@@ -125,7 +125,8 @@ export default () => {
                         dispatch(addItemToCart({
                           id: swiperList.id,
                           title: swiperList.name,
-                          price: swiperList.price
+                          price: swiperList.price,
+                          count: 1,
                         }));
                         handleOpen();
                       }}

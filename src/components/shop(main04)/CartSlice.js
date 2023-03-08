@@ -21,19 +21,28 @@ const initialState = {
       count: 3
     }
   ]
-}
+};
 
 const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
     increaseCount: (state, action) => {
-      const targetItem = state.cartList.find((cart) => { return cart.id === action.id; });
+
+      console.log("increase action", action);
+
+      const targetItem = state.cartList.find((cart) => { return cart.id === action.payload; });
       targetItem.count += 1;
     },
+    decreaseCount: (state, action) => {
 
+      console.log("decrease action", action);
+      
+      const targetItem = state.cartList.find((cart) => { return cart.id === action.payload; });
+      targetItem.count -= 1;
+    },
     addItemToCart: (state, action) => {
-      console.log(action);
+      console.log("add action", action);
 
       const targetItem = state.cartList.find((cart) => cart.id === action.id);
       if (targetItem) {
@@ -41,11 +50,15 @@ const cartSlice = createSlice({
       } else {
         state.cartList.push(action.payload);
       }
+    },
+    removeItemFromCart: (state, { payload: id }) => {
+      const targetIndex = state.cartList.findIndex((cart) => cart.id === id);
+      state.cartList.splice(targetIndex, 1);
     }
   }
 });
 
-export const { addItemToCart, increaseCount } = cartSlice.actions;
+export const { addItemToCart, increaseCount, decreaseCount, removeItemFromCart } = cartSlice.actions;
 
 export const selectCartList = state => state.cart.cartList;
 

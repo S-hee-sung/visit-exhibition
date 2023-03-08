@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Search, Person, Place } from '@mui/icons-material';
+import { Search, Person, Place, AddShoppingCart } from '@mui/icons-material';
 import { useState, useEffect } from 'react';
 
 import { Link, useNavigate } from "react-router-dom";
@@ -73,8 +73,8 @@ function UtilityMenu(props) {
           </Person>
         </li>
         <li onClick={() => navigate('/cart')}>
-          <Place sx={{ fontSize: 35, color: 'black' }}>
-          </Place>
+          <AddShoppingCart sx={{ fontSize: 32, color: 'black' }}>
+          </AddShoppingCart>
         </li>
       </ul>
       <UtilityTopMenuArea>

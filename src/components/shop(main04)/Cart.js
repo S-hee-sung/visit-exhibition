@@ -1,22 +1,31 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { Button, Table } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { selectCartList, increaseCount } from "../shop(main04)/CartSlice";
+import { selectCartList, increaseCount, decreaseCount, removeItemFromCart } from "../shop(main04)/CartSlice";
+import HorizonLine from "../main(main01)/HorizonLine";
+import Payment from "../payload/Payment";
 
 
 const CartWrapper = styled.div`
   width: 100%;
   margin: 0 auto;
-  height: 700px;
-  background-color: yellow;
+  height: 100%;
+  /* background-color: yellow; */
   .inner {
     margin: 0 auto;
     max-width: 1200px;
-    height: 700px;
+    height: 100%;
     padding-top: 220px;
-    background-color: pink;
+    text-align: center;
+    /* background-color: pink; */
+  }
+  .paymentBtn {
+    display: flex;
+    justify-content: end;
+    margin-top: 30px;
+    margin-bottom: 50px;
   }
 `;
 
@@ -24,7 +33,19 @@ function Cart(props) {
 
   const cartAdd = useSelector(selectCartList);
   console.log(cartAdd);
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
+
+  const arr1 = [...cartAdd];
+  const totalPrice = arr1.reduce((stack, el) => {
+    return stack + (el.price * el.count);
+  }, 0);
+  console.log("totalPrice", totalPrice);
+
+  const arr2 = [...cartAdd];
+  const totalCount = arr2.reduce((stack, el) => {
+    return stack + (el.count);
+  }, 0);
+  console.log("totalCount", totalCount);
 
   // console.log(data);
 
@@ -36,29 +57,57 @@ function Cart(props) {
             <tr>
               <th>no</th>
               <th>상품명</th>
-              <th>가격</th>
+              <th>상품 가격</th>
               <th>수량</th>
+              <th>총 가격</th>
               <th>삭제</th>
             </tr>
           </thead>
           <tbody>
             {cartAdd.map((cart, index) => (
-              <tr key={cart.id}>
-                <td>{index + 1}</td>
-                <td>{cart.title}</td>
-                <td>{cart.price}</td>
-                <td>
-                  <Button variant="outline-secondary"> - </Button>
-                  {/* <Button variant="outline-secondary"
-                    onClick={() => { dispatch(increaseCount(cart.id)); }}> + </Button> */}
-                </td>
-                <td>
-                  <Button variant="outline-success"> x </Button>
-                </td>
-              </tr>
+              <>
+                <tr key={cart.id}>
+                  <td>{index + 1}</td>
+                  <td>{cart.title}</td>
+                  <td>{cart.price}</td>
+                  <td>
+                    <Button variant="outline-warning" size="sm"
+                      onClick={() => { dispatch(decreaseCount(cart.id)); }}> - </Button>
+                    {` ${cart.count} `}
+                    <Button variant="outline-warning" size="sm"
+                      onClick={() => { dispatch(increaseCount(cart.id)); }}> + </Button>
+                  </td>
+                  <td>{` ${cart.count * cart.price} `}</td>
+                  <td>
+                    <Button variant="outline-danger" size="sm"
+                      onClick={(e) => { dispatch(removeItemFromCart(cart.id)); }}> x </Button>
+                  </td>
+                </tr>
+              </>
             ))}
           </tbody>
         </Table>
+        <HorizonLine />
+        <Table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>주문 수량</th>
+              <th>최종 결제 금액</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr key={''}>
+                <td>{''}</td>
+                <td>{totalCount}</td>
+                <td>{totalPrice}</td>
+              </tr>
+          </tbody>
+        </Table>
+        <HorizonLine />
+        <div className="paymentBtn">
+          <Payment />
+        </div>
       </div>
     </CartWrapper>
   );

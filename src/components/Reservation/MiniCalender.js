@@ -8,6 +8,7 @@ const CalenderWrap = styled.div`
   gap: 10px;
   height: 100%;
   flex-direction: column;
+  justify-content: space-around;
   .header{
     display: flex;
     gap: 20px;
@@ -29,38 +30,41 @@ const CalenderWrap = styled.div`
       align-items: center;
     }
   }
-  .days-of-week{
+  .days-of-container{
     display: flex;
-    gap: 10px;
-    background: #f6f6f6;
-    justify-content: space-between;
-    padding: 10px;
-    font-size: 18px;
-    color: #333;
-  }
-  
-  .days-of-month{
-    padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    font-size: 18px;
-    gap: 20px;
-    /* background: wheat; */
-    justify-content: space-between;
-    /* height: 100%; */
-    div{
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 20px;
-    }
-    .day{
-      /* background: red; */
+    flex-direction: column;
+    .days-of-week{
+      display: flex;
+      gap: 10px;
+      background: #f6f6f6;
+      justify-content: space-between;
       padding: 10px;
+      font-size: 18px;
+      color: #333;
     }
-    .selected{
-      background: rgb(236, 125, 44);
-      color: white;
-      border-radius: 50%;
+    
+    .days-of-month{
+      padding: 10px;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      display: grid;
+      font-size: 18px;
+      gap: 20px;
+      /* height: 100%; */
+      div{
+        font-weight: bold;
+        font-size: 20px;
+      }
+      .day{
+        cursor: pointer;
+        /* background: red; */
+        /* padding: 10px; */
+        text-align: right;
+        /* background: #ec7d2c; */
+        padding-top: 5px;
+        &:hover{
+          color: #555;
+        }
+      }
     }
   }
   .selected-date{
@@ -126,7 +130,7 @@ const MiniCalendar = () => {
           className={className}
           onClick={() => setSelectedDate(day)}
         >
-          {i}
+          {i} <span style={{color:"#333",fontWeight:'normal'}}>일</span>
         </div>
       );
     }
@@ -153,13 +157,15 @@ const MiniCalendar = () => {
         </div>
         <button onClick={nextMonth}>{'>'}</button>
       </div>
-      <div className="days-of-week">
-        {daysOfWeek.map((day, index) => (
-          <div key={index} className="day-of-week">{day}</div>
-        ))}
-      </div>
-      <div className="days-of-month">
-        {renderDaysOfMonth()}
+      <div className='days-of-container'>
+        <div className="days-of-week">
+          {daysOfWeek.map((day, index) => (
+            <div key={index} className="day-of-week">{day}</div>
+          ))}
+        </div>
+        <div className="days-of-month">
+          {renderDaysOfMonth()}
+        </div>
       </div>
       <div className="selected-date" onClick={confirmResult}>
         {selectedDate ? `${selectedDate.toDateString()} 예약 하기` : '관람 날짜를 선택해주세요.'}

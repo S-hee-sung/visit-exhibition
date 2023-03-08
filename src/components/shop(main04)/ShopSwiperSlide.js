@@ -116,7 +116,7 @@ export default () => {
                     {swiperList.name}
                   </li>
                   <li>
-                    {swiperList.price}
+                    {`${swiperList.price}원`.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                   </li>
                   <li className="icons">
                     <AddShoppingCart

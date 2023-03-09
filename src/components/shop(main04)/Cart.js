@@ -7,7 +7,6 @@ import { selectCartList, increaseCount, decreaseCount, removeItemFromCart } from
 import HorizonLine from "../main(main01)/HorizonLine";
 import Payment from "../payload/Payment";
 
-
 const CartWrapper = styled.div`
   width: 100%;
   margin: 0 auto;

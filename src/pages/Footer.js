@@ -149,7 +149,7 @@ function Footer(props) {
           </div>
           <DropDown>
             <ul onClick={() => { setDropDown(!dropDown) }}>
-              family Site
+              <li>amily Site</li>
               {dropDown && <FooterDropDown />}
             </ul>
           </DropDown>

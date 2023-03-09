@@ -305,7 +305,8 @@ function Map(props) {
       const temp_html = `<div class="customoverlay">
                         <a>
 													<span class="title">${desc}</span>
-                        </a></div>`;
+                        </a>
+												</div>`;
 
       // 커스텀 오버레이를 생성합니다
       new kakao.maps.CustomOverlay({

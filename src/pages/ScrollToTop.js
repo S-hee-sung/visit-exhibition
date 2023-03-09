@@ -8,7 +8,7 @@ const ScrollWrap = styled.div`
   bottom: 35px;
   z-index: 5;
   padding: 0;
-  #top{
+  .top{
   font-weight: bold;
   padding: 0;
   font-size: 15px;
@@ -54,7 +54,7 @@ function ScrollToTop(props) {
 
   return showButton && (
     <ScrollWrap>
-      <button id='top' onClick={scrollTop}>Top</button>
+      <button className='top' onClick={scrollTop}>Top</button>
     </ScrollWrap>
   );
 }

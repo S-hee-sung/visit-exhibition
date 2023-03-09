@@ -88,7 +88,7 @@ const Chat = () => {
         setAnswer('일정은 웹사이트에서 확인하세요 ><');
         break;
       case '전시회 위치':
-        setAnswer('일정도 웹사이트에서 확인해주세요 ^^');
+        setAnswer('위치도 웹사이트에서 확인해주세요 ^^');
         break;
       case '사용 방법':
         setAnswer('이런! 아쉽게도 저도 잘 몰라요');

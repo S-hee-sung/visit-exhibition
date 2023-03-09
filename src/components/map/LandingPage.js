@@ -1,4 +1,3 @@
-import { useState } from "react"
 import styled from "styled-components"
 import HorizonLine from "../main(main01)/HorizonLine";
 import Map from "./Map";

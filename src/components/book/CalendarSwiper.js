@@ -39,22 +39,22 @@ function CalendarSwiper() {
 					className="mySwiper"
 				>
 					<SwiperSlide>
-						<img src={sw1} className="imgSlide" />
+						<img src={sw1} className="imgSlide" alt="슬라이드1" />
 					</SwiperSlide>
 					<SwiperSlide>
-						<img src={sw2} className="imgSlide" />
+						<img src={sw2} className="imgSlide" alt="슬라이드2" />
 					</SwiperSlide>
 					<SwiperSlide>
-						<img src={sw3} className="imgSlide" />
+						<img src={sw3} className="imgSlide" alt="슬라이드3" />
 					</SwiperSlide>
 					<SwiperSlide>
-						<img src={sw4} className="imgSlide" />
+						<img src={sw4} className="imgSlide" alt="슬라이드4" />
 					</SwiperSlide>
 					<SwiperSlide>
-						<img src={sw5} className="imgSlide" />
+						<img src={sw5} className="imgSlide" alt="슬라이드5" />
 					</SwiperSlide>
 					<SwiperSlide>
-						<img src={sw6} className="imgSlide" />
+						<img src={sw6} className="imgSlide" alt="슬라이드6" />
 					</SwiperSlide>
 				</StyledSwiper>
 			</>

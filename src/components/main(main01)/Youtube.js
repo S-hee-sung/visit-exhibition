@@ -8,7 +8,7 @@ flex-direction: row;
 gap: 10px;
 `;
 
-function youtube(props) {
+function Youtube(props) {
   return (
     <VideoSizeWrapper>
       <ReactPlayer
@@ -25,4 +25,4 @@ function youtube(props) {
   );
 }
 
-export default youtube;
+export default Youtube;

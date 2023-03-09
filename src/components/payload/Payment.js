@@ -55,7 +55,7 @@ const onClickPayment = () => {
 }
   
   const callback = (response) => {
-    const {success, error_msg, imp_uid, merchant_uid, pay_method, paid_amount, status} = response;
+    const {success, error_msg} = response;
     if (success) {
       alert('결제 성공');
     } else {

@@ -11,17 +11,13 @@ const TabMenu = styled.ul`
   display: flex;
   padding: 30px;
   justify-content: space-around;
-  /* align-items: center; */
-  /* margin-bottom: 7rem;
-  margin-top: 10px; */
   margin-top: 1.8rem;
   margin-bottom: 1.2rem;
   gap: 10px;
-
+  
   .submenu {
     display: flex;
     justify-content: space-evenly;
-    /* text-align: center; */
     width: 180px;
     height: 42px;
     border: 1px solid #656565;
@@ -51,7 +47,6 @@ const Desc = styled.div`
 
 export const Tab = () => {
   const [currentTab, setCurrentTab] = useState(0);
-
   const menuArr = [
     { name: '서울 종로구', content: <ExhibitionSwiperSlide slideList={data} /> },
     { name: '서울 강남구', content: <ExhibitionSwiperSlide slideList={data2} /> },
@@ -59,7 +54,6 @@ export const Tab = () => {
     { name: '인천', content: <ExhibitionSwiperSlide slideList={data4} /> },
     { name: '경기', content: <ExhibitionSwiperSlide slideList={data5} /> },
   ];
-
   return (
     <>
       <div>

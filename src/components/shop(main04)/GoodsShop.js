@@ -19,7 +19,6 @@ h4 {
 `;
 
 function GoodsShop(props) {
-  
   return (
     <GoodsShopWrapper>
       <div className='inner'>

@@ -4,41 +4,29 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from "styled-components";
 import data from "../../data6.json";
 import { AddShoppingCart } from '@mui/icons-material';
-
-// import 'swiper/css';
-// import { useNavigate, useParams } from "react-router";
 import LikeButton from "./LikeButton";
-
 import { addItemToCart } from "../shop(main04)/CartSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Button, Modal } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from "react-router";
 
-
 const SlideWrapper = styled.div`
 .inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    height: 450px;
-  }
-  img {
-    margin-top: 50px;
-    height: 20vh;
-    width: 10vw;
-    margin-bottom: 20px;
-  }
-  
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 450px;
+}
+img {
+  margin-top: 50px;
+  height: 20vh;
+  width: 10vw;
+  margin-bottom: 20px;
+}
 ul {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-between; */
   line-height: 1rem;
   width: 10vw;
 }
-/* ul .imageContainer {
-    width: 10px
-  } */
 ul li:nth-child(2) {
   font-size: 0.7rem;
   font-weight: 700;
@@ -64,32 +52,11 @@ ul li:nth-child(4) {
 `;
 
 export default () => {
-
-  // const product = useSelector(state => state.cart.cartList);
-  // const product = [
-  //   {
-  //     id: '1',
-  //     title: 'ALL OF THEM WITCHES\' PUZZLE 500',
-  //     price: 28900,
-  //     count: 1
-  //   },
-  //   {
-  //     id: '2',
-  //     title: '백자청화초화문편병 굽접시',
-  //     price: 32900,
-  //     count: 3
-  //   }
-  // ];
-  // console.log(product[0].id);
-
   const dispatch = useDispatch();
 
-  // modal
   const [ showModal, setShowModal ] = useState(false);
-
   const handleClose = () => setShowModal(false);
   const handleOpen = () => setShowModal(true);
-
   const navigate = useNavigate();
   
   return (
@@ -107,7 +74,7 @@ export default () => {
               <div>
                 <ul>
                   <li className="imageContainer">
-                    <img src={swiperList.src} />
+                    <img src={swiperList.src} alt="shopSldieImages" />
                   </li>
                   <li>
                     {swiperList.title}
@@ -131,7 +98,6 @@ export default () => {
                         handleOpen();
                       }}
                       />
-                    {/* <FavoriteBorder sx={{ fontSize: 20, color: '#FFC3C3', cursor: 'pointer' }} /> */}
                     <LikeButton />
                   </li>
                 </ul>

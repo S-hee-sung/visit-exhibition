@@ -21,13 +21,11 @@ const ButtonWrapper = styled.div`
 
 const localButton = (props) => {
   const { children, onClick } = props;
-
   return (
     <ButtonWrapper>
       <button onClick={onClick}>{props.name}</button>
     </ButtonWrapper>
-    
   )
-}
+};
 
 export default localButton;

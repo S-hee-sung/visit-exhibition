@@ -7,30 +7,28 @@ import { ArrowForwardIos } from '@mui/icons-material';
 
 
 const MainWrapper = styled.div`
-    background: url(https://weaverloft.com/common/img/main/new/main.png) no-repeat;
-    width: 100%;
-    height: 100%;
-    background-size: 100%;
-    background-position: bottom;
-    padding-bottom: 30px;
+  background: url(https://weaverloft.com/common/img/main/new/main.png) no-repeat;
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+  background-position: bottom;
+  padding-bottom: 30px;
 .inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-top:200px;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top:200px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   .textContainer{
     display: flex;
     color: white;
     font-size: 1.2rem;
-    /* color: #fff; */
     font-weight: 600;
     padding-bottom: 10px;
   }
-  }
-
+}
   .maintext {
     width: 600px;
     color: #656565;
@@ -40,18 +38,16 @@ const MainWrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    .youbuteWrap{
+    .youbuteWrap {
       position: relative;
-      .youtubeCover{
+      .youtubeCover {
         position: absolute;
         width: 100%;
         height: 100%;
-        /* background: black; */
         top: 0;
       }
     }
   }
-
   .buttonArea{
     display: flex;
     justify-content: center;
@@ -65,7 +61,7 @@ const MainWrapper = styled.div`
       justify-content: center;
       align-items: center;
       border: none;
-      cursor: pointer;
+    cursor: pointer;
       font-weight: bold;
       font-size: 16px;
       background: white;
@@ -78,17 +74,15 @@ const MainWrapper = styled.div`
       }
     }
   }
-  `;
+`;
 
 function MainPage(props) {
   const navigate = useNavigate();
-
   return (
     <MainWrapper>
       <div className="inner">
         <div className='textContainer'>
           <h4>visit exhibihion.</h4>
-          {/* <p className="maintext">Lorem ipsum dolor sit amet,</p> */}
         </div>
         <div className='imagecontainer'>
           <div className='youbuteWrap'>
@@ -108,8 +102,6 @@ function MainPage(props) {
         </div>
       </div>
     </MainWrapper>
-
-
   );
 }
 

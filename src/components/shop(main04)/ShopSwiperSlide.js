@@ -19,8 +19,8 @@ const SlideWrapper = styled.div`
 }
 img {
   margin-top: 50px;
-  height: 20vh;
-  width: 10vw;
+  height: 280px;
+  width: 220px;
   margin-bottom: 20px;
 }
 ul {

@@ -47,5 +47,12 @@
     "name": "SLICK LOUNGE",
     "location": "[GIFC 타워]",
     "address": "경기 고양시 일산서구 킨텍스로 240"
+  },
+  {
+    "id": 8,
+    "src": "./images/slide05-8.jpg ",
+    "name": "젊은 건축가 3인방의 첫번째 봄",
+    "location": "[용인문화예술원]",
+    "address": "경기 용인시 처인구 중부대로 1199"
   }
 ]

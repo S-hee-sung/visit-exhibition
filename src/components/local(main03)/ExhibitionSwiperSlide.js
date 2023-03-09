@@ -12,8 +12,8 @@ const SlideWrapper = styled.div`
     margin: 0 auto;
   }
   img {
-    height: 40vh;
-    width: 14vw;
+    height: 370px;
+    width: 262px;
   }
   li:nth-child(2) {
     line-height: 2.0rem;
@@ -34,6 +34,8 @@ const SlideWrapper = styled.div`
 
 const ExhibitionSwiperSlide = (props) => {
   const { slideList } = props;
+
+  console.log(slideList);
 
   return (
     <SlideWrapper>

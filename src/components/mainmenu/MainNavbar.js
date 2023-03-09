@@ -50,10 +50,10 @@ const mainMenuList = [
 function MainNavbar() {
   return (
     <MainMenu>
-      <Nav defaultActiveKey="/home" as="ul">
+      <Nav as="ul">
         {mainMenuList.map((list) => {
           return <Nav.Item as='li' key={list.id}>
-            <Nav.Link>{list.title}</Nav.Link>
+            <a href="javascript:void(0)">{list.title}</a>
           </Nav.Item>
         })}
       </Nav>

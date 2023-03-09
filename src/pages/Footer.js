@@ -116,7 +116,7 @@ function Footer(props) {
     <FooterWrapper>
       <div className="footerInner">
         <div className="footerImageArea" style={{ marginLeft: '100px' }}>
-          <img src={backgroundImg} alt="푸터 로고 이미지"/>
+          <img src={backgroundImg} alt="푸터 로고 이미지" />
         </div>
         <div className="footerRightArea">
           <div className="textArea">
@@ -158,28 +158,28 @@ function Footer(props) {
       <FooterBottom>
         <p>14 Samcheong-ro, Jongno-gu, Seoul 03062 Korea<br />
           Gallery Hyundai - All rights reserved 2023</p>
-          
+
         <ul>
           <li>
-            <a href="#" style={{fontWeight:'bold'}}>개인정보처리관리</a>
+            <a href="javascript:void(0)" style={{ fontWeight: 'bold' }}>개인정보처리관리</a>
           </li>
           <li>
             |
           </li>
           <li>
-            <a href="#">이용약관</a>
+            <a href="javascript:void(0)">이용약관</a>
           </li>
           <li>
             |
           </li>
           <li>
-            <a href="#">통합검색 고객센터</a>
+            <a href="javascript:void(0)">통합검색 고객센터</a>
           </li>
           <li>
             |
           </li>
           <li>
-            <a href="#">전체 서비스</a>
+            <a href="javascript:void(0)">전체 서비스</a>
           </li>
         </ul>
       </FooterBottom>

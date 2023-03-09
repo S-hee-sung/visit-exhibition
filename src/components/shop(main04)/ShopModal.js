@@ -5,7 +5,6 @@ function ShopModal(props) {
 function closeShopModal() {
   props.closeShopModal();
 }
-
   return (
     <div className='Modal' onClick={closeShopModal}>
       <div className='modalBody' onClick={(e) => e.stopPropagation()}>

@@ -12,19 +12,16 @@ const CartWrapper = styled.div`
   width: 100%;
   margin: 0 auto;
   height: 100%;
-  /* background-color: yellow; */
   .inner {
     margin: 0 auto;
     max-width: 1200px;
     height: 100%;
     padding-top: 220px;
     text-align: center;
-    /* background-color: pink; */
   }
 `;
 
 function Cart(props) {
-
   const cartAdd = useSelector(selectCartList);
   console.log(cartAdd);
   const dispatch = useDispatch();
@@ -40,8 +37,6 @@ function Cart(props) {
     return stack + (el.count);
   }, 0);
   console.log("totalCount", totalCount);
-
-  // console.log(data);
 
   return (
     <CartWrapper>

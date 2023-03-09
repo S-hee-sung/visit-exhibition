@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styled from "styled-components";
@@ -29,13 +29,11 @@ const SlideWrapper = styled.div`
   }
   ul *:nth-child(5) {
     padding: 10px 0 50px 0;
-  }`;
+  }
+`;
 
 const ExhibitionSwiperSlide = (props) => {
-
   const { slideList } = props;
-
-  // console.log(slideList);
 
   return (
     <SlideWrapper>
@@ -47,12 +45,12 @@ const ExhibitionSwiperSlide = (props) => {
           spaceBetween={50}
           slidesPerView={4}
         >
-          {slideList.map((swiperList,index) => {
+          {slideList.map((swiperList, index) => {
             return <SwiperSlide key={index}>
               <div>
                 <ul>
                   <li className="imageContainer">
-                    <img src={swiperList.src} />
+                    <img src={swiperList.src} alt="exhibitionSlideImages"/>
                   </li>
                   <li>
                     {swiperList.name}
@@ -67,7 +65,6 @@ const ExhibitionSwiperSlide = (props) => {
                   </li>
                 </ul>
               </div>
-
             </SwiperSlide>
           })}
         </Swiper>

@@ -22,10 +22,9 @@ const SubButtonWrapper = styled.div`
     color: dodgerblue;
   }
 `;
+
 function SubButton(props) {
-
   const navigate = useNavigate()
-
   return (
     <SubButtonWrapper>
       <div className='buttons'>
@@ -33,25 +32,6 @@ function SubButton(props) {
       </div>
     </SubButtonWrapper>
   )
-
-}
+};
 
 export default SubButton;
-
-// /${data[0].id}`
-
-// const SubButton = (props) => {
-
-//   const navigate = useNavigate()
-
-//   return (
-//     <SubButtonWrapper>
-//       <div className='buttons'>
-//         <button onClick={slideList}>상세보기</button>
-//         <button onClick={() => navigate(`/reservation/${data[0].id}`)}>바로예약</button>
-//       </div>
-
-
-//     </SubButtonWrapper>
-//   )
-// }

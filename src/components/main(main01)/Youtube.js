@@ -14,14 +14,12 @@ function Youtube(props) {
       <ReactPlayer
         className="player"
         url={"https://youtu.be/9cmGRuWdmzg"}
-        // width="400px"
         heigth="100%"
         playing={true}
         muted={true}
         loop={true}
       />
     </VideoSizeWrapper>
-
   );
 }
 

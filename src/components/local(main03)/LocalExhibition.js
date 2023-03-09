@@ -31,7 +31,6 @@ function LocalExhibition(props) {
         <Tab />
       </div>
     </LocalExhibitionWrapper>
-    
   );
 }
 

@@ -53,7 +53,7 @@ function MainNavbar() {
       <Nav as="ul">
         {mainMenuList.map((list) => {
           return <Nav.Item as='li' key={list.id}>
-            <a href="javascript:void(0)">{list.title}</a>
+            <a >{list.title}</a>
           </Nav.Item>
         })}
       </Nav>

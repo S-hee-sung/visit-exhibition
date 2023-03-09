@@ -161,25 +161,25 @@ function Footer(props) {
 
         <ul>
           <li>
-            <a href="javascript:void(0)" style={{ fontWeight: 'bold' }}>개인정보처리관리</a>
+            <a style={{ fontWeight: 'bold' }}>개인정보처리관리</a>
           </li>
           <li>
             |
           </li>
           <li>
-            <a href="javascript:void(0)">이용약관</a>
+            <a >이용약관</a>
           </li>
           <li>
             |
           </li>
           <li>
-            <a href="javascript:void(0)">통합검색 고객센터</a>
+            <a >통합검색 고객센터</a>
           </li>
           <li>
             |
           </li>
           <li>
-            <a href="javascript:void(0)">전체 서비스</a>
+            <a >전체 서비스</a>
           </li>
         </ul>
       </FooterBottom>

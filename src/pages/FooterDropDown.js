@@ -25,7 +25,7 @@ function FooterDropDown(props) {
   return (
     <div>
       {familySite.map((family) => {
-        return <li key={family.key} style={{ paddingTop: '10px' }}>{family.text}</li>
+        return <li key={family.id} style={{ paddingTop: '10px' }}>{family.text}</li>
       })}
     </div>
   );

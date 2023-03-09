@@ -63,7 +63,7 @@ export default () => {
     <SlideWrapper>
       <div className="inner">
         <Swiper
-          autoplay={{ delay: 1500 }}
+          autoplay={{ delay: 1000 }}
           loop={true}
           modules={[Autoplay]}
           spaceBetween={60}

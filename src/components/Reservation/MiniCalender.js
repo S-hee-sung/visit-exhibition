@@ -49,17 +49,13 @@ const CalenderWrap = styled.div`
       display: grid;
       font-size: 18px;
       gap: 20px;
-      /* height: 100%; */
       div{
         font-weight: bold;
         font-size: 20px;
       }
       .day{
         cursor: pointer;
-        /* background: red; */
-        /* padding: 10px; */
         text-align: right;
-        /* background: #ec7d2c; */
         padding-top: 5px;
         &:hover{
           color: #555;
@@ -79,7 +75,6 @@ const CalenderWrap = styled.div`
   }
   .complete-data-wrap{
     width: 100%;
-    /* height: 100%; */
     background: yellow;
   }
 `;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useState, useEffect } from 'react';
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SignupWrap = styled.div`
   padding-top: 140px;
@@ -263,7 +263,6 @@ function Signup(props) {
           <div >
             <button
               className='bottomButton'
-              // disabled={notAllow}
               onClick={onClickConfirm}
             >
               회원가입

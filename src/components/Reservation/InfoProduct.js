@@ -8,7 +8,6 @@ const InfoArea = styled.div`
     display: flex;
     flex-direction: column;
     height: 100%;
-    /* background: #f6f6f6; */
     .infoProductArea1{
       height: 100%;
       display: flex;
@@ -113,20 +112,18 @@ function InfoProduct(props) {
   const { contents } = props;
 
 
-  console.log(contents.content);
-
   return (
     <InfoArea>
       <div className='infoProductArea1'>
         <div className='infoArea'>
           <div className='categoryArea'>
             <div className='contentImg'>
-              <img src={contents[activeContentIndex].imageSrc} />
+              <img src={contents[activeContentIndex].imageSrc} alt='포스터 이미지' />
             </div>
             <div className='tapContents'>
               {contents.map((content, index) => (
                 <div className='tapItem' key={index} onClick={() => handleContentClick(index)}>
-                  <img src={content.imageSrc} />
+                  <img src={content.imageSrc} alt='포스터 이미지' />
                   <p>{content.content}</p>
                 </div>
               ))}

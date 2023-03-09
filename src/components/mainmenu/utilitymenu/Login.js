@@ -1,7 +1,7 @@
 
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import KakaoLogin from './KakaoLogin';
 import NaverLogin from './NaverLogin';
 

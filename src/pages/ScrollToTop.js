@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { ArrowDropUp } from '@mui/icons-material';
 
 
 const ScrollWrap = styled.div`

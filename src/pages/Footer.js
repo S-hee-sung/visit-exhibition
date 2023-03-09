@@ -116,7 +116,7 @@ function Footer(props) {
     <FooterWrapper>
       <div className="footerInner">
         <div className="footerImageArea" style={{ marginLeft: '100px' }}>
-          <img src={backgroundImg} />
+          <img src={backgroundImg} alt="푸터 로고 이미지"/>
         </div>
         <div className="footerRightArea">
           <div className="textArea">

@@ -16,11 +16,10 @@ const NaverBtn = styled.div`
   }
 `;
 
-function NaverLogin({ setGetToken, setUserInfo }) {
+function NaverLogin() {
 
   const { naver } = window
-  const NAVER_CLIENT_ID = 'YrwSEQ1V45KSMRgkt6mS';
-  const NAVER_CALLBACK_URL = 'http://localhost:3000'
+
 
   const initializeNaverLogin = () => {
     const naverLogin = new naver.LoginWithNaverId({
@@ -31,14 +30,6 @@ function NaverLogin({ setGetToken, setUserInfo }) {
       callbackHandle: true,
     })
     naverLogin.init()
-
-    naverLogin.getLoginStatus(async function (status) {
-      if (status) {
-
-        const userid = naverLogin.user.getEmail();
-        const username = naverLogin.user.getName();
-      }
-    })
   }
 
   const userAccessToken = () => {
@@ -49,7 +40,6 @@ function NaverLogin({ setGetToken, setUserInfo }) {
     const token = window.location.href.split('=')[1].split('&')[0]
   }
 
-  // 화면 첫 렌더링이후 바로 실행하기 위해 useEffect 를 사용하였다.
   useEffect(() => {
     initializeNaverLogin()
     userAccessToken()
@@ -61,7 +51,7 @@ function NaverLogin({ setGetToken, setUserInfo }) {
         <div id='naverIdLogin'>
           <ul>
             <li>
-              <img src='https://image.nbkorea.com/NBRB_PC/common/icon_kakao.jpg' />
+              <img src='https://image.nbkorea.com/NBRB_PC/common/icon_kakao.jpg' alt='네이버 로그인 이미지' />
             </li>
             <li>
               네이버 로그인

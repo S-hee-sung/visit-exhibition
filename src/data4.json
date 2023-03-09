@@ -33,5 +33,26 @@
     "name": "놀이터를 부탁해",
     "location": "[인천도시역사관]",
     "address": "인천 연수구 인천타워대로 238"
+  },
+  {
+    "id": 6,
+    "src": "./images/slide04-6.jpg",
+    "name": "공중용사 안창남",
+    "location": "[영종역사관]",
+    "address": "인천 중구 구읍로 63"
+  },
+  {
+    "id": 7,
+    "src": "./images/slide04-7.jpg",
+    "name": "IAAS",
+    "location": "[인천아시아아트쇼]",
+    "address": "인천 연수구 송도과학로 56"
+  },
+  {
+    "id": 8,
+    "src": "./images/slide04-8.jpg",
+    "name": "한바탕의 봄 꿈",
+    "location": "[컨벤시아 갤러리]",
+    "address": "인천 연수구 센트럴로 123 남문"
   }
 ]

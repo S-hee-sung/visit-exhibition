@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Search, Person, Place, AddShoppingCart } from '@mui/icons-material';
+import { Search, Person, AddShoppingCart } from '@mui/icons-material';
 import { useState, useEffect } from 'react';
 
-import { Link, useNavigate } from "react-router-dom";
-import Login from "./Login";
-import { Nav } from 'react-bootstrap';
+import { useNavigate } from "react-router-dom";
+
 
 
 const UtilityMenuArea = styled.div`
@@ -33,12 +32,7 @@ const UtilityTopMenuArea = styled.div`
   font-weight: bold;
   font-size: 15px;
 `;
-// const windowFeatures = "left=100,top=100,width=320,height=320";
-//   const handleOpen = window.open(
-//     "http://localhost:3000/chat",
-//     "mozillaWindow",
-//     windowFeatures
-//   );
+
 
 function UtilityMenu(props) {
 
@@ -84,10 +78,9 @@ function UtilityMenu(props) {
           </li>
           <li onClick={() => navigate('/signup')}>
             회원가입
-          </li> 
+          </li>
           <li onClick={() => { window.open("http://localhost:3000/chat", "Popup", "toolbar=no, location=no, statusbar=no, menubar=no, scrollbars=1, resizable=0, width=400, height=400, top=800, left=1700") }}>
             고객센터
-            {/* <a href='http://localhost:3000/chat' target='_blank' rel='noreferrer'>고객센터</a> */}
           </li>
         </ul>
       </UtilityTopMenuArea>

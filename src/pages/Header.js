@@ -73,7 +73,7 @@ function Header() {
         <div className={scrollPosition < 60 ? "original_header" : "change_header"}>
           <div className='header_inner'>
             <div className='header_Area' onClick={() => navigate('/')}>
-              <img src={backgroundImg} />
+              <img src={backgroundImg} alt="헤더 로고 이미지"/>
             </div>
             <MainNavbar />
             <UtilityMenu />

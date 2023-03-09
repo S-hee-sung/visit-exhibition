@@ -272,7 +272,6 @@ function Map(props) {
 			}
 		}
 		
-		// console.log(db);
 
 		const imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
 		
